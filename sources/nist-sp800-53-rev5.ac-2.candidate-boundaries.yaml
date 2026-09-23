@@ -1,0 +1,114 @@
+candidate_boundary_set:
+  source_snapshot:
+    source_family_id: nist-sp800-53-rev5
+    source_content_release: "5.2.0"
+    repository_commit: 78650f02ad9321bb7b817846f8fbd4f2bcd620de
+    source_artifact_path: nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json
+    source_slice_reference: sources/nist-sp800-53-rev5.ac-2-si-12.slice.yaml
+  evaluated_source_objects:
+    - source_object_reference: ac-2
+      candidate_count: 12
+    - source_object_reference: ac-2.10
+      candidate_count: 0
+      rationale: No independent normative statement; incorporated into AC-2 item k.
+  candidates:
+    - candidate_boundary_id: cbr-nist-sp800-53-rev5-ac-2-smt-a
+      source_object_reference: ac-2
+      root_source_part_reference: ac-2_smt.a
+      included_source_part_references: [ac-2_smt.a]
+      normative_parameter_references: []
+      boundary_rationale: Independent operative action.
+      derivation_method: hybrid
+      validation_status: PROPOSED
+    - candidate_boundary_id: cbr-nist-sp800-53-rev5-ac-2-smt-b
+      source_object_reference: ac-2
+      root_source_part_reference: ac-2_smt.b
+      included_source_part_references: [ac-2_smt.b]
+      normative_parameter_references: []
+      boundary_rationale: Independent operative action.
+      derivation_method: hybrid
+      validation_status: PROPOSED
+    - candidate_boundary_id: cbr-nist-sp800-53-rev5-ac-2-smt-c
+      source_object_reference: ac-2
+      root_source_part_reference: ac-2_smt.c
+      included_source_part_references: [ac-2_smt.c]
+      normative_parameter_references: [ac-02_odp.01]
+      boundary_rationale: Independent operative action.
+      derivation_method: hybrid
+      validation_status: PROPOSED
+    - candidate_boundary_id: cbr-nist-sp800-53-rev5-ac-2-smt-d
+      source_object_reference: ac-2
+      root_source_part_reference: ac-2_smt.d
+      included_source_part_references: [ac-2_smt.d, ac-2_smt.d.1, ac-2_smt.d.2, ac-2_smt.d.3]
+      normative_parameter_references: [ac-02_odp.02]
+      boundary_rationale: Parent supplies the operative action and descendants complete the obligation.
+      derivation_method: hybrid
+      validation_status: PROPOSED
+    - candidate_boundary_id: cbr-nist-sp800-53-rev5-ac-2-smt-e
+      source_object_reference: ac-2
+      root_source_part_reference: ac-2_smt.e
+      included_source_part_references: [ac-2_smt.e]
+      normative_parameter_references: [ac-02_odp.03]
+      boundary_rationale: Independent operative action.
+      derivation_method: hybrid
+      validation_status: PROPOSED
+    - candidate_boundary_id: cbr-nist-sp800-53-rev5-ac-2-smt-f
+      source_object_reference: ac-2
+      root_source_part_reference: ac-2_smt.f
+      included_source_part_references: [ac-2_smt.f]
+      normative_parameter_references: [ac-02_odp.04]
+      boundary_rationale: Independent operative action.
+      derivation_method: hybrid
+      validation_status: PROPOSED
+    - candidate_boundary_id: cbr-nist-sp800-53-rev5-ac-2-smt-g
+      source_object_reference: ac-2
+      root_source_part_reference: ac-2_smt.g
+      included_source_part_references: [ac-2_smt.g]
+      normative_parameter_references: []
+      boundary_rationale: Independent operative action.
+      derivation_method: hybrid
+      validation_status: PROPOSED
+    - candidate_boundary_id: cbr-nist-sp800-53-rev5-ac-2-smt-h
+      source_object_reference: ac-2
+      root_source_part_reference: ac-2_smt.h
+      included_source_part_references: [ac-2_smt.h, ac-2_smt.h.1, ac-2_smt.h.2, ac-2_smt.h.3]
+      normative_parameter_references: [ac-02_odp.05, ac-02_odp.06, ac-02_odp.07, ac-02_odp.08]
+      boundary_rationale: Parent supplies the operative action and descendants complete the obligation.
+      derivation_method: hybrid
+      validation_status: PROPOSED
+    - candidate_boundary_id: cbr-nist-sp800-53-rev5-ac-2-smt-i
+      source_object_reference: ac-2
+      root_source_part_reference: ac-2_smt.i
+      included_source_part_references: [ac-2_smt.i, ac-2_smt.i.1, ac-2_smt.i.2, ac-2_smt.i.3]
+      normative_parameter_references: [ac-02_odp.09]
+      boundary_rationale: Parent supplies the operative action and descendants complete the obligation.
+      derivation_method: hybrid
+      validation_status: PROPOSED
+    - candidate_boundary_id: cbr-nist-sp800-53-rev5-ac-2-smt-j
+      source_object_reference: ac-2
+      root_source_part_reference: ac-2_smt.j
+      included_source_part_references: [ac-2_smt.j]
+      normative_parameter_references: [ac-02_odp.10]
+      boundary_rationale: Independent operative action.
+      derivation_method: hybrid
+      validation_status: PROPOSED
+    - candidate_boundary_id: cbr-nist-sp800-53-rev5-ac-2-smt-k
+      source_object_reference: ac-2
+      root_source_part_reference: ac-2_smt.k
+      included_source_part_references: [ac-2_smt.k]
+      normative_parameter_references: []
+      boundary_rationale: Independent operative action.
+      derivation_method: hybrid
+      validation_status: PROPOSED
+      related_source_relationship_references:
+        - origin_source_object_reference: ac-2.10
+          relationship_type: incorporated-into
+          target: "#ac-2_smt.k"
+    - candidate_boundary_id: cbr-nist-sp800-53-rev5-ac-2-smt-l
+      source_object_reference: ac-2
+      root_source_part_reference: ac-2_smt.l
+      included_source_part_references: [ac-2_smt.l]
+      normative_parameter_references: []
+      boundary_rationale: Independent operative action.
+      derivation_method: hybrid
+      validation_status: PROPOSED
