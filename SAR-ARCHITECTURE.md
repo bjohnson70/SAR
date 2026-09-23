@@ -140,6 +140,14 @@ Organizational classification and regulatory applicability are separate question
 
 HIPAA, HITECH, and Business Associate obligations are examples of federal or contractual authority paths that SAR may need to evaluate. This principle defines an architectural requirement for assessment; it does not make a legal determination about any particular organization or relationship.
 
+## Terminology: Covered Entity, Business Associate, and State Contractor
+
+In this context, **CE** means a HIPAA Covered Entity and **BA** means a HIPAA Business Associate. Business Associate is a HIPAA relationship or designation and must not be treated as synonymous with State contractor. Where applicable, a Regional Center may operate as a BA within a HIPAA relationship in which DDS is the CE; HIPAA, HITECH, and the applicable Business Associate Agreement or other governing arrangement may provide obligations associated with that relationship.
+
+DDS is a California State Department, and its contractual or agreement relationships with Regional Centers are separate facts from the HIPAA CE-to-BA relationship. A HIPAA BA designation does not by itself establish that an organization is a State contractor or that any State contractual, procurement, cloud, IT, security, privacy, or other requirement applies. Each such requirement requires its own applicability basis.
+
+Multiple applicability bases may coexist for the same safeguard. SAR must preserve those bases independently so it can explain why a requirement or control applies. System, data, and environment risk determine safeguard and control expectations; the HIPAA relationship, contractual or organizational relationship, and State or DDS requirement applicability remain separately evaluated dimensions.
+
 ## Initial Known Assessment Domains
 
 The following are known design inputs that require later detailed definition. They are not universal controls and do not automatically apply to every product:
