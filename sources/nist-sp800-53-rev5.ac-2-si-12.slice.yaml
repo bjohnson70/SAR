@@ -1,0 +1,191 @@
+source_slice:
+  source_family_id: nist-sp800-53-rev5
+  source_content_release: "5.2.0"
+  oscal_version: "1.2.2"
+  representation: json
+  repository_commit: 78650f02ad9321bb7b817846f8fbd4f2bcd620de
+  primary_source_artifact_path: nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json
+  profile_artifact_paths:
+    LOW: nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_LOW-baseline_profile.json
+    MODERATE: nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_MODERATE-baseline_profile.json
+    HIGH: nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_HIGH-baseline_profile.json
+    PRIVACY: nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_PRIVACY-baseline_profile.json
+source_objects:
+  - source_control_id: ac-2
+    title: "Account Management"
+    family_id: ac
+    source_uuid: null
+    relationships: [{"rel": "reference", "href": "#2956e175-f674-43f4-b1b9-e074ad9fc39c"}, {"rel": "reference", "href": "#388a3aa2-5d85-4bad-b8a3-77db80d63c4f"}, {"rel": "reference", "href": "#53df282b-8b3f-483a-bad1-6a8b8ac00114"}, {"rel": "related", "href": "#ac-3"}, {"rel": "related", "href": "#ac-5"}, {"rel": "related", "href": "#ac-6"}, {"rel": "related", "href": "#ac-17"}, {"rel": "related", "href": "#ac-18"}, {"rel": "related", "href": "#ac-20"}, {"rel": "related", "href": "#ac-24"}, {"rel": "related", "href": "#au-2"}, {"rel": "related", "href": "#au-12"}, {"rel": "related", "href": "#cm-5"}, {"rel": "related", "href": "#ia-2"}, {"rel": "related", "href": "#ia-4"}, {"rel": "related", "href": "#ia-5"}, {"rel": "related", "href": "#ia-8"}, {"rel": "related", "href": "#ma-3"}, {"rel": "related", "href": "#ma-5"}, {"rel": "related", "href": "#pe-2"}, {"rel": "related", "href": "#pl-4"}, {"rel": "related", "href": "#ps-2"}, {"rel": "related", "href": "#ps-4"}, {"rel": "related", "href": "#ps-5"}, {"rel": "related", "href": "#ps-7"}, {"rel": "related", "href": "#pt-2"}, {"rel": "related", "href": "#pt-3"}, {"rel": "related", "href": "#sc-7"}, {"rel": "related", "href": "#sc-12"}, {"rel": "related", "href": "#sc-13"}, {"rel": "related", "href": "#sc-37"}]
+    statement_parts: [{"part_id": "ac-2_smt", "part_type": "statement", "parent_part_id": null}, {"part_id": "ac-2_smt.a", "part_type": "item", "parent_part_id": "ac-2_smt"}, {"part_id": "ac-2_smt.b", "part_type": "item", "parent_part_id": "ac-2_smt"}, {"part_id": "ac-2_smt.c", "part_type": "item", "parent_part_id": "ac-2_smt"}, {"part_id": "ac-2_smt.d", "part_type": "item", "parent_part_id": "ac-2_smt"}, {"part_id": "ac-2_smt.d.1", "part_type": "item", "parent_part_id": "ac-2_smt.d"}, {"part_id": "ac-2_smt.d.2", "part_type": "item", "parent_part_id": "ac-2_smt.d"}, {"part_id": "ac-2_smt.d.3", "part_type": "item", "parent_part_id": "ac-2_smt.d"}, {"part_id": "ac-2_smt.e", "part_type": "item", "parent_part_id": "ac-2_smt"}, {"part_id": "ac-2_smt.f", "part_type": "item", "parent_part_id": "ac-2_smt"}, {"part_id": "ac-2_smt.g", "part_type": "item", "parent_part_id": "ac-2_smt"}, {"part_id": "ac-2_smt.h", "part_type": "item", "parent_part_id": "ac-2_smt"}, {"part_id": "ac-2_smt.h.1", "part_type": "item", "parent_part_id": "ac-2_smt.h"}, {"part_id": "ac-2_smt.h.2", "part_type": "item", "parent_part_id": "ac-2_smt.h"}, {"part_id": "ac-2_smt.h.3", "part_type": "item", "parent_part_id": "ac-2_smt.h"}, {"part_id": "ac-2_smt.i", "part_type": "item", "parent_part_id": "ac-2_smt"}, {"part_id": "ac-2_smt.i.1", "part_type": "item", "parent_part_id": "ac-2_smt.i"}, {"part_id": "ac-2_smt.i.2", "part_type": "item", "parent_part_id": "ac-2_smt.i"}, {"part_id": "ac-2_smt.i.3", "part_type": "item", "parent_part_id": "ac-2_smt.i"}, {"part_id": "ac-2_smt.j", "part_type": "item", "parent_part_id": "ac-2_smt"}, {"part_id": "ac-2_smt.k", "part_type": "item", "parent_part_id": "ac-2_smt"}, {"part_id": "ac-2_smt.l", "part_type": "item", "parent_part_id": "ac-2_smt"}]
+    guidance_part_id: "ac-2_gdn"
+    parameters: [{"parameter_id": "ac-02_odp.01", "label": "prerequisites and criteria", "choices": [], "constraints": [], "usage_parts": [{"part_id": "ac-2_smt.c", "part_type": "item"}, {"part_id": "ac-2_obj.c", "part_type": "assessment-objective"}]}, {"parameter_id": "ac-02_odp.02", "label": "attributes (as required)", "choices": [], "constraints": [], "usage_parts": [{"part_id": "ac-2_smt.d.3", "part_type": "item"}, {"part_id": "ac-2_obj.d.3-2", "part_type": "assessment-objective"}]}, {"parameter_id": "ac-02_odp.03", "label": "personnel or roles", "choices": [], "constraints": [], "usage_parts": [{"part_id": "ac-2_smt.e", "part_type": "item"}, {"part_id": "ac-2_obj.e", "part_type": "assessment-objective"}]}, {"parameter_id": "ac-02_odp.04", "label": "policy, procedures, prerequisites, and criteria", "choices": [], "constraints": [], "usage_parts": [{"part_id": "ac-2_smt.f", "part_type": "item"}, {"part_id": "ac-2_obj.f-1", "part_type": "assessment-objective"}, {"part_id": "ac-2_obj.f-2", "part_type": "assessment-objective"}, {"part_id": "ac-2_obj.f-3", "part_type": "assessment-objective"}, {"part_id": "ac-2_obj.f-4", "part_type": "assessment-objective"}, {"part_id": "ac-2_obj.f-5", "part_type": "assessment-objective"}]}, {"parameter_id": "ac-02_odp.05", "label": "personnel or roles", "choices": [], "constraints": [], "usage_parts": [{"part_id": "ac-2_smt.h", "part_type": "item"}, {"part_id": "ac-2_obj.h.1", "part_type": "assessment-objective"}, {"part_id": "ac-2_obj.h.2", "part_type": "assessment-objective"}, {"part_id": "ac-2_obj.h.3", "part_type": "assessment-objective"}]}, {"parameter_id": "ac-02_odp.06", "label": "time period", "choices": [], "constraints": [], "usage_parts": [{"part_id": "ac-2_smt.h.1", "part_type": "item"}, {"part_id": "ac-2_obj.h.1", "part_type": "assessment-objective"}]}, {"parameter_id": "ac-02_odp.07", "label": "time period", "choices": [], "constraints": [], "usage_parts": [{"part_id": "ac-2_smt.h.2", "part_type": "item"}, {"part_id": "ac-2_obj.h.2", "part_type": "assessment-objective"}]}, {"parameter_id": "ac-02_odp.08", "label": "time period", "choices": [], "constraints": [], "usage_parts": [{"part_id": "ac-2_smt.h.3", "part_type": "item"}, {"part_id": "ac-2_obj.h.3", "part_type": "assessment-objective"}]}, {"parameter_id": "ac-02_odp.09", "label": "attributes (as required)", "choices": [], "constraints": [], "usage_parts": [{"part_id": "ac-2_smt.i.3", "part_type": "item"}, {"part_id": "ac-2_obj.i.3", "part_type": "assessment-objective"}]}, {"parameter_id": "ac-02_odp.10", "label": "frequency", "choices": [], "constraints": [], "usage_parts": [{"part_id": "ac-2_smt.j", "part_type": "item"}, {"part_id": "ac-2_obj.j", "part_type": "assessment-objective"}]}]
+    profile_memberships: ["LOW", "MODERATE", "HIGH"]
+  - source_control_id: ac-2.1
+    title: "Automated System Account Management"
+    family_id: ac
+    source_uuid: null
+    parent_source_control_id: ac-2
+    relationships: [{"rel": "required", "href": "#ac-2"}]
+    statement_parts: [{"part_id": "ac-2.1_smt", "part_type": "statement", "parent_part_id": null}]
+    guidance_part_id: "ac-2.1_gdn"
+    parameters: [{"parameter_id": "ac-02.01_odp", "label": "automated mechanisms", "choices": [], "constraints": [], "usage_parts": [{"part_id": "ac-2.1_smt", "part_type": "statement"}, {"part_id": "ac-2.1_obj", "part_type": "assessment-objective"}]}]
+    profile_memberships: ["MODERATE", "HIGH"]
+  - source_control_id: ac-2.2
+    title: "Automated Temporary and Emergency Account Management"
+    family_id: ac
+    source_uuid: null
+    parent_source_control_id: ac-2
+    relationships: [{"rel": "required", "href": "#ac-2"}]
+    statement_parts: [{"part_id": "ac-2.2_smt", "part_type": "statement", "parent_part_id": null}]
+    guidance_part_id: "ac-2.2_gdn"
+    parameters: [{"parameter_id": "ac-02.02_odp.01", "label": null, "choices": ["remove", "disable"], "constraints": [], "usage_parts": [{"part_id": "ac-2.2_smt", "part_type": "statement"}, {"part_id": "ac-2.2_obj", "part_type": "assessment-objective"}]}, {"parameter_id": "ac-02.02_odp.02", "label": "time period", "choices": [], "constraints": [], "usage_parts": [{"part_id": "ac-2.2_smt", "part_type": "statement"}, {"part_id": "ac-2.2_obj", "part_type": "assessment-objective"}]}]
+    profile_memberships: ["MODERATE", "HIGH"]
+  - source_control_id: ac-2.3
+    title: "Disable Accounts"
+    family_id: ac
+    source_uuid: null
+    parent_source_control_id: ac-2
+    relationships: [{"rel": "required", "href": "#ac-2"}]
+    statement_parts: [{"part_id": "ac-2.3_smt", "part_type": "statement", "parent_part_id": null}, {"part_id": "ac-2.3_smt.a", "part_type": "item", "parent_part_id": "ac-2.3_smt"}, {"part_id": "ac-2.3_smt.b", "part_type": "item", "parent_part_id": "ac-2.3_smt"}, {"part_id": "ac-2.3_smt.c", "part_type": "item", "parent_part_id": "ac-2.3_smt"}, {"part_id": "ac-2.3_smt.d", "part_type": "item", "parent_part_id": "ac-2.3_smt"}]
+    guidance_part_id: "ac-2.3_gdn"
+    parameters: [{"parameter_id": "ac-02.03_odp.01", "label": "time period", "choices": [], "constraints": [], "usage_parts": [{"part_id": "ac-2.3_smt", "part_type": "statement"}, {"part_id": "ac-2.3_obj.a", "part_type": "assessment-objective"}, {"part_id": "ac-2.3_obj.b", "part_type": "assessment-objective"}, {"part_id": "ac-2.3_obj.c", "part_type": "assessment-objective"}, {"part_id": "ac-2.3_obj.d", "part_type": "assessment-objective"}]}, {"parameter_id": "ac-02.03_odp.02", "label": "time period", "choices": [], "constraints": [], "usage_parts": [{"part_id": "ac-2.3_smt.d", "part_type": "item"}, {"part_id": "ac-2.3_obj.d", "part_type": "assessment-objective"}]}]
+    profile_memberships: ["MODERATE", "HIGH"]
+  - source_control_id: ac-2.4
+    title: "Automated Audit Actions"
+    family_id: ac
+    source_uuid: null
+    parent_source_control_id: ac-2
+    relationships: [{"rel": "required", "href": "#ac-2"}, {"rel": "related", "href": "#au-2"}, {"rel": "related", "href": "#au-6"}]
+    statement_parts: [{"part_id": "ac-2.4_smt", "part_type": "statement", "parent_part_id": null}]
+    guidance_part_id: "ac-2.4_gdn"
+    parameters: []
+    profile_memberships: ["MODERATE", "HIGH"]
+  - source_control_id: ac-2.5
+    title: "Inactivity Logout"
+    family_id: ac
+    source_uuid: null
+    parent_source_control_id: ac-2
+    relationships: [{"rel": "required", "href": "#ac-2"}, {"rel": "related", "href": "#ac-11"}]
+    statement_parts: [{"part_id": "ac-2.5_smt", "part_type": "statement", "parent_part_id": null}]
+    guidance_part_id: "ac-2.5_gdn"
+    parameters: [{"parameter_id": "ac-02.05_odp", "label": "time period of expected inactivity or description of when to log out", "choices": [], "constraints": [], "usage_parts": [{"part_id": "ac-2.5_smt", "part_type": "statement"}, {"part_id": "ac-2.5_obj", "part_type": "assessment-objective"}]}]
+    profile_memberships: ["MODERATE", "HIGH"]
+  - source_control_id: ac-2.6
+    title: "Dynamic Privilege Management"
+    family_id: ac
+    source_uuid: null
+    parent_source_control_id: ac-2
+    relationships: [{"rel": "required", "href": "#ac-2"}, {"rel": "related", "href": "#ac-16"}]
+    statement_parts: [{"part_id": "ac-2.6_smt", "part_type": "statement", "parent_part_id": null}]
+    guidance_part_id: "ac-2.6_gdn"
+    parameters: [{"parameter_id": "ac-02.06_odp", "label": "dynamic privilege management capabilities", "choices": [], "constraints": [], "usage_parts": [{"part_id": "ac-2.6_smt", "part_type": "statement"}, {"part_id": "ac-2.6_obj", "part_type": "assessment-objective"}]}]
+    profile_memberships: []
+  - source_control_id: ac-2.7
+    title: "Privileged User Accounts"
+    family_id: ac
+    source_uuid: null
+    parent_source_control_id: ac-2
+    relationships: [{"rel": "required", "href": "#ac-2"}]
+    statement_parts: [{"part_id": "ac-2.7_smt", "part_type": "statement", "parent_part_id": null}, {"part_id": "ac-2.7_smt.a", "part_type": "item", "parent_part_id": "ac-2.7_smt"}, {"part_id": "ac-2.7_smt.b", "part_type": "item", "parent_part_id": "ac-2.7_smt"}, {"part_id": "ac-2.7_smt.c", "part_type": "item", "parent_part_id": "ac-2.7_smt"}, {"part_id": "ac-2.7_smt.d", "part_type": "item", "parent_part_id": "ac-2.7_smt"}]
+    guidance_part_id: "ac-2.7_gdn"
+    parameters: [{"parameter_id": "ac-02.07_odp", "label": null, "choices": ["a role-based access scheme", "an attribute-based access scheme"], "constraints": [], "usage_parts": [{"part_id": "ac-2.7_smt.a", "part_type": "item"}, {"part_id": "ac-2.7_obj.a", "part_type": "assessment-objective"}]}]
+    profile_memberships: []
+  - source_control_id: ac-2.8
+    title: "Dynamic Account Management"
+    family_id: ac
+    source_uuid: null
+    parent_source_control_id: ac-2
+    relationships: [{"rel": "required", "href": "#ac-2"}, {"rel": "related", "href": "#ac-16"}]
+    statement_parts: [{"part_id": "ac-2.8_smt", "part_type": "statement", "parent_part_id": null}]
+    guidance_part_id: "ac-2.8_gdn"
+    parameters: [{"parameter_id": "ac-02.08_odp", "label": "system accounts", "choices": [], "constraints": [], "usage_parts": [{"part_id": "ac-2.8_smt", "part_type": "statement"}, {"part_id": "ac-2.8_obj-1", "part_type": "assessment-objective"}, {"part_id": "ac-2.8_obj-2", "part_type": "assessment-objective"}, {"part_id": "ac-2.8_obj-3", "part_type": "assessment-objective"}, {"part_id": "ac-2.8_obj-4", "part_type": "assessment-objective"}]}]
+    profile_memberships: []
+  - source_control_id: ac-2.9
+    title: "Restrictions on Use of Shared and Group Accounts"
+    family_id: ac
+    source_uuid: null
+    parent_source_control_id: ac-2
+    relationships: [{"rel": "required", "href": "#ac-2"}]
+    statement_parts: [{"part_id": "ac-2.9_smt", "part_type": "statement", "parent_part_id": null}]
+    guidance_part_id: "ac-2.9_gdn"
+    parameters: [{"parameter_id": "ac-02.09_odp", "label": "conditions", "choices": [], "constraints": [], "usage_parts": [{"part_id": "ac-2.9_smt", "part_type": "statement"}, {"part_id": "ac-2.9_obj", "part_type": "assessment-objective"}]}]
+    profile_memberships: []
+  - source_control_id: ac-2.10
+    title: "Shared and Group Account Credential Change"
+    family_id: ac
+    source_uuid: null
+    parent_source_control_id: ac-2
+    relationships: [{"rel": "incorporated-into", "href": "#ac-2_smt.k"}]
+    statement_parts: []
+    guidance_part_id: null
+    parameters: []
+    profile_memberships: []
+  - source_control_id: ac-2.11
+    title: "Usage Conditions"
+    family_id: ac
+    source_uuid: null
+    parent_source_control_id: ac-2
+    relationships: [{"rel": "required", "href": "#ac-2"}]
+    statement_parts: [{"part_id": "ac-2.11_smt", "part_type": "statement", "parent_part_id": null}]
+    guidance_part_id: "ac-2.11_gdn"
+    parameters: [{"parameter_id": "ac-02.11_odp.01", "label": "circumstances and/or usage conditions", "choices": [], "constraints": [], "usage_parts": [{"part_id": "ac-2.11_smt", "part_type": "statement"}, {"part_id": "ac-2.11_obj", "part_type": "assessment-objective"}]}, {"parameter_id": "ac-02.11_odp.02", "label": "system accounts", "choices": [], "constraints": [], "usage_parts": [{"part_id": "ac-2.11_smt", "part_type": "statement"}, {"part_id": "ac-2.11_obj", "part_type": "assessment-objective"}]}]
+    profile_memberships: ["HIGH"]
+  - source_control_id: ac-2.12
+    title: "Account Monitoring for Atypical Usage"
+    family_id: ac
+    source_uuid: null
+    parent_source_control_id: ac-2
+    relationships: [{"rel": "required", "href": "#ac-2"}, {"rel": "related", "href": "#au-6"}, {"rel": "related", "href": "#au-7"}, {"rel": "related", "href": "#ca-7"}, {"rel": "related", "href": "#ir-8"}, {"rel": "related", "href": "#si-4"}]
+    statement_parts: [{"part_id": "ac-2.12_smt", "part_type": "statement", "parent_part_id": null}, {"part_id": "ac-2.12_smt.a", "part_type": "item", "parent_part_id": "ac-2.12_smt"}, {"part_id": "ac-2.12_smt.b", "part_type": "item", "parent_part_id": "ac-2.12_smt"}]
+    guidance_part_id: "ac-2.12_gdn"
+    parameters: [{"parameter_id": "ac-02.12_odp.01", "label": "atypical usage", "choices": [], "constraints": [], "usage_parts": [{"part_id": "ac-2.12_smt.a", "part_type": "item"}, {"part_id": "ac-2.12_obj.a", "part_type": "assessment-objective"}]}, {"parameter_id": "ac-02.12_odp.02", "label": "personnel or roles", "choices": [], "constraints": [], "usage_parts": [{"part_id": "ac-2.12_smt.b", "part_type": "item"}, {"part_id": "ac-2.12_obj.b", "part_type": "assessment-objective"}]}]
+    profile_memberships: ["HIGH"]
+  - source_control_id: ac-2.13
+    title: "Disable Accounts for High-risk Individuals"
+    family_id: ac
+    source_uuid: null
+    parent_source_control_id: ac-2
+    relationships: [{"rel": "required", "href": "#ac-2"}, {"rel": "related", "href": "#au-6"}, {"rel": "related", "href": "#si-4"}]
+    statement_parts: [{"part_id": "ac-2.13_smt", "part_type": "statement", "parent_part_id": null}]
+    guidance_part_id: "ac-2.13_gdn"
+    parameters: [{"parameter_id": "ac-02.13_odp.01", "label": "time period", "choices": [], "constraints": [], "usage_parts": [{"part_id": "ac-2.13_smt", "part_type": "statement"}, {"part_id": "ac-2.13_obj", "part_type": "assessment-objective"}]}, {"parameter_id": "ac-02.13_odp.02", "label": "significant risks", "choices": [], "constraints": [], "usage_parts": [{"part_id": "ac-2.13_smt", "part_type": "statement"}, {"part_id": "ac-2.13_obj", "part_type": "assessment-objective"}]}]
+    profile_memberships: ["MODERATE", "HIGH"]
+  - source_control_id: si-12
+    title: "Information Management and Retention"
+    family_id: si
+    source_uuid: null
+    relationships: [{"rel": "reference", "href": "#e922fc50-b1f9-469f-92ef-ed7d9803611c"}, {"rel": "reference", "href": "#27847491-5ce1-4f6a-a1e4-9e483782f0ef"}, {"rel": "related", "href": "#ac-16"}, {"rel": "related", "href": "#au-5"}, {"rel": "related", "href": "#au-11"}, {"rel": "related", "href": "#ca-2"}, {"rel": "related", "href": "#ca-3"}, {"rel": "related", "href": "#ca-5"}, {"rel": "related", "href": "#ca-6"}, {"rel": "related", "href": "#ca-7"}, {"rel": "related", "href": "#ca-9"}, {"rel": "related", "href": "#cm-5"}, {"rel": "related", "href": "#cm-9"}, {"rel": "related", "href": "#cp-2"}, {"rel": "related", "href": "#ir-8"}, {"rel": "related", "href": "#mp-2"}, {"rel": "related", "href": "#mp-3"}, {"rel": "related", "href": "#mp-4"}, {"rel": "related", "href": "#mp-6"}, {"rel": "related", "href": "#pl-2"}, {"rel": "related", "href": "#pl-4"}, {"rel": "related", "href": "#pm-4"}, {"rel": "related", "href": "#pm-8"}, {"rel": "related", "href": "#pm-9"}, {"rel": "related", "href": "#ps-2"}, {"rel": "related", "href": "#ps-6"}, {"rel": "related", "href": "#pt-2"}, {"rel": "related", "href": "#pt-3"}, {"rel": "related", "href": "#ra-2"}, {"rel": "related", "href": "#ra-3"}, {"rel": "related", "href": "#sa-5"}, {"rel": "related", "href": "#sa-8"}, {"rel": "related", "href": "#sr-2"}]
+    statement_parts: [{"part_id": "si-12_smt", "part_type": "statement", "parent_part_id": null}]
+    guidance_part_id: "si-12_gdn"
+    parameters: []
+    profile_memberships: ["LOW", "MODERATE", "HIGH", "PRIVACY"]
+  - source_control_id: si-12.1
+    title: "Limit Personally Identifiable Information Elements"
+    family_id: si
+    source_uuid: null
+    parent_source_control_id: si-12
+    relationships: [{"rel": "required", "href": "#si-12"}, {"rel": "related", "href": "#pm-25"}]
+    statement_parts: [{"part_id": "si-12.1_smt", "part_type": "statement", "parent_part_id": null}]
+    guidance_part_id: "si-12.1_gdn"
+    parameters: [{"parameter_id": "si-12.01_odp", "label": "elements of personally identifiable information", "choices": [], "constraints": [], "usage_parts": [{"part_id": "si-12.1_smt", "part_type": "statement"}, {"part_id": "si-12.1_obj", "part_type": "assessment-objective"}]}]
+    profile_memberships: ["PRIVACY"]
+  - source_control_id: si-12.2
+    title: "Minimize Personally Identifiable Information in Testing, Training, and Research"
+    family_id: si
+    source_uuid: null
+    parent_source_control_id: si-12
+    relationships: [{"rel": "required", "href": "#si-12"}, {"rel": "related", "href": "#pm-22"}, {"rel": "related", "href": "#pm-25"}, {"rel": "related", "href": "#si-19"}]
+    statement_parts: [{"part_id": "si-12.2_smt", "part_type": "statement", "parent_part_id": null}]
+    guidance_part_id: "si-12.2_gdn"
+    parameters: [{"parameter_id": "si-12.2_prm_1", "label": "organization-defined techniques", "choices": [], "constraints": [], "usage_parts": [{"part_id": "si-12.2_smt", "part_type": "statement"}]}, {"parameter_id": "si-12.02_odp.01", "label": "techniques", "choices": [], "constraints": [], "usage_parts": [{"part_id": "si-12.2_obj-1", "part_type": "assessment-objective"}]}, {"parameter_id": "si-12.02_odp.02", "label": "techniques", "choices": [], "constraints": [], "usage_parts": [{"part_id": "si-12.2_obj-2", "part_type": "assessment-objective"}]}, {"parameter_id": "si-12.02_odp.03", "label": "techniques", "choices": [], "constraints": [], "usage_parts": [{"part_id": "si-12.2_obj-3", "part_type": "assessment-objective"}]}]
+    profile_memberships: ["PRIVACY"]
+  - source_control_id: si-12.3
+    title: "Information Disposal"
+    family_id: si
+    source_uuid: null
+    parent_source_control_id: si-12
+    relationships: [{"rel": "required", "href": "#si-12"}]
+    statement_parts: [{"part_id": "si-12.3_smt", "part_type": "statement", "parent_part_id": null}]
+    guidance_part_id: "si-12.3_gdn"
+    parameters: [{"parameter_id": "si-12.3_prm_1", "label": "organization-defined techniques", "choices": [], "constraints": [], "usage_parts": [{"part_id": "si-12.3_smt", "part_type": "statement"}]}, {"parameter_id": "si-12.03_odp.01", "label": "techniques", "choices": [], "constraints": [], "usage_parts": [{"part_id": "si-12.3_obj-1", "part_type": "assessment-objective"}]}, {"parameter_id": "si-12.03_odp.02", "label": "techniques", "choices": [], "constraints": [], "usage_parts": [{"part_id": "si-12.3_obj-2", "part_type": "assessment-objective"}]}, {"parameter_id": "si-12.03_odp.03", "label": "techniques", "choices": [], "constraints": [], "usage_parts": [{"part_id": "si-12.3_obj-3", "part_type": "assessment-objective"}]}]
+    profile_memberships: ["PRIVACY"]
