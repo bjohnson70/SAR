@@ -1,0 +1,209 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SAR Candidate Requirement Boundary Set",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "candidate_boundary_set"
+  ],
+  "properties": {
+    "candidate_boundary_set": {
+      "$ref": "#/$defs/candidateBoundarySet"
+    }
+  },
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "candidateBoundarySet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_snapshot",
+        "evaluated_source_objects",
+        "candidates"
+      ],
+      "properties": {
+        "source_snapshot": {
+          "$ref": "#/$defs/sourceSnapshot"
+        },
+        "evaluated_source_objects": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/evaluatedSourceObject"
+          }
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/candidate"
+          }
+        }
+      }
+    },
+    "sourceSnapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_family_id",
+        "source_content_release",
+        "repository_commit",
+        "source_artifact_path",
+        "source_slice_reference"
+      ],
+      "properties": {
+        "source_family_id": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "source_content_release": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "repository_commit": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "source_artifact_path": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "source_slice_reference": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    },
+    "evaluatedSourceObject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_object_reference",
+        "candidate_count"
+      ],
+      "properties": {
+        "source_object_reference": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "candidate_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "rationale": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "candidate_count": {
+                "const": 0
+              }
+            },
+            "required": [
+              "candidate_count"
+            ]
+          },
+          "then": {
+            "required": [
+              "rationale"
+            ]
+          }
+        }
+      ]
+    },
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_boundary_id",
+        "source_object_reference",
+        "root_source_part_reference",
+        "included_source_part_references",
+        "normative_parameter_references",
+        "boundary_rationale",
+        "derivation_method",
+        "validation_status"
+      ],
+      "properties": {
+        "candidate_boundary_id": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/nonEmptyString"
+            },
+            {
+              "pattern": "^cbr-"
+            }
+          ]
+        },
+        "source_object_reference": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "root_source_part_reference": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "included_source_part_references": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
+        },
+        "normative_parameter_references": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
+        },
+        "related_source_relationship_references": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/relationshipReference"
+          }
+        },
+        "boundary_rationale": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "derivation_method": {
+          "enum": [
+            "human",
+            "rules-assisted",
+            "ai-assisted",
+            "hybrid"
+          ]
+        },
+        "validation_status": {
+          "enum": [
+            "PROPOSED",
+            "VALIDATED",
+            "REJECTED"
+          ]
+        },
+        "resulting_requirement_reference": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    },
+    "relationshipReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "origin_source_object_reference",
+        "relationship_type",
+        "target"
+      ],
+      "properties": {
+        "origin_source_object_reference": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "relationship_type": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "target": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    }
+  }
+}
