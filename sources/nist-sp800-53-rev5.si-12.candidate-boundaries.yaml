@@ -1,0 +1,49 @@
+candidate_boundary_set:
+  source_snapshot:
+    source_family_id: nist-sp800-53-rev5
+    source_content_release: "5.2.0"
+    repository_commit: 78650f02ad9321bb7b817846f8fbd4f2bcd620de
+    source_artifact_path: nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json
+    source_slice_reference: sources/nist-sp800-53-rev5.ac-2-si-12.slice.yaml
+  evaluated_source_objects:
+    - source_object_reference: si-12
+      candidate_count: 1
+    - source_object_reference: si-12.1
+      candidate_count: 1
+    - source_object_reference: si-12.2
+      candidate_count: 1
+    - source_object_reference: si-12.3
+      candidate_count: 1
+  candidates:
+    - candidate_boundary_id: cbr-nist-sp800-53-rev5-si-12-smt
+      source_object_reference: si-12
+      root_source_part_reference: si-12_smt
+      included_source_part_references: [si-12_smt]
+      normative_parameter_references: []
+      boundary_rationale: Independent operative action.
+      derivation_method: hybrid
+      validation_status: PROPOSED
+    - candidate_boundary_id: cbr-nist-sp800-53-rev5-si-12-1-smt
+      source_object_reference: si-12.1
+      root_source_part_reference: si-12.1_smt
+      included_source_part_references: [si-12.1_smt]
+      normative_parameter_references: [si-12.01_odp]
+      boundary_rationale: Independent operative action.
+      derivation_method: hybrid
+      validation_status: PROPOSED
+    - candidate_boundary_id: cbr-nist-sp800-53-rev5-si-12-2-smt
+      source_object_reference: si-12.2
+      root_source_part_reference: si-12.2_smt
+      included_source_part_references: [si-12.2_smt]
+      normative_parameter_references: [si-12.2_prm_1]
+      boundary_rationale: Independent operative action.
+      derivation_method: hybrid
+      validation_status: PROPOSED
+    - candidate_boundary_id: cbr-nist-sp800-53-rev5-si-12-3-smt
+      source_object_reference: si-12.3
+      root_source_part_reference: si-12.3_smt
+      included_source_part_references: [si-12.3_smt]
+      normative_parameter_references: [si-12.3_prm_1]
+      boundary_rationale: Independent operative action.
+      derivation_method: hybrid
+      validation_status: PROPOSED
