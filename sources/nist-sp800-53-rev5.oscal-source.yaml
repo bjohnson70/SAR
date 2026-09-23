@@ -1,0 +1,57 @@
+source_family_id: nist-sp800-53-rev5
+publisher: National Institute of Standards and Technology
+publications:
+  - NIST Special Publication 800-53
+  - NIST Special Publication 800-53B
+publication_revision: "5"
+content_release: "5.2.0"
+representation: json
+repository: https://github.com/usnistgov/oscal-content
+repository_commit: 78650f02ad9321bb7b817846f8fbd4f2bcd620de
+retrieved_at: "2026-09-23T20:35:18Z"
+artifacts:
+  - path: nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json
+    artifact_type: catalog
+    title: Electronic (OSCAL) Version of NIST SP 800-53 Rev 5.2.0 Controls and SP 800-53A Rev 5.2.0 Assessment Procedures
+    content_release: "5.2.0"
+    oscal_version: "1.2.2"
+    last_modified: "2026-05-11T16:01:09.00000-00:00"
+    derivative: false
+    canonical_uri: https://raw.githubusercontent.com/usnistgov/oscal-content/78650f02ad9321bb7b817846f8fbd4f2bcd620de/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json
+  - path: nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_LOW-baseline_profile.json
+    artifact_type: profile
+    profile_role: LOW
+    title: Electronic (OSCAL) Version of NIST Special Publication 800-53 Revision 5.2.0 LOW IMPACT BASELINE
+    content_release: "5.2.0"
+    oscal_version: "1.2.2"
+    last_modified: "2026-05-11T16:10:16.00000-00:00"
+    derivative: false
+    canonical_uri: https://raw.githubusercontent.com/usnistgov/oscal-content/78650f02ad9321bb7b817846f8fbd4f2bcd620de/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_LOW-baseline_profile.json
+  - path: nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_MODERATE-baseline_profile.json
+    artifact_type: profile
+    profile_role: MODERATE
+    title: Electronic (OSCAL) Version of NIST Special Publication 800-53 Revision 5.2.0 MODERATE IMPACT BASELINE
+    content_release: "5.2.0"
+    oscal_version: "1.2.2"
+    last_modified: "2026-05-11T16:10:16.00000-00:00"
+    derivative: false
+    canonical_uri: https://raw.githubusercontent.com/usnistgov/oscal-content/78650f02ad9321bb7b817846f8fbd4f2bcd620de/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_MODERATE-baseline_profile.json
+  - path: nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_HIGH-baseline_profile.json
+    artifact_type: profile
+    profile_role: HIGH
+    title: Electronic (OSCAL) Version of NIST Special Publication 800-53 Revision 5.1.1 HIGH IMPACT BASELINE
+    content_release: "5.2.0"
+    oscal_version: "1.2.2"
+    last_modified: "2026-05-11T16:10:16.00000-00:00"
+    derivative: false
+    canonical_uri: https://raw.githubusercontent.com/usnistgov/oscal-content/78650f02ad9321bb7b817846f8fbd4f2bcd620de/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_HIGH-baseline_profile.json
+    provenance_note: "Upstream metadata title contains 'Revision 5.1.1' while structured metadata.version is '5.2.0'; both values preserved as observed."
+  - path: nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_PRIVACY-baseline_profile.json
+    artifact_type: profile
+    profile_role: PRIVACY
+    title: Electronic (OSCAL) Version of NIST Special Publication 800-53 Revision 5.2.0 PRIVACY BASELINE
+    content_release: "5.2.0"
+    oscal_version: "1.2.2"
+    last_modified: "2026-05-11T16:10:16.00000-00:00"
+    derivative: false
+    canonical_uri: https://raw.githubusercontent.com/usnistgov/oscal-content/78650f02ad9321bb7b817846f8fbd4f2bcd620de/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_PRIVACY-baseline_profile.json
