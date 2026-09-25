@@ -10,17 +10,17 @@ A, B, D, E, H, S
 
 ## Preconditions
 
-Use a fresh conversation and provide `SUBMITTER.md` plus all Northstar fixtures.
+Use a fresh conversation and provide `SUBMITTER.md` plus all TESTSTAR fixtures.
 
 ## Inputs
 
-- `fixtures/northstar-request.md`
-- `fixtures/northstar-product-fact-sheet.md`
-- `fixtures/northstar-architecture.md`
+- `fixtures/S01-TESTSTAR-1-Request.md`
+- `fixtures/S01-TESTSTAR-2-Product-Fact-Sheet.md`
+- `fixtures/S01-TESTSTAR-3-Architecture.md`
 
 ## Participant Script
 
-1. Provide the files and say: `We are considering Northstar Scheduling for appointment coordination at Redwood Community Services.`
+1. Provide the files and say: `We are considering TESTSTAR Scheduling for appointment coordination at TESTSTAR Community Services.`
 2. Confirm extracted product and intended-use facts.
 3. If asked about an undocumented fact, answer: `I don't know; our vendor contact may know.`
 

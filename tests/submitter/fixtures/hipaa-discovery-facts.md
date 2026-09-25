@@ -2,7 +2,7 @@
 
 ## Fictional Data Discovery Facts
 
-A fictional Redwood workflow may enter the following synthetic fields into Northstar Scheduling:
+A fictional TESTSTAR workflow may enter the following synthetic fields into TESTSTAR Scheduling:
 
 - a person's fictional name;
 - a fictional appointment date;

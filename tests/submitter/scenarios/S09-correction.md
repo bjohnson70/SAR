@@ -10,7 +10,7 @@ Q, D, G, S
 
 ## Preconditions
 
-Use a fresh conversation with a fictional Northstar assessment.
+Use a fresh conversation with a fictional TESTSTAR assessment.
 
 ## Inputs
 

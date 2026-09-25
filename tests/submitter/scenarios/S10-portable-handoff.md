@@ -10,11 +10,11 @@ S, T, U
 
 ## Preconditions
 
-Complete a synthetic Northstar or Atlas assessment far enough to contain known facts, claims, at least one unknown, and one evidence request.
+Complete a synthetic TESTSTAR or Atlas assessment far enough to contain known facts, claims, at least one unknown, and one evidence request.
 
 ## Inputs
 
-Use any relevant Northstar or Atlas fixtures and the participant facts from S01 or S03.
+Use any relevant TESTSTAR or Atlas fixtures and the participant facts from S01 or S03.
 
 ## Participant Script
 

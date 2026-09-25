@@ -14,7 +14,7 @@ Use a fresh conversation with only `SUBMITTER.md` and no additional source mater
 
 ## Inputs
 
-Participant statement: `We are considering Northstar Scheduling for appointment coordination.`
+Participant statement: `We are considering TESTSTAR Scheduling for appointment coordination.`
 
 ## Participant Script
 

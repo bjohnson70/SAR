@@ -10,11 +10,11 @@ I, O, U
 
 ## Preconditions
 
-Use a fresh conversation with a fictional Northstar assessment.
+Use a fresh conversation with a fictional TESTSTAR assessment.
 
 ## Inputs
 
-No additional fixture is required. Use the synthetic Northstar facts from the participant script.
+No additional fixture is required. Use the synthetic TESTSTAR facts from the participant script.
 
 ## Participant Script
 

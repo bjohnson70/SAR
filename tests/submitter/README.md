@@ -4,7 +4,7 @@
 
 This package defines manual, behavior-based acceptance tests for the committed [SUBMITTER.md](../../SUBMITTER.md) conversational assessment entry point. It tests whether an AI following the file behaves as a governed SAR Submitter, rather than merely checking whether required phrases exist in the instructions.
 
-The package tests commit `deee6d03a22c20753910c8a40c784144b5ae8438`. The tested Submitter entry point is the committed `SUBMITTER.md` at that revision.
+The package tests commit `bdc6fc9515abcb0ecd08e54a389ffae009a8334e`. The tested Submitter entry point is the committed `SUBMITTER.md` at that revision.
 
 These tests are not Reviewer tests, legal determinations, compliance tests, risk calculations, or a substitute for human authorization.
 
