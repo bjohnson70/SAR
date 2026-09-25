@@ -80,6 +80,27 @@ The following are source families or candidate sources already known to the SAR 
 
 These are source families or candidate sources only. This document does not populate detailed requirements or invent citations, URLs, revision dates, effective dates, control numbers, statutory sections, or document metadata. It does not assert that any source applies to Regional Centers, Business Associates, vendors, or every SAR.
 
+### HIPAA Safe Harbor Identifier Authority
+
+For the initial SAR HIPAA Safe Harbor identifier reference, preserve two distinguishable source authorities:
+
+**Regulatory authority**
+
+- authority: 45 CFR § 164.514(b)(2);
+- source role: federal regulatory authority;
+- relationship to SAR artifact: supports [HIPAA-IDENTIFIERS.md](HIPAA-IDENTIFIERS.md);
+- status: registered source authority, not a universal applicability determination.
+
+**Explanatory guidance**
+
+- publisher: U.S. Department of Health and Human Services, Office for Civil Rights;
+- title: *Guidance Regarding Methods for De-identification of Protected Health Information in Accordance with the Health Insurance Portability and Accountability Act (HIPAA) Privacy Rule*;
+- source role: authoritative explanatory guidance;
+- relationship to SAR artifact: explains the Safe Harbor identifier categories preserved in [HIPAA-IDENTIFIERS.md](HIPAA-IDENTIFIERS.md);
+- relationship to regulation: explanatory guidance for 45 CFR § 164.514(b)(2), not the regulation itself.
+
+No publication date, revision, version, canonical URL, immutable retrieval reference, source owner, or applicability conclusion is asserted here because none is established by the registered repository evidence. Registration does not establish that HIPAA applies to every SAR or that identifier presence establishes PHI.
+
 ## Source Identity
 
 SAR should eventually retain the following conceptual information for each catalog source where available and relevant:
