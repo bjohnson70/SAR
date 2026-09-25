@@ -16,7 +16,7 @@ Run whichever variants are naturally available. Do not sabotage an environment.
 
 Variants:
 
-A. GitHub URL cannot be opened.
+A. SUBMITTER.md or a referenced GitHub URL cannot be opened.
 B. Attachment cannot be read.
 C. Vendor website cannot be accessed.
 D. Markdown file creation or download is unavailable.

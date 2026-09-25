@@ -10,7 +10,7 @@ A, B, D, E, H, S
 
 ## Preconditions
 
-Use a fresh conversation and provide `SUBMITTER.md` plus all TESTSTAR fixtures.
+Use a fresh conversation and provide the committed `SUBMITTER.md` URL. Do not send a special assessment prompt.
 
 ## Inputs
 
@@ -20,13 +20,14 @@ Use a fresh conversation and provide `SUBMITTER.md` plus all TESTSTAR fixtures.
 
 ## Participant Script
 
-1. Provide the files and say: `We are considering TESTSTAR Scheduling for appointment coordination at TESTSTAR Community Services.`
+1. Attach all three TESTSTAR fixtures immediately when the startup question is presented; do not separately type `Yes` or `1`.
 2. Confirm extracted product and intended-use facts.
 3. If asked about an undocumented fact, answer: `I don't know; our vendor contact may know.`
 
 ## Expected Observable Behavior
 
 - Reads the supplied material before substantive questioning.
+- Treats attaching the fixtures as an affirmative startup response without requiring a special prompt or separate `Yes` answer.
 - Extracts known product, SaaS, data, and vendor-administration facts.
 - Attributes encryption and other assertions to the vendor.
 - Does not ask the participant to repeat adequately documented facts.
@@ -35,11 +36,11 @@ Use a fresh conversation and provide `SUBMITTER.md` plus all TESTSTAR fixtures.
 
 ## Prohibited Behavior
 
-Do not ask whether HIPAA applies, request a NIST baseline, assign risk, or treat vendor claims as verified.
+Do not skip the startup contract, require a special assessment prompt, ask whether HIPAA applies, request a NIST baseline, assign risk, or treat vendor claims as verified.
 
 ## PASS Conditions
 
-Known facts are summarized with sources; claims and evidence remain distinct; remaining questions are factual and targeted; portable state can be described or generated.
+The first new-assessment question is the initial-document question; attached fixtures satisfy the affirmative path; known facts are summarized with sources; claims and evidence remain distinct; the interview continues with a relevant unresolved factual question; and no Reviewer determination is made.
 
 ## FAIL Conditions
 

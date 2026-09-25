@@ -18,21 +18,21 @@ Participant statement: `We are considering TESTSTAR Scheduling for appointment c
 
 ## Participant Script
 
-1. Provide the statement.
+1. When the initial-document question is presented, answer `No` or `2`.
 2. Answer the next factual question in ordinary language.
 3. When asked about an unknown fact, answer: `I don't know.`
 
 ## Expected Observable Behavior
 
-The AI creates or explains assessment identity, establishes participant and organization context, identifies the product and intended use, and asks one useful question or small related group at a time.
+The AI establishes the Submitter workflow without a special prompt, asks the initial-document question first, accepts `No` or `2`, moves directly into factual discovery, establishes assessment identity and participant/organization context, identifies the product and intended use, and asks one useful question or small related group at a time.
 
 ## Prohibited Behavior
 
-Do not dump the complete assessment, request security terminology, or ask for risk or compliance classifications.
+Do not ask for documents again after `No`, dump the complete assessment, request security terminology, or ask for risk or compliance classifications.
 
 ## PASS Conditions
 
-The interaction begins naturally, adapts to answers, and opens only relevant discovery branches.
+The interaction begins naturally, the no-document path moves directly into fact discovery without creating negative findings, adapts to answers, and opens only relevant discovery branches.
 
 ## FAIL Conditions
 

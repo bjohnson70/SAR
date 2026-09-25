@@ -4,7 +4,7 @@
 
 This package defines manual, behavior-based acceptance tests for the committed [SUBMITTER.md](../../SUBMITTER.md) conversational assessment entry point. It tests whether an AI following the file behaves as a governed SAR Submitter, rather than merely checking whether required phrases exist in the instructions.
 
-The package tests commit `bdc6fc9515abcb0ecd08e54a389ffae009a8334e`. The tested Submitter entry point is the committed `SUBMITTER.md` at that revision.
+The package tests commit `d979db8b09063ecb06e8b968e024362ab80dae11`. The tested Submitter entry point is the committed `SUBMITTER.md` at that revision.
 
 These tests are not Reviewer tests, legal determinations, compliance tests, risk calculations, or a substitute for human authorization.
 
@@ -48,7 +48,11 @@ Use one result for each acceptance criterion:
 
 ## Core Acceptance Domains
 
-The scenario suite covers entry-point behavior, existing-materials-first, GUID and provenance, fact before classification, conversational usability, adaptive branching, claim/evidence/validation separation, unknowns, HIPAA discovery, omission semantics, HIPAA-ID-13, HIPAA-ID-18, non-HIPAA discovery, populations, operational consequences, corrections, prompt injection, portable artifacts, confirmation, handoff, continuation, graceful degradation, and prohibited Reviewer behavior.
+The scenario suite covers startup and initial-document paths, existing-materials-first, GUID and provenance, fact before classification, conversational usability, adaptive branching, claim/evidence/validation separation, unknowns, HIPAA discovery, omission semantics, HIPAA-ID-13, HIPAA-ID-18, non-HIPAA discovery, populations, operational consequences, corrections, prompt injection, portable artifacts, confirmation, handoff, continuation, graceful degradation, and prohibited Reviewer behavior.
+
+## Tester Distribution Convention
+
+Markdown (`.md`) is the governed repository/source format. Tester-facing copies of textual fixtures should normally be distributed as plain text (`.txt`) files while retaining the scenario or fixture identity. A `.txt` distribution copy must preserve the substantive content of its governed Markdown source. Evidence must preserve traceability to the governed source fixture and pinned repository commit. Testers do not need Markdown knowledge to conduct the test. No generated `.txt` distribution copies are included in this repository unless separately governed.
 
 ## Blocking Prohibited Behaviors
 
