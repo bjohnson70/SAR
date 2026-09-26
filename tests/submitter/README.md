@@ -45,6 +45,7 @@ Use one result for each acceptance criterion:
 - `NOT TESTED` - the criterion was not exercised;
 - `ENVIRONMENT LIMITATION` - an unavailable capability was handled by the governed fallback or prevented evaluation; and
 - `INCONCLUSIVE` - the observation is ambiguous or interrupted and must be repeated.
+- `CANCELLED / SUPERSEDED` - the execution was intentionally terminated because the implementation, interaction contract, or test contract is being revised before testing continues. This is distinct from `PASS`, `FAIL`, `NOT TESTED`, `ENVIRONMENT LIMITATION`, and `INCONCLUSIVE`, and must not be used as a current acceptance disposition.
 
 `INCONCLUSIVE` is temporary and must resolve before release disposition. Do not use numeric scoring.
 

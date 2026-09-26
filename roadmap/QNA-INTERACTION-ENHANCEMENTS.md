@@ -254,6 +254,8 @@ This document records possible improvements without changing S01 or other accept
 
 Historical staff-test observations are summarized in [S01-STAFF-TEST-OBSERVATIONS-2026-09-25.md](../tests/submitter/S01-STAFF-TEST-OBSERVATIONS-2026-09-25.md). That record is historical evidence, not a current-baseline S01 result.
 
+The current S01 cycle was subsequently documented as `CANCELLED / SUPERSEDED FOR DESIGN REVISION`. The approved revision scope is recorded in [SUBMITTER-INTERACTION-REVISION.md](SUBMITTER-INTERACTION-REVISION.md); this does not promote the remaining candidates or implement them.
+
 ## O. Future Governance Questions
 
 The following questions remain unresolved:
