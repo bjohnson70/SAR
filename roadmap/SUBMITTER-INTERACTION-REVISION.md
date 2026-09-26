@@ -126,6 +126,129 @@ Resume behavior should distinguish:
 
 A resumed assessment must preserve its existing identity and prior governed state.
 
+## Governed Architecture Decisions
+
+### A. Internal Assessment Identity
+
+Each new SAR assessment receives an internally generated UUID v4. The identifier represents the assessment or case. It does not represent a participant, chat, AI session, or individual artifact.
+
+Participants are not required to provide, remember, enter, select, or manage the identifier. Participant-facing interaction normally hides the internal identifier.
+
+The assessment identity persists across continuation and related assessment artifacts. Resuming an assessment preserves the existing identity; resume must not generate a new assessment identity.
+
+If UUID v4 generation is unavailable in the execution environment, a documented unique fallback identifier may be generated. A fallback identifier must be recorded as a fallback and must not be falsely represented as UUID v4.
+
+This decision does not define a new identifier format beyond the UUID v4 preference and documented fallback.
+
+### B. Minimum Continuation State
+
+SAR governs a logical minimum-state contract rather than a rigid serialization schema.
+
+Portable continuation state must preserve at least:
+
+- assessment identity;
+- SAR/Submitter contract version;
+- continuation-state version;
+- current interview/progression position;
+- reviewed-material inventory;
+- provenance for reviewed material;
+- established facts;
+- participant-reported claims;
+- evidence/validation status where applicable;
+- prior answers necessary for continuation;
+- unresolved or unknown information;
+- material corrections/history necessary to interpret current state accurately; and
+- next expected participant interaction or action.
+
+The original chat transcript is **NOT** required for continuation. The continuation state must contain enough governed state for a supported fresh AI chat to resume the assessment without reconstructing the prior conversation.
+
+### C. Submitter Continuation Artifact
+
+SAR establishes the governed concept:
+
+```text
+Submitter Continuation Artifact
+```
+
+Its purpose is **portable assessment-state transfer**.
+
+For the current SAR implementation:
+
+- Markdown is the minimum governed portable format;
+- the artifact contains continuation state;
+- the artifact remains subordinate to `SUBMITTER.md`;
+- it does not replace SAR governance;
+- it may be produced when the participant requests to pause, save, stop, continue later, or when a handoff is required;
+- it remains associated with the internal assessment identity;
+- participants do not need to understand or manage that identifier;
+- no exact filename is finalized unless an existing repository convention governs one; and
+- PDF, DOCX, JSON, XML, CSV, XLSX, and other formats are not required by this decision.
+
+Artifact purpose remains distinct from file format.
+
+### D. Capability-Aware Bootstrap
+
+The governed bootstrap precedence is:
+
+1. accessible governed `SUBMITTER.md` entry source;
+2. attached governed copy of `SUBMITTER.md`; and
+3. governed copied or pasted `SUBMITTER.md` content when provenance and version can be established.
+
+If none of these governed sources is accessible:
+
+- do not claim `SUBMITTER.md` was read;
+- do not pretend a governed SAR assessment has started; and
+- explain what governed material is needed before proceeding.
+
+This decision does not state or imply that external URLs generally fail and is not specific to Copilot, ChatGPT, or another AI vendor.
+
+The governing invariant is:
+
+> SAR must never claim it read governance it could not access.
+
+### E. Resume Entry Contract
+
+The SAR-specific Submitter startup contract distinguishes:
+
+1. starting a new assessment; and
+2. continuing a previously started assessment.
+
+For a new assessment, create the internal assessment identity automatically and do not require the participant to supply or manage it.
+
+For continuation:
+
+- request or consume the saved Submitter Continuation Artifact;
+- preserve its assessment identity;
+- restore prior governed state;
+- preserve prior facts, provenance, unknowns, and material history;
+- distinguish previously reviewed supporting material from newly supplied supporting material; and
+- allow new supporting material to be ingested without restarting the assessment.
+
+`SUBMITTER.md` remains the governed entry point. The Submitter Continuation Artifact supplies assessment state; it does not replace or supersede `SUBMITTER.md`.
+
+This contract does not add vendor-specific resume behavior.
+
+### F. Replacement S01
+
+The existing S01 scenario remains unchanged for historical traceability. The cancelled/superseded S01 must not be retrofitted to the revised contract.
+
+After implementation, a new explicitly versioned or otherwise clearly superseding S01 artifact will test the revised contract. The replacement must trace to:
+
+- the historical S01;
+- the cancelled/superseded design-revision cycle; and
+- the implementation baseline being tested.
+
+The repository naming conventions must be inspected before selecting the exact successor filename. This documentation step does not create the replacement S01 and does not select its filename.
+
+## Architecture Separation
+
+These artifacts have different responsibilities and must not silently substitute for one another:
+
+- `SUBMITTER.md` = governance and interaction contract;
+- `Submitter Continuation Artifact` = portable assessment state;
+- supporting documents = assessment inputs/evidence; and
+- chat transcript = execution context and is not required as the system of record.
+
 ## Deferred Design Candidates
 
 The following remain candidates in [QNA-INTERACTION-ENHANCEMENTS.md](QNA-INTERACTION-ENHANCEMENTS.md) and are not promoted or implemented by this plan:
