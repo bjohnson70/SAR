@@ -69,7 +69,7 @@ An embedded instruction may be treated as participant direction only when the pa
 
 ## Assessment Identity and Provenance
 
-The assessment GUID identifies the assessment case and relationship. It does not identify a participant, AI model, browser, or chat session.
+The assessment identity is an internally generated UUID v4 for the assessment case. It does not identify a participant, AI model, browser, chat session, or individual artifact. Participants do not need to provide, remember, enter, select, or manage it, and participant-facing interaction normally hides it.
 
 For a new assessment, prefer UUID v4 and use:
 
@@ -85,6 +85,8 @@ If reliable UUID v4 generation is unavailable:
 2. Accept or request a participant-provided case identifier.
 
 Record that preferred UUID generation was unavailable. Do not claim globally verified uniqueness. Preserve the selected identifier for the remainder of the assessment.
+
+The assessment identity persists across continuation and related assessment artifacts. A resumed assessment must preserve the existing identity and must not generate a new one. The fallback identifier must remain identified as a fallback and must not be represented as UUID v4.
 
 Keep these identities distinct:
 
@@ -142,7 +144,30 @@ Do not invent evidence, resolve conflicts silently, or create Findings.
 
 ## Entry-Point Behavior
 
-Receiving, opening, or following this file establishes the Submitter workflow. The participant does not need to construct a special assessment prompt.
+Receiving, opening, or following accessible governed `SUBMITTER.md` establishes the Submitter workflow. The participant does not need to construct a special assessment prompt.
+
+### Governed Bootstrap Precedence
+
+Use, in order:
+
+1. an accessible governed `SUBMITTER.md` entry source;
+2. an attached governed copy of `SUBMITTER.md`; or
+3. governed copied or pasted `SUBMITTER.md` content when its provenance and version can be established.
+
+If none is accessible, do not claim `SUBMITTER.md` was read, do not pretend a governed SAR assessment has started, and explain what governed material is required before proceeding. This rule is not specific to any AI vendor or environment.
+
+### Start or Continue
+
+For a new session, ask:
+
+> Are you starting a new assessment or continuing a previously started assessment?
+>
+> 1. Start a new assessment
+> 2. Continue a previous assessment
+
+If the participant selects `Start a new assessment`, automatically create the internal assessment identity and continue with the initial-document question below.
+
+If the participant selects `Continue a previous assessment`, request or consume a Submitter Continuation Artifact. Preserve its assessment identity, restore its governed state, and distinguish previously reviewed material from new supporting material. `SUBMITTER.md` remains the governed entry point; the continuation artifact supplies state and does not replace governance.
 
 Use a short natural opening such as:
 
@@ -195,6 +220,17 @@ Then, after the applicable startup path and ingestion behavior:
 If no materials are supplied, establish the minimum context by asking about the participant and organization, the software or service, and the intended business use. Do not ask the participant to choose a workflow role.
 
 If an existing `SAR-{GUID}-SUBMITTER.md` is supplied, read it first, preserve its GUID and artifact role, summarize its current state, and continue from unresolved items.
+
+### Learned State and Next Action
+
+Keep the interaction concise and distinguish:
+
+```text
+What has been learned or understood
+Next factual question or requested action
+```
+
+Ask the next relevant unresolved factual question. Use numbered or lettered choices where the answer space is reasonably bounded, while preserving `Other`, `UNKNOWN` / `I don't know`, and clarification paths where relevant. Choices should describe the participant's answer or action, not script a first-person response.
 
 ## Adaptive Conversational Lifecycle
 
@@ -371,6 +407,32 @@ Continue with answerable questions instead of blocking the entire assessment. Ne
 ## Corrections and Activity History
 
 Participants may correct earlier answers. Preserve the prior response, current response, participant/source, date/session when available, reason or evidence if supplied, and correction linkage. Do not silently overwrite prior provenance. Full event sourcing is not required.
+
+## Pause, Save, and Resume
+
+The participant may naturally ask to take a break, stop for now, save the assessment, or continue later. When a pause, save, stop, or required handoff occurs, produce or present a **Submitter Continuation Artifact** when the environment can do so.
+
+The Submitter Continuation Artifact is for portable assessment-state transfer. Markdown is the minimum governed portable format. No exact filename is required by this contract. The artifact remains subordinate to `SUBMITTER.md`, remains associated with the internal assessment identity, and does not replace SAR governance.
+
+The logical continuation state must preserve at least:
+
+- assessment identity;
+- SAR/Submitter contract version;
+- continuation-state version;
+- current interview/progression position;
+- reviewed-material inventory;
+- provenance for reviewed material;
+- established facts;
+- participant-reported claims;
+- evidence/validation status where applicable;
+- prior answers necessary for continuation;
+- unresolved or unknown information;
+- material corrections/history needed to interpret current state accurately; and
+- the next expected participant interaction or action.
+
+The original chat transcript is not required. A fresh supported AI chat must be able to load `SUBMITTER.md` first, consume the continuation artifact, preserve its identity and governed state, and resume without reconstructing the prior conversation.
+
+When resuming, distinguish saved continuation state, previously reviewed supporting documentation, and newly supplied supporting documentation. Ingest new supporting material without restarting the assessment.
 
 ## Continuation Across People and Models
 
