@@ -34,6 +34,8 @@ Use only the fictional products, organizations, participants, and documents in t
 
 The package contains test definitions and fixtures only. It is not operational assessment evidence.
 
+Historical external staff-test observations are summarized in [S01-STAFF-TEST-OBSERVATIONS-2026-09-25.md](S01-STAFF-TEST-OBSERVATIONS-2026-09-25.md). That record is not a current-baseline S01 result and does not change the current acceptance criteria or release gate.
+
 ## Result Vocabulary
 
 Use one result for each acceptance criterion:

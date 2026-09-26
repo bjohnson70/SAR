@@ -252,6 +252,8 @@ Not every UX observation is an S01 acceptance failure. Final S01 disposition mus
 
 This document records possible improvements without changing S01 or other acceptance scenarios.
 
+Historical staff-test observations are summarized in [S01-STAFF-TEST-OBSERVATIONS-2026-09-25.md](../tests/submitter/S01-STAFF-TEST-OBSERVATIONS-2026-09-25.md). That record is historical evidence, not a current-baseline S01 result.
+
 ## O. Future Governance Questions
 
 The following questions remain unresolved:
