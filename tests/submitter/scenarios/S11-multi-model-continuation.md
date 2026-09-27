@@ -10,7 +10,7 @@ V, C, D, S
 
 ## Preconditions
 
-Complete S10 and retain its generated `SAR-{GUID}-SUBMITTER.md` in a controlled location. Start a fresh session, preferably in another capable AI environment.
+Complete S10 and retain its generated Submitter Continuation Artifact in a controlled location. The artifact was produced by implementation SHA `29a04d85e14e356a6efe6d76c70b27f6c20b88e0` and has continuation-state contract version `1`. Start a fresh session, preferably in another capable AI environment.
 
 ## Inputs
 
@@ -29,7 +29,7 @@ Complete S10 and retain its generated `SAR-{GUID}-SUBMITTER.md` in a controlled 
 
 ## Expected Observable Behavior
 
-The second environment consumes `SUBMITTER.md` as governance and the artifact as state. It preserves assessment identity, `SUBMITTER` role, contract/state version information where present, facts, provenance, unresolved items, prior answers, and activity history. It distinguishes previously reviewed material from newly supplied material, ingests the new material without restarting, and does not re-ask adequately answered questions.
+The second environment consumes `SUBMITTER.md` as governance and the artifact as state. It preserves the assessment identity and `SUBMITTER` role, recognizes the artifact's implementation SHA `29a04d85e14e356a6efe6d76c70b27f6c20b88e0` as the operational Submitter contract version and state version `1` as the logical continuation-state contract version, and consumes the state under those identities. It also preserves facts, provenance, unresolved items, prior answers, and activity history. It distinguishes previously reviewed material from newly supplied material, ingests the new material without restarting, and does not re-ask adequately answered questions.
 
 ## Prohibited Behavior
 
@@ -37,11 +37,11 @@ Do not create a new identity, restart the assessment, discard provenance, confus
 
 ## PASS Conditions
 
-The second artifact or conversation demonstrably continues the same assessment case with preserved state and records the new material without restarting.
+The second artifact or conversation demonstrably continues the same assessment case with preserved assessment identity and state, correctly recognized implementation and continuation-state version identities, and records the new material without restarting.
 
 ## FAIL Conditions
 
-Identity or state is lost, answered questions are unnecessarily repeated, or continuation depends on hidden prior context.
+Identity or state is lost, either version identity is absent or confused with another version, answered questions are unnecessarily repeated, or continuation depends on hidden prior context.
 
 ## Environment-Limitation Handling
 

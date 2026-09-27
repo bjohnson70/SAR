@@ -430,6 +430,13 @@ The logical continuation state must preserve at least:
 - material corrections/history needed to interpret current state accurately; and
 - the next expected participant interaction or action.
 
+For the currently implemented Submitter contract, preserve these version identities in the continuation state's human-readable content:
+
+- SAR/Submitter contract version: `29a04d85e14e356a6efe6d76c70b27f6c20b88e0`, the immutable Git commit SHA identifying the governed `SUBMITTER.md` implementation being executed;
+- continuation-state contract version: `1`, the logical semantic contract version for interpreting the saved continuation state.
+
+These values identify different things: the implementation SHA identifies the operational Submitter contract, while the continuation-state version identifies the meaning of the continuation state. Record the applicable values without asking the participant to create, enter, select, remember, or manage them. Preserve them as semantic content; no fixed field names, Markdown headings, filename, or serialization format is required.
+
 The original chat transcript is not required. A fresh supported AI chat must be able to load `SUBMITTER.md` first, consume the continuation artifact, preserve its identity and governed state, and resume without reconstructing the prior conversation.
 
 When resuming, distinguish saved continuation state, previously reviewed supporting documentation, and newly supplied supporting documentation. Ingest new supporting material without restarting the assessment.
@@ -448,9 +455,9 @@ When continuing an existing Submitter artifact:
 
 The original chat transcript is not required. The Markdown artifact is the portable assessment state.
 
-## Portable Artifact Structure
+## Portable Artifact Presentation
 
-Create or update a human-readable artifact named `SAR-{GUID}-SUBMITTER.md` with this structure:
+Create or update a human-readable **Submitter Continuation Artifact** associated with the assessment identity. Markdown is the minimum governed portable format. No exact filename is required. The following headings are an optional organizational example, not a required structure; no rigid Markdown structure or serialization schema is required:
 
 ```text
 # SAR Submitter Assessment

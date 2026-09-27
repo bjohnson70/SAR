@@ -12,7 +12,7 @@ A, B, C, D, E, F, G, H, I, J, K, U, X
 
 ## Preconditions
 
-Use a fresh conversation. Provide the governed `SUBMITTER.md` entry source and all TESTSTAR fixtures. Do not send a special assessment prompt or manage an identifier on behalf of the participant.
+Use a fresh conversation and the immutable pinned [`SUBMITTER.md` implementation](https://github.com/bjohnson70/SAR/blob/29a04d85e14e356a6efe6d76c70b27f6c20b88e0/SUBMITTER.md), verifying SHA `29a04d85e14e356a6efe6d76c70b27f6c20b88e0`. The configured Git `origin` is `https://github.com/bjohnson70/SAR.git`. A current moving `main` copy is not sufficient if it differs from the pinned implementation. If the URL cannot be opened, use an attached copy of that exact revision or paste its content only when provenance and version can be established, following the governed bootstrap precedence. If the pinned implementation cannot be established, record the capability limitation and do not substitute another revision. Provide all TESTSTAR fixtures. Do not send a special assessment prompt or ask the participant to manage an identifier.
 
 ## Inputs
 
@@ -33,8 +33,8 @@ Use a fresh conversation. Provide the governed `SUBMITTER.md` entry source and a
 ## Expected Observable Behavior
 
 - Accessible governed `SUBMITTER.md` establishes the Submitter workflow without a special prompt.
-- The AI offers the Start New path and does not ask the participant to supply, remember, or manage an internal identifier.
-- The new assessment receives an internal identity automatically and preserves it in later state without exposing unnecessary mechanics.
+- SAR automatically establishes the internal assessment identity for the new assessment.
+- The participant is not asked to create, type, remember, select, or manage that identity, and unnecessary identity mechanics are not exposed to the participant.
 - Attaching the TESTSTAR fixtures satisfies the affirmative document-provided action without a redundant `Yes` response.
 - All accessible fixtures are read before questions already answered by them are asked.
 - Known facts, source materials, provenance, vendor claims, and evidence/validation distinctions are preserved.
@@ -51,13 +51,13 @@ Do not reuse historical S01 results, ask the participant to construct a special 
 
 ## PASS Conditions
 
-The revised startup and ingestion contract is observed; identity is automatic and participant-hidden; attached documents satisfy the affirmative path; facts and claims retain provenance; unresolved information remains visible; progression is factual and targeted; and no Reviewer conclusion occurs.
+The revised startup and ingestion contract is observed; identity establishment is automatic and participant-hidden; attached documents satisfy the affirmative path; facts and claims retain provenance; unresolved information remains visible; progression is factual and targeted; and no Reviewer conclusion occurs. This scenario does not test identity persistence through later continuation state.
 
 This scenario must not be marked `PASS` until actually executed against the stated baseline.
 
 ## FAIL Conditions
 
-The AI skips governed startup, requires participant-managed identity, ignores accessible fixtures, repeats adequately documented facts, invents or verifies unsupported claims, converts unknown/omitted information to `NO`, restarts or makes autonomous assessment determinations, or performs Reviewer work.
+The AI skips governed startup, asks the participant to create, type, remember, select, or manage the identity, exposes unnecessary identity mechanics, ignores accessible fixtures, repeats adequately documented facts, invents or verifies unsupported claims, converts unknown/omitted information to `NO`, restarts or makes autonomous assessment determinations, or performs Reviewer work.
 
 ## Environment-Limitation Handling
 

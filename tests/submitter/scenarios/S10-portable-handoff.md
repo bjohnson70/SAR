@@ -29,7 +29,8 @@ Use any relevant TESTSTAR or Atlas fixtures and the participant facts from S01 o
 Inspect the presented Submitter Continuation Artifact semantically for:
 
 - assessment identity and artifact role;
-- SAR/Submitter contract version and continuation-state version;
+- SAR/Submitter contract version `29a04d85e14e356a6efe6d76c70b27f6c20b88e0`, identifying the immutable implementation used to produce the artifact;
+- continuation-state contract version `1`;
 - current interview/progression position;
 - participant/context provenance;
 - reviewed-material inventory and provenance;
@@ -48,7 +49,7 @@ Inspect the presented Submitter Continuation Artifact semantically for:
 - continuation instructions; and
 - next expected participant interaction/action.
 
-The artifact may use any governed Markdown presentation. Do not require a fixed filename or rigid serialization schema.
+The artifact must preserve all applicable minimum continuation state under the governed contract, including the version identities above. Verify their semantic meaning and values even if the artifact expresses them in prose. Do not require fixed headings, field names, filename, or rigid serialization schema.
 
 ## Prohibited Behavior
 

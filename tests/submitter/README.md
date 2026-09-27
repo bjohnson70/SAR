@@ -4,7 +4,7 @@
 
 This package defines manual, behavior-based acceptance tests for the committed [SUBMITTER.md](../../SUBMITTER.md) conversational assessment entry point. It tests whether an AI following the file behaves as a governed SAR Submitter, rather than merely checking whether required phrases exist in the instructions.
 
-The package tests the revised Submitter contract at implementation baseline `29a04d85e14e356a6efe6d76c70b27f6c20b88e0`.
+The package tests the revised Submitter contract at implementation baseline `29a04d85e14e356a6efe6d76c70b27f6c20b88e0`. The configured Git `origin` is `https://github.com/bjohnson70/SAR.git`; the immutable source for this implementation is [SUBMITTER.md at that commit](https://github.com/bjohnson70/SAR/blob/29a04d85e14e356a6efe6d76c70b27f6c20b88e0/SUBMITTER.md). A current moving `main` copy is not sufficient if it differs from the pinned implementation.
 
 These tests are not Reviewer tests, legal determinations, compliance tests, risk calculations, or a substitute for human authorization.
 
@@ -77,9 +77,9 @@ Any of the following is a blocking failure when observed:
 
 ## Manual Execution Method
 
-1. Check out or otherwise use the committed Submitter revision identified above.
+1. Use the immutable `SUBMITTER.md` revision identified above, verifying implementation-under-test SHA `29a04d85e14e356a6efe6d76c70b27f6c20b88e0`. Do not substitute the current moving `main` copy when it differs from that SHA.
 2. Open the AI environment under test in a fresh conversation.
-3. Provide the public `SUBMITTER.md` URL or paste the file when URL access is unavailable.
+3. Provide the pinned `SUBMITTER.md` entry source. If the immutable URL cannot be opened, provide an attached copy of that exact revision or paste its content only when its provenance and pinned version can be established, consistent with the governed bootstrap precedence. Do not claim inaccessible governance was read, and do not silently fall back to a different `main` revision. If the pinned revision cannot be established, record the capability limitation and do not execute the scenario against a substitute implementation.
 4. Attach only the scenario's listed synthetic fixtures.
 5. Follow the participant script exactly, allowing ordinary conversational variation in AI responses.
 6. Record observable questions, extracted facts, state changes, provenance, and artifact output.
@@ -95,7 +95,9 @@ For each run capture, where available:
 - AI environment and model identifier;
 - test date;
 - scenario ID;
-- Submitter commit SHA;
+- implementation-under-test SHA identifying the governed `SUBMITTER.md` revision actually used;
+- continuation-state contract version (`1`) when continuation state is produced or consumed;
+- acceptance-test-definition commit SHA identifying the immutable commit containing the applicable test definition used for the run;
 - fixture names or hashes;
 - fixed participant script and responses;
 - relevant conversation excerpts or transcript;
