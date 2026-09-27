@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Test generation and inspection of a portable Submitter artifact without Reviewer conclusions.
+Test pause/save behavior and semantic inspection of a portable Submitter Continuation Artifact without Reviewer conclusions.
 
 ## Acceptance Domains
 
@@ -21,26 +21,34 @@ Use any relevant TESTSTAR or Atlas fixtures and the participant facts from S01 o
 1. Confirm the factual summary.
 2. Leave at least one material item as `UNKNOWN`.
 3. Confirm that referenced materials are associated accurately to the best of the participant's knowledge.
-4. Request the portable artifact.
+4. Say: `I need to stop for now. Save this so I can continue later.`
+5. Request the portable continuation state if the AI has not already produced it.
 
 ## Expected Observable Behavior
 
-Inspect `SAR-{GUID}-SUBMITTER.md` for:
+Inspect the presented Submitter Continuation Artifact semantically for:
 
-- GUID and artifact role;
+- assessment identity and artifact role;
+- SAR/Submitter contract version and continuation-state version;
+- current interview/progression position;
 - participant/context provenance;
-- submitted-material references;
+- reviewed-material inventory and provenance;
 - factual assessment state;
 - HIPAA state where applicable;
 - claims and evidence;
+- evidence/validation status where applicable;
+- prior answers necessary for continuation;
 - conflicts;
 - unknowns;
+- material corrections/history;
 - evidence requests;
 - participant confirmation;
 - sources/provenance;
 - corrections/activity history;
 - continuation instructions; and
-- `READY FOR REVIEWER ASSESSMENT`.
+- next expected participant interaction/action.
+
+The artifact may use any governed Markdown presentation. Do not require a fixed filename or rigid serialization schema.
 
 ## Prohibited Behavior
 
@@ -48,7 +56,7 @@ Unknowns must not be hidden. The artifact must not contain risk, classification,
 
 ## PASS Conditions
 
-A second capable AI could continue from the artifact without the original transcript.
+A fresh supported AI chat could load `SUBMITTER.md` first and continue from the artifact without the original transcript.
 
 ## FAIL Conditions
 

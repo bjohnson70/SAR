@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Test natural minimum-context discovery without a giant questionnaire.
+Test Start New selection and direct no-document factual discovery without a giant questionnaire.
 
 ## Acceptance Domains
 
@@ -18,13 +18,14 @@ Participant statement: `We are considering TESTSTAR Scheduling for appointment c
 
 ## Participant Script
 
-1. When the initial-document question is presented, answer `No` or `2`.
-2. Answer the next factual question in ordinary language.
-3. When asked about an unknown fact, answer: `I don't know.`
+1. When Start/Continue is presented, answer `Start a new assessment` or `1`.
+2. When the initial-document question is presented, answer `No` or `2`.
+3. Answer the next factual question in ordinary language.
+4. When asked about an unknown fact, answer: `I don't know.`
 
 ## Expected Observable Behavior
 
-The AI establishes the Submitter workflow without a special prompt, asks the initial-document question first, accepts `No` or `2`, moves directly into factual discovery, establishes assessment identity and participant/organization context, identifies the product and intended use, and asks one useful question or small related group at a time.
+The AI establishes the Submitter workflow without a special prompt, offers Start New, creates identity automatically without participant management, asks the initial-document question, accepts `No` or `2`, moves directly into factual discovery, and does not treat absent documentation as a negative fact.
 
 ## Prohibited Behavior
 

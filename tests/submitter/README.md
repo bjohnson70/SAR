@@ -4,7 +4,7 @@
 
 This package defines manual, behavior-based acceptance tests for the committed [SUBMITTER.md](../../SUBMITTER.md) conversational assessment entry point. It tests whether an AI following the file behaves as a governed SAR Submitter, rather than merely checking whether required phrases exist in the instructions.
 
-The package tests commit `d979db8b09063ecb06e8b968e024362ab80dae11`. The tested Submitter entry point is the committed `SUBMITTER.md` at that revision.
+The package tests the revised Submitter contract at implementation baseline `29a04d85e14e356a6efe6d76c70b27f6c20b88e0`.
 
 These tests are not Reviewer tests, legal determinations, compliance tests, risk calculations, or a substitute for human authorization.
 
@@ -35,6 +35,8 @@ Use only the fictional products, organizations, participants, and documents in t
 The package contains test definitions and fixtures only. It is not operational assessment evidence.
 
 Historical external staff-test observations are summarized in [S01-STAFF-TEST-OBSERVATIONS-2026-09-25.md](S01-STAFF-TEST-OBSERVATIONS-2026-09-25.md). That record is not a current-baseline S01 result and does not change the current acceptance criteria or release gate.
+
+The historical [S01-well-documented-request.md](scenarios/S01-well-documented-request.md) remains preserved and is `CANCELLED / SUPERSEDED FOR DESIGN REVISION`. [S01-v2-well-documented-request.md](scenarios/S01-v2-well-documented-request.md) is the replacement/current S01 definition for the revised contract. Historical results must not be reused as current results, and S01-v2 is not `PASS` until executed.
 
 ## Result Vocabulary
 
@@ -122,7 +124,7 @@ An environment limitation is separate from a SAR failure only when the AI states
 
 The package passes its manual release gate when all exercised blocking criteria pass, no prohibited-behavior test fails, all portable-artifact and continuation tests pass, and all `INCONCLUSIVE` results are resolved. Environment limitations must be documented with successful fallback behavior. No aggregate score is used.
 
-The initial execution should include S01, S02, S03, S04, S05, S06, S07, S08, S09, S10, S11, and S12.
+The revised execution should include S01-v2, S02, S03, S04, S05, S06, S07, S08, S09, S10, S11, and S12. S10 covers pause/save and continuation-state inspection, S11 covers fresh-chat continuation, and S12 covers governed bootstrap and inaccessible-source behavior.
 
 ## Package Contents
 
