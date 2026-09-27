@@ -160,6 +160,12 @@ Portable continuation state must preserve at least:
 - material corrections/history necessary to interpret current state accurately; and
 - next expected participant interaction or action.
 
+#### Version Identification
+
+- **SAR/Submitter contract version:** the immutable Git commit SHA identifying the governed `SUBMITTER.md` implementation being executed. For the currently implemented contract, this is `29a04d85e14e356a6efe6d76c70b27f6c20b88e0`. It identifies the operational contract, not the AI model, chat session, continuation artifact, or test-definition version.
+- **Continuation-state version:** the governed logical continuation-state contract begins at `1`. This is a semantic contract version, not a serialization-schema version, required Markdown heading structure, filename version, or JSON/XML schema version. Future incompatible or materially revised continuation-state contracts may increment it through governance.
+- **Acceptance-test definition version:** the commit containing the applicable acceptance-test definition. Keep this distinct from both the Submitter implementation commit SHA and the continuation-state contract version; do not silently substitute one for another.
+
 The original chat transcript is **NOT** required for continuation. The continuation state must contain enough governed state for a supported fresh AI chat to resume the assessment without reconstructing the prior conversation.
 
 ### C. Submitter Continuation Artifact
