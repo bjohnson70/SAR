@@ -73,12 +73,18 @@ The following are source families or candidate sources already known to the SAR 
 - California State security and privacy requirements;
 - California State IT requirements;
 - California cloud provisions;
+- DGS PD 402-ITGP Cloud;
+- DGS PD 403-ITGP Non-Cloud;
+- SIMM 5305-F - Generative Artificial Intelligence Risk Assessment;
+- SIMM 71B - Certification of Compliance with IT Policies;
 - California State AI requirements or guidance;
 - DDS policies and standards;
 - the authoritative source for the DDS 19 data-element concept; and
 - other contractual or organizational requirements identified through assessment.
 
 These are source families or candidate sources only. This document does not populate detailed requirements or invent citations, URLs, revision dates, effective dates, control numbers, statutory sections, or document metadata. It does not assert that any source applies to Regional Centers, Business Associates, vendors, or every SAR.
+
+The four specifically named California documents above are source-family candidates, not completed authoritative source registrations. Their publisher metadata, version/revision, publication and effective dates, canonical and immutable references, applicable citations, currentness, and any inter-source relationships require authoritative source ingestion. Do not guess missing fields or bulk-extract requirements as part of source-family registration. Procurement or contract routing and certification obligations remain distinct from security/privacy risk determinations. A certification or compliance statement is not, by itself, evidence that safeguards are implemented or independently validated. No cross-source relationship is asserted until its direction and source/version-specific citation are established.
 
 ### HIPAA Safe Harbor Identifier Authority
 
@@ -311,20 +317,27 @@ Future implementation may use hashes or digests, signed releases, repository com
 
 ## Source Relationships
 
-Catalog sources may have relationships such as:
+Catalog sources may have typed, directional relationships such as:
 
 - supersedes;
 - superseded by;
 - implements;
 - supplements;
 - references;
+- requires / required by;
+- implementation guidance for;
+- definition source for;
+- procurement routing for; and
+- certification basis for;
 - interprets;
 - contractualizes or incorporates where appropriate;
 - machine-readable representation of;
 - human-readable representation of; and
 - related to.
 
-This document does not create final relationship enumerations or infer legal hierarchy solely from these relationships.
+For each relationship, preserve the source and referenced source identities and versions where known, relationship type and direction, supporting provision or citation, and provenance for how the relationship was established. If a version or citation is not established, record it as unknown or requiring source ingestion rather than guessing.
+
+A source relationship does not by itself establish requirement applicability. In particular, a source referencing or requiring another source does not make every requirement in the referenced source automatically applicable. Each requirement still requires its own supported applicability determination and rationale. These relationship types describe source-level context; they do not independently establish legal hierarchy or SAR applicability.
 
 ## Authority Versus Reference / Benchmark
 

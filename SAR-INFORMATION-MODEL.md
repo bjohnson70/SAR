@@ -159,7 +159,9 @@ This domain captures the operating and hosting context, including:
 - on-premises, cloud, hybrid, vendor-hosted, or other deployment model;
 - SaaS, PaaS, or IaaS where relevant;
 - hosting provider;
+- product, service, and service tier;
 - regions and data locations;
+- service or authorization boundary where relevant;
 - administrative access locations;
 - production and non-production separation;
 - endpoints or infrastructure involved; and
@@ -194,6 +196,23 @@ This domain represents material relationships and dependencies, including:
 - material software or service dependencies.
 
 These facts do not themselves make legal determinations about a party or relationship.
+
+### Hosting Assurance and FedRAMP
+
+Where relevant to the service and its intended use, the assessment record must be able to represent:
+
+- the hosting/deployment model and whether it is SaaS, PaaS, IaaS, or another model;
+- hosting provider, product/service/tier, hosting region, and data location;
+- the service boundary and any claimed authorization boundary;
+- subprocessors and material service dependencies;
+- shared-responsibility arrangements;
+- a vendor or provider FedRAMP authorization claim and its stated status;
+- authoritative authorization evidence and its validation status;
+- an authorization impact level where established;
+- whether the exact product, service, tier, configuration, and environment are within the evidenced authorization scope;
+- inherited controls and customer responsibilities where established.
+
+Preserve `Vendor Claim != Evidence != Validation`. A vendor statement about FedRAMP authorization remains a claim until supported by relevant authoritative evidence; the evidence's authenticity, currency, service identity, scope, and relationship to the assessed deployment must be evaluated separately. Do not assume FedRAMP applies merely because a service is cloud hosted. FedRAMP authorization does not by itself approve the requested software or use case; the assessment must still consider the requested product and configuration, data, integrations, users, contractual conditions, and intended use.
 
 ### AI / Generative AI
 
@@ -401,6 +420,43 @@ Authorized Risk Decision
 ```
 
 This chain preserves the distinction between risk before safeguards are evaluated and the remaining risk after controls and treatments are considered.
+
+## Assessment Trace
+
+SAR must support an explicit, bidirectional trace across distinct assessment objects. The forward trace is:
+
+```text
+Assessment Fact(s)
+    ->
+Applicability Determination + Rationale
+    ->
+Requirement
+    ->
+Authority / Source + Assessment Version + Citation
+    ->
+Control / Safeguard
+    ->
+Evidence
+    ->
+Validation
+    ->
+Finding
+    ->
+Residual Risk
+    ->
+Human Risk Decision
+```
+
+Each relationship must retain enough provenance and references to traverse the trace in either direction. Starting from a finding, a reviewer must be able to trace backward through its validation, evidence, safeguard/control, requirement, applicability determination and rationale, authoritative source/version/citation, and originating facts. Starting from a human risk decision, a reviewer must be able to trace backward through residual risk and the findings and evidence considered, then through validation, safeguard/control, requirement, applicability rationale, cited source/version, and originating facts. SAR must also be able to start from an authoritative requirement and identify the assessments in which it was evaluated, the associated applicability determinations, safeguards, evidence and validation, findings, residual risk, and human decisions.
+
+The trace is a relationship model, not a single compliance record or a prescribed workflow. Preserve the distinctions:
+
+```text
+Source != Requirement != Applicability != Control / Safeguard
+       != Evidence != Finding != Risk Decision
+```
+
+Do not collapse these objects or their independent provenance into one record. This trace complements the Evidence Chain, Decision Chain, Applicability Trace, Requirement Trace, and Source Trace.
 
 ## Machine Readability
 

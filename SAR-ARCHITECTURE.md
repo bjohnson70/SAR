@@ -18,6 +18,18 @@ Organizational status does not determine system risk. A Business Associate or Re
 
 SAR must distinguish the assessment of system and data risk from determination of the legal, contractual, policy, or regulatory authority that makes a particular safeguard applicable. This architecture does not make legal conclusions about whether Regional Centers are State entities or State contractors.
 
+## Submitter Contract Version
+
+The initial human-readable version of the governed Submitter contract is **SAR Submitter v1.0**. The version must be contained in the governed `SUBMITTER.md` contract and visibly identified when Submitter startup succeeds. Participants must not be asked to enter, select, remember, or manage this version.
+
+The human-readable contract version is distinct from:
+
+- the immutable Git commit SHA identifying the exact `SUBMITTER.md` implementation executed;
+- the logical continuation-state contract version; and
+- the commit SHA identifying the acceptance-test definition used.
+
+Execution provenance continues to record the applicable immutable Git SHA; `SAR Submitter v1.0` does not replace or weaken that provenance. Any change to the human-readable contract version requires an explicit governed version decision; it must not be inferred or changed automatically from a Git commit or test-definition update.
+
 ## Conceptual SAR Decision Chain
 
 SAR follows this conceptual decision chain:
@@ -133,6 +145,8 @@ Potential control and authority sources may include, without asserting that ever
 - other applicable laws, regulations, policies, and standards.
 
 California contractor and cloud provisions may also be evaluated as control-equivalency benchmarks where appropriate. Their use as benchmarks does not assert that a Business Associate is legally a State contractor.
+
+Cloud hosting or a FedRAMP authorization claim does not by itself establish that FedRAMP applies or approve the requested software or use case. Assessment must consider the actual product, service and configuration, data, integrations, users, contractual conditions, and intended use. A cloud-hosted service must not be treated as FedRAMP-authorized without authoritative evidence establishing the exact service and scope.
 
 ## Business Associate and Regulated Data Principle
 

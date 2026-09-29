@@ -113,7 +113,7 @@ This branch collects facts needed later to evaluate authentication, MFA, SSO, au
 
 Potential triggers include SaaS, PaaS, IaaS, vendor hosting, cloud storage, externally hosted processing, or remote administration.
 
-This branch collects facts about the provider; service or deployment model; hosting and data regions; administrative access locations; tenancy; production and non-production separation; and shared responsibility. It does not ask requestors to determine whether California cloud provisions apply.
+This branch collects facts about the provider; product, service, and tier; service or deployment model; hosting and data regions; service or authorization boundary where relevant; administrative access locations; tenancy; production and non-production separation; subprocessors and dependencies; and shared responsibility. Where a provider claims FedRAMP authorization, collect the claimed status, exact service/product/tier/environment and scope, impact level where established, available authoritative authorization evidence, inherited controls, and customer responsibilities. Preserve the provider statement as a claim until evidence is evaluated and validated. Do not assume FedRAMP applies merely because software is cloud hosted, and do not treat an authorization as approval of the requested software or use case. Intake records facts and evidence; it does not decide applicability or risk acceptance. It does not ask requestors to determine whether California cloud provisions apply.
 
 ### Connectivity / Integration Branch
 
