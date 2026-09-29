@@ -4,7 +4,7 @@
 
 This package defines manual, behavior-based acceptance tests for the committed [SUBMITTER.md](../../SUBMITTER.md) conversational assessment entry point. It tests whether an AI following the file behaves as a governed SAR Submitter, rather than merely checking whether required phrases exist in the instructions.
 
-The package tests the revised Submitter contract at implementation baseline `29a04d85e14e356a6efe6d76c70b27f6c20b88e0`. The configured Git `origin` is `https://github.com/bjohnson70/SAR.git`; the immutable source for this implementation is [SUBMITTER.md at that commit](https://github.com/bjohnson70/SAR/blob/29a04d85e14e356a6efe6d76c70b27f6c20b88e0/SUBMITTER.md). A current moving `main` copy is not sufficient if it differs from the pinned implementation.
+The current S01-v2 scenario tests **SAR Submitter v1.0** at implementation baseline `22eb88f7eb78a1c07bd68eec1424e1341d0eae73`. This supersedes the previous S01-v2 implementation pin `29a04d85e14e356a6efe6d76c70b27f6c20b88e0`. The configured Git `origin` is `https://github.com/bjohnson70/SAR.git`; the immutable S01-v2 source is [SUBMITTER.md at the pinned implementation](https://github.com/bjohnson70/SAR/blob/22eb88f7eb78a1c07bd68eec1424e1341d0eae73/SUBMITTER.md). A current moving `main` copy is not sufficient if it differs from the scenario's pin. Other scenarios may specify continuation-artifact version identities separately.
 
 These tests are not Reviewer tests, legal determinations, compliance tests, risk calculations, or a substitute for human authorization.
 
@@ -77,14 +77,13 @@ Any of the following is a blocking failure when observed:
 
 ## Manual Execution Method
 
-1. Use the immutable `SUBMITTER.md` revision identified above, verifying implementation-under-test SHA `29a04d85e14e356a6efe6d76c70b27f6c20b88e0`. Do not substitute the current moving `main` copy when it differs from that SHA.
+1. Follow the implementation pin stated by the scenario. For S01-v2, use `22eb88f7eb78a1c07bd68eec1424e1341d0eae73`; do not substitute a moving `main` copy.
 2. Open the AI environment under test in a fresh conversation.
-3. Provide the pinned `SUBMITTER.md` entry source. If the immutable URL cannot be opened, provide an attached copy of that exact revision or paste its content only when its provenance and pinned version can be established, consistent with the governed bootstrap precedence. Do not claim inaccessible governance was read, and do not silently fall back to a different `main` revision. If the pinned revision cannot be established, record the capability limitation and do not execute the scenario against a substitute implementation.
-4. Attach only the scenario's listed synthetic fixtures.
-5. Follow the participant script exactly, allowing ordinary conversational variation in AI responses.
-6. Record observable questions, extracted facts, state changes, provenance, and artifact output.
-7. Mark each criterion `PASS`, `FAIL`, `NOT TESTED`, `ENVIRONMENT LIMITATION`, or `INCONCLUSIVE`.
-8. Preserve relevant excerpts and generated artifacts only in an approved controlled location.
+3. For S01-v2, provide both the root `ASSESSMENT.md` launch artifact and the exact pinned `SUBMITTER.md` from implementation SHA `22eb88f7eb78a1c07bd68eec1424e1341d0eae73`. This attachment is the controlled-QA bootstrap input; immutable URL retrieval may be noted separately but is not required for S01-v2 `PASS`. Other scenarios may provide their governed entry source directly, as specified by their preconditions.
+4. Follow the participant script exactly. For S01-v2, do not initially attach the fixtures; attach them when the governed initial-document interaction requests them.
+5. Record observable questions, extracted facts, state changes, provenance, and artifact output.
+6. Mark each criterion `PASS`, `FAIL`, `NOT TESTED`, `ENVIRONMENT LIMITATION`, or `INCONCLUSIVE`.
+7. Preserve relevant excerpts and generated artifacts only in an approved controlled location.
 
 Do not execute the AI tests as part of repository package creation.
 
@@ -130,6 +129,7 @@ The revised execution should include S01-v2, S02, S03, S04, S05, S06, S07, S08, 
 
 ## Package Contents
 
+- For S01-v2, `ASSESSMENT.md` is the QA launch artifact, the exact pinned `SUBMITTER.md` attachment is the governed operational contract, the S01-v2 scenario is the test definition, and the TESTSTAR files are synthetic test fixtures.
 - `scenarios/` contains the twelve fixed participant scripts and acceptance criteria.
 - `fixtures/` contains fictional reusable source material.
 - There is no `results/` directory. Test evidence must remain outside the public repository until separate governance is approved.
