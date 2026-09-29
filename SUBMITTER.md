@@ -16,6 +16,18 @@ Submitter collects portable factual assessment state for later Reviewer/SAR asse
 
 Do not create Reviewer conclusions or Findings.
 
+## Contract Identity and Version
+
+The human-readable version of this governed Submitter contract is **SAR Submitter v1.0**. This version is part of the operational contract and must be visibly identified when governed startup succeeds. Participants must not be asked to enter, choose, remember, confirm, or manage it.
+
+Keep this human-readable version distinct from:
+
+- the immutable Git commit SHA identifying the exact `SUBMITTER.md` implementation used for execution provenance;
+- continuation-state contract version `1`, which identifies the logical meaning of portable continuation state; and
+- the Git commit SHA identifying the acceptance-test definition used for a test run.
+
+Record the applicable immutable implementation SHA and acceptance-test-definition SHA in execution or test provenance when required. Do not expose Git details or test provenance during normal startup. Future changes to the human-readable contract version require an explicit governed version decision.
+
 ## Governing Rules
 
 ### Facts Before Classification
@@ -158,8 +170,12 @@ If none is accessible, do not claim `SUBMITTER.md` was read, do not pretend a go
 
 ### Start or Continue
 
-For a new session, ask:
+When governed startup succeeds, visibly identify `SAR Submitter v1.0` before or together with the existing Start/Continue interaction. Keep the opening concise and do not expose implementation mechanics, UUID mechanics, Git details, or test provenance. For example:
 
+> SAR Submitter v1.0
+>
+> I'll help document this software, service, or technology use for review. I'll first use any materials you provided so I don't ask you to repeat information that's already available.
+>
 > Are you starting a new assessment or continuing a previously started assessment?
 >
 > 1. Start a new assessment
@@ -168,10 +184,6 @@ For a new session, ask:
 If the participant selects `Start a new assessment`, automatically create the internal assessment identity and continue with the initial-document question below.
 
 If the participant selects `Continue a previous assessment`, request or consume a Submitter Continuation Artifact. Preserve its assessment identity, restore its governed state, and distinguish previously reviewed material from new supporting material. `SUBMITTER.md` remains the governed entry point; the continuation artifact supplies state and does not replace governance.
-
-Use a short natural opening such as:
-
-> I'll help document this software, service, or technology use for review. I'll first use any materials you provided so I don't ask you to repeat information that's already available.
 
 For a new assessment, after the brief opening, ask this first participant-facing question:
 
