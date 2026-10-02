@@ -4,7 +4,7 @@
 
 This package defines manual, behavior-based acceptance tests for the committed [SUBMITTER.md](../../SUBMITTER.md) conversational assessment entry point. It tests whether an AI following the file behaves as a governed SAR Submitter, rather than merely checking whether required phrases exist in the instructions.
 
-The current S01-v2 scenario tests **SAR Submitter v1.0** at implementation baseline `22eb88f7eb78a1c07bd68eec1424e1341d0eae73`. This supersedes the previous S01-v2 implementation pin `29a04d85e14e356a6efe6d76c70b27f6c20b88e0`. The configured Git `origin` is `https://github.com/bjohnson70/SAR.git`; the immutable S01-v2 source is [SUBMITTER.md at the pinned implementation](https://github.com/bjohnson70/SAR/blob/22eb88f7eb78a1c07bd68eec1424e1341d0eae73/SUBMITTER.md). A current moving `main` copy is not sufficient if it differs from the scenario's pin. Other scenarios may specify continuation-artifact version identities separately.
+Historical S01-v2 tests **SAR Submitter v1.0** at implementation baseline `22eb88f7eb78a1c07bd68eec1424e1341d0eae73`; its execution result is `FAIL`. Do not rewrite or reuse that definition/result as a v1.1 outcome. The v1.1 successor is [S01-v3-well-documented-request.md](scenarios/S01-v3-well-documented-request.md), pinned to implementation `54f78fddfbce8c162250f1a6e2693a24888dd112` and runtime architecture checkpoint `dea4fc18240b1b4538693f759c23e941f9013143`. Continuation successors [S10-v2-portable-handoff.md](scenarios/S10-v2-portable-handoff.md) and [S11-v2-runtime-continuation.md](scenarios/S11-v2-runtime-continuation.md) cover Continuation-State Contract Version 2. Use each scenario's immutable implementation pin; a moving `main` copy is not a substitute.
 
 These tests are not Reviewer tests, legal determinations, compliance tests, risk calculations, or a substitute for human authorization.
 
@@ -36,7 +36,7 @@ The package contains test definitions and fixtures only. It is not operational a
 
 Historical external staff-test observations are summarized in [S01-STAFF-TEST-OBSERVATIONS-2026-09-25.md](S01-STAFF-TEST-OBSERVATIONS-2026-09-25.md). That record is not a current-baseline S01 result and does not change the current acceptance criteria or release gate.
 
-The historical [S01-well-documented-request.md](scenarios/S01-well-documented-request.md) remains preserved and is `CANCELLED / SUPERSEDED FOR DESIGN REVISION`. [S01-v2-well-documented-request.md](scenarios/S01-v2-well-documented-request.md) is the replacement/current S01 definition for the revised contract. Historical results must not be reused as current results, and S01-v2 is not `PASS` until executed.
+The historical [S01-well-documented-request.md](scenarios/S01-well-documented-request.md) remains preserved and is `CANCELLED / SUPERSEDED FOR DESIGN REVISION`. [S01-v2-well-documented-request.md](scenarios/S01-v2-well-documented-request.md) remains the historical v1.0 definition with its recorded `FAIL`; [S01-v3-well-documented-request.md](scenarios/S01-v3-well-documented-request.md) is the v1.1 successor definition and has no execution result. Historical results must not be reused as current results.
 
 ## Result Vocabulary
 
@@ -77,10 +77,10 @@ Any of the following is a blocking failure when observed:
 
 ## Manual Execution Method
 
-1. Follow the implementation pin stated by the scenario. For S01-v2, use `22eb88f7eb78a1c07bd68eec1424e1341d0eae73`; do not substitute a moving `main` copy.
+1. Follow the implementation pin and continuation-state version stated by the scenario; do not substitute a moving `main` copy.
 2. Open the AI environment under test in a fresh conversation.
-3. For S01-v2, provide both the root `ASSESSMENT.md` launch artifact and the exact pinned `SUBMITTER.md` from implementation SHA `22eb88f7eb78a1c07bd68eec1424e1341d0eae73`. This attachment is the controlled-QA bootstrap input; immutable URL retrieval may be noted separately but is not required for S01-v2 `PASS`. Other scenarios may provide their governed entry source directly, as specified by their preconditions.
-4. Follow the participant script exactly. For S01-v2, do not initially attach the fixtures; attach them when the governed initial-document interaction requests them.
+3. Provide the governed launch artifact and exact pinned `SUBMITTER.md` required by the selected scenario. S01-v2's historical bootstrap used implementation SHA `22eb88f7eb78a1c07bd68eec1424e1341d0eae73`; S01-v3 uses its own v1.1 pin and harness precondition. Other scenarios may provide their governed entry source directly, as specified by their preconditions.
+4. For S01-v3, establish its synthetic SAR Execution Context only through the trusted test-harness context channel described by that scenario. If the environment cannot establish trusted context, record `ENVIRONMENT LIMITATION`; do not pass context values as participant claims. Follow the selected scenario's artifact and fixture sequence exactly.
 5. Record observable questions, extracted facts, state changes, provenance, and artifact output.
 6. Mark each criterion `PASS`, `FAIL`, `NOT TESTED`, `ENVIRONMENT LIMITATION`, or `INCONCLUSIVE`.
 7. Preserve relevant excerpts and generated artifacts only in an approved controlled location.
@@ -95,7 +95,7 @@ For each run capture, where available:
 - test date;
 - scenario ID;
 - implementation-under-test SHA identifying the governed `SUBMITTER.md` revision actually used;
-- continuation-state contract version (`1`) when continuation state is produced or consumed;
+- continuation-state contract version stated by the scenario when continuation state is produced or consumed (historical v1 scenarios remain v1; v1.1 continuation successors use v2);
 - acceptance-test-definition commit SHA identifying the immutable commit containing the applicable test definition used for the run;
 - fixture names or hashes;
 - fixed participant script and responses;
@@ -125,11 +125,11 @@ An environment limitation is separate from a SAR failure only when the AI states
 
 The package passes its manual release gate when all exercised blocking criteria pass, no prohibited-behavior test fails, all portable-artifact and continuation tests pass, and all `INCONCLUSIVE` results are resolved. Environment limitations must be documented with successful fallback behavior. No aggregate score is used.
 
-The revised execution should include S01-v2, S02, S03, S04, S05, S06, S07, S08, S09, S10, S11, and S12. S10 covers pause/save and continuation-state inspection, S11 covers fresh-chat continuation, and S12 covers governed bootstrap and inaccessible-source behavior.
+The Submitter v1.1 acceptance execution should include S01-v3, S02, S03, S04, S05, S06, S07, S08, S09, S10-v2, S11-v2, and S12. S01-v2 remains historical and is not reused as a v1.1 result. S10-v2 covers pause/save and continuation-state v2 inspection; S11-v2 covers fresh-context continuation and v1 compatibility variants; S12 covers capability/bootstrap limitations. Existing S02, S06, S09, and S12 definitions remain unchanged and reusable subject to their stated environment preconditions.
 
 ## Package Contents
 
-- For S01-v2, `ASSESSMENT.md` is the QA launch artifact, the exact pinned `SUBMITTER.md` attachment is the governed operational contract, the S01-v2 scenario is the test definition, and the TESTSTAR files are synthetic test fixtures.
-- `scenarios/` contains the twelve fixed participant scripts and acceptance criteria.
+- For S01-v3, `ASSESSMENT.md` is the QA launch artifact, the exact pinned `SUBMITTER.md` attachment is the governed operational contract, the S01-v3 scenario is the test definition, and the TESTSTAR files are synthetic test fixtures. S01-v2's prior inputs and result remain historical.
+- `scenarios/` contains historical definitions and versioned successor scripts/criteria; follow each scenario's implementation and continuation-state pins.
 - `fixtures/` contains fictional reusable source material.
 - There is no `results/` directory. Test evidence must remain outside the public repository until separate governance is approved.
