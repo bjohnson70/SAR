@@ -44,6 +44,10 @@ candidate_boundary_set:
       root_source_part_reference: si-12.3_smt
       included_source_part_references: [si-12.3_smt]
       normative_parameter_references: [si-12.3_prm_1]
-      boundary_rationale: Independent operative action.
+      related_source_relationship_references:
+        - origin_source_object_reference: si-12.3
+          relationship_type: required
+          target: "#si-12"
+      boundary_rationale: Distinct enhancement statement under parent SI-12; source relationship retained.
       derivation_method: hybrid
-      validation_status: PROPOSED
+      validation_status: VALIDATED
