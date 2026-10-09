@@ -1,0 +1,305 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SAR Requirement Governance Record (Provisional Implementation Schema)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_type",
+    "record_context",
+    "record_schema_version",
+    "identity",
+    "lifecycle",
+    "source_provenance",
+    "normative_content",
+    "governance",
+    "applicability",
+    "execution_boundary",
+    "history"
+  ],
+  "properties": {
+    "record_type": { "const": "SAR_REQUIREMENT_GOVERNANCE_RECORD" },
+    "record_context": { "enum": ["GOVERNANCE_RECORD", "NON_OPERATIONAL_EXAMPLE", "SYNTHETIC_TEST_FIXTURE"] },
+    "record_schema_version": { "const": "0.1-provisional" },
+    "identity": { "$ref": "#/$defs/identity" },
+    "lifecycle": { "$ref": "#/$defs/lifecycle" },
+    "source_provenance": { "$ref": "#/$defs/sourceProvenance" },
+    "normative_content": { "$ref": "#/$defs/normativeContent" },
+    "governance": { "$ref": "#/$defs/governance" },
+    "applicability": { "$ref": "#/$defs/applicability" },
+    "execution_boundary": { "$ref": "#/$defs/executionBoundary" },
+    "history": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/historyEvent" }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "lifecycle": { "properties": { "state": { "enum": ["APPROVED", "SUPERSEDED", "RETIRED"] } }, "required": ["state"] }
+        },
+        "required": ["lifecycle"]
+      },
+      "then": {
+        "properties": {
+          "governance": {
+            "properties": {
+              "human_review_state": { "const": "REVIEWED" },
+              "approval_decision": { "const": "APPROVED" },
+              "approval_record": { "properties": { "decision": { "const": "APPROVE" } }, "required": ["decision"] }
+            },
+            "required": ["human_review_state", "approval_decision", "approval_record"]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "lifecycle": { "properties": { "state": { "const": "REJECTED" } }, "required": ["state"] }
+        },
+        "required": ["lifecycle"]
+      },
+      "then": {
+        "properties": {
+          "governance": {
+            "properties": {
+              "human_review_state": { "const": "REVIEWED" },
+              "approval_decision": { "const": "REJECTED" },
+              "approval_record": { "properties": { "decision": { "const": "REJECT" } }, "required": ["decision"] }
+            },
+            "required": ["human_review_state", "approval_decision", "approval_record"]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "lifecycle": { "properties": { "state": { "enum": ["PROPOSED", "HUMAN_REVIEWED"] } }, "required": ["state"] }
+        },
+        "required": ["lifecycle"]
+      },
+      "then": {
+        "properties": {
+          "governance": {
+            "properties": { "approval_decision": { "const": "NOT_APPROVED" } },
+            "required": ["approval_decision"],
+            "not": { "required": ["approval_record"] }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "lifecycle": { "properties": { "state": { "const": "HUMAN_REVIEWED" } }, "required": ["state"] }
+        },
+        "required": ["lifecycle"]
+      },
+      "then": {
+        "properties": {
+          "governance": { "properties": { "human_review_state": { "const": "REVIEWED" } }, "required": ["human_review_state"] }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "lifecycle": { "properties": { "state": { "const": "SUPERSEDED" } }, "required": ["state"] }
+        },
+        "required": ["lifecycle"]
+      },
+      "then": {
+        "properties": {
+          "lifecycle": { "properties": { "currentness_state": { "const": "SUPERSEDED" } }, "required": ["currentness_state"] }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "nonEmptyString": { "type": "string", "minLength": 1 },
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["logical_id", "version"],
+      "properties": {
+        "logical_id": { "$ref": "#/$defs/nonEmptyString" },
+        "version": { "$ref": "#/$defs/nonEmptyString" },
+        "identifier_convention_status": { "const": "PROVISIONAL_NOT_PRODUCTION_APPROVED" }
+      }
+    },
+    "identityReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["logical_id", "version"],
+      "properties": {
+        "logical_id": { "$ref": "#/$defs/nonEmptyString" },
+        "version": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "lifecycle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "currentness_state", "supersedes", "superseded_by"],
+      "properties": {
+        "state": { "enum": ["PROPOSED", "HUMAN_REVIEWED", "APPROVED", "REJECTED", "SUPERSEDED", "RETIRED"] },
+        "currentness_state": { "enum": ["CURRENTNESS_UNKNOWN", "CURRENT", "REVIEW_DUE", "SUPERSEDED", "WITHDRAWN", "EXPIRED"] },
+        "supersedes": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/identityReference" } },
+        "superseded_by": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/identityReference" } }
+      }
+    },
+    "sourceRelationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["origin_source_object_reference", "relationship_type", "target"],
+      "properties": {
+        "origin_source_object_reference": { "$ref": "#/$defs/nonEmptyString" },
+        "relationship_type": { "$ref": "#/$defs/nonEmptyString" },
+        "target": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "sourceProvenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_catalog_identity",
+        "source_version",
+        "pinned_upstream_revision",
+        "source_artifact_path",
+        "source_object_id",
+        "normative_part_ids",
+        "candidate_boundary",
+        "source_relationships"
+      ],
+      "properties": {
+        "source_catalog_identity": { "$ref": "#/$defs/nonEmptyString" },
+        "source_version": { "$ref": "#/$defs/nonEmptyString" },
+        "pinned_upstream_revision": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+        "source_artifact_path": { "$ref": "#/$defs/nonEmptyString" },
+        "source_object_id": { "$ref": "#/$defs/nonEmptyString" },
+        "normative_part_ids": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/nonEmptyString" } },
+        "candidate_boundary": { "$ref": "#/$defs/candidateBoundaryReference" },
+        "source_relationships": { "type": "array", "items": { "$ref": "#/$defs/sourceRelationship" } }
+      }
+    },
+    "candidateBoundaryReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidate_boundary_id", "validation_status", "approval_scope", "decision_reference"],
+      "properties": {
+        "candidate_boundary_id": { "type": "string", "pattern": "^cbr-.+" },
+        "validation_status": { "const": "VALIDATED" },
+        "approval_scope": { "const": "SOURCE_BOUNDARY_FIDELITY_ONLY" },
+        "decision_reference": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "parameterDependency": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["parameter_id", "assignment_state"],
+          "properties": {
+            "parameter_id": { "$ref": "#/$defs/nonEmptyString" },
+            "assignment_state": { "const": "UNRESOLVED" }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["parameter_id", "assignment_state", "assignment"],
+          "properties": {
+            "parameter_id": { "$ref": "#/$defs/nonEmptyString" },
+            "assignment_state": { "const": "ASSIGNED" },
+            "assignment": { "$ref": "#/$defs/parameterAssignment" }
+          }
+        }
+      ]
+    },
+    "parameterAssignment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "authority", "scope", "version", "effective_date", "decision_reference"],
+      "properties": {
+        "value": { "$ref": "#/$defs/nonEmptyString" },
+        "authority": { "$ref": "#/$defs/nonEmptyString" },
+        "scope": { "$ref": "#/$defs/nonEmptyString" },
+        "version": { "$ref": "#/$defs/nonEmptyString" },
+        "effective_date": { "type": "string", "format": "date" },
+        "decision_reference": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "normativeContent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_bound_obligation_reference", "controlled_representation", "parameter_dependencies"],
+      "properties": {
+        "source_bound_obligation_reference": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["source_object_id", "part_id"],
+          "properties": {
+            "source_object_id": { "$ref": "#/$defs/nonEmptyString" },
+            "part_id": { "$ref": "#/$defs/nonEmptyString" }
+          }
+        },
+        "controlled_representation": { "$ref": "#/$defs/nonEmptyString" },
+        "parameter_dependencies": { "type": "array", "items": { "$ref": "#/$defs/parameterDependency" } }
+      }
+    },
+    "approvalRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["decision", "authority", "date", "scope", "requirement_identity", "decision_provenance", "decision_reference"],
+      "properties": {
+        "decision": { "enum": ["APPROVE", "REJECT"] },
+        "authority": { "$ref": "#/$defs/nonEmptyString" },
+        "date": { "type": "string", "format": "date" },
+        "scope": { "const": "REQUIREMENT_GOVERNANCE_ONLY" },
+        "requirement_identity": { "$ref": "#/$defs/identityReference" },
+        "decision_provenance": { "$ref": "#/$defs/nonEmptyString" },
+        "decision_reference": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "governance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["human_review_state", "approval_decision"],
+      "properties": {
+        "human_review_state": { "enum": ["NOT_REVIEWED", "REVIEWED"] },
+        "approval_decision": { "enum": ["NOT_APPROVED", "APPROVED", "REJECTED"] },
+        "approval_record": { "$ref": "#/$defs/approvalRecord" }
+      }
+    },
+    "applicability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state", "assessment_source_role"],
+      "properties": {
+        "state": { "const": "UNRESOLVED / GOVERNED RULE NOT YET POPULATED" },
+        "assessment_source_role": { "const": "NOT_DETERMINED" }
+      }
+    },
+    "executionBoundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["execution_state", "parameter_dependent_evaluation_state"],
+      "properties": {
+        "execution_state": { "const": "NON_EXECUTABLE" },
+        "parameter_dependent_evaluation_state": { "const": "BLOCKED_UNTIL_AUTHORIZED_ASSIGNMENT_AND_GOVERNED_RULE" }
+      }
+    },
+    "historyEvent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["event_type", "date", "reference"],
+      "properties": {
+        "event_type": { "enum": ["BOUNDARY_VALIDATION_REFERENCE", "REQUIREMENT_PROPOSED", "REQUIREMENT_REVIEWED", "REQUIREMENT_APPROVED", "REQUIREMENT_REJECTED", "REQUIREMENT_SUPERSEDED", "REQUIREMENT_RETIRED"] },
+        "date": { "type": "string", "format": "date" },
+        "authority": { "$ref": "#/$defs/nonEmptyString" },
+        "reference": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    }
+  }
+}

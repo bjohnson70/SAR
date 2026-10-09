@@ -1,0 +1,56 @@
+record_type: SAR_REQUIREMENT_GOVERNANCE_RECORD
+record_context: NON_OPERATIONAL_EXAMPLE
+record_schema_version: 0.1-provisional
+identity:
+  logical_id: EXAMPLE-REQ-0001
+  version: EXAMPLE-VERSION-1
+  identifier_convention_status: PROVISIONAL_NOT_PRODUCTION_APPROVED
+lifecycle:
+  state: PROPOSED
+  currentness_state: CURRENTNESS_UNKNOWN
+  supersedes: []
+  superseded_by: []
+source_provenance:
+  source_catalog_identity: nist-sp800-53-rev5
+  source_version: 5.2.0
+  pinned_upstream_revision: 78650f02ad9321bb7b817846f8fbd4f2bcd620de
+  source_artifact_path: nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json
+  source_object_id: si-12.3
+  normative_part_ids:
+    - si-12.3_smt
+  candidate_boundary:
+    candidate_boundary_id: cbr-nist-sp800-53-rev5-si-12-3-smt
+    validation_status: VALIDATED
+    approval_scope: SOURCE_BOUNDARY_FIDELITY_ONLY
+    decision_reference: SAR-SI-12-3-BOUNDARY-VALIDATION.md#recorded-approval
+  source_relationships:
+    - origin_source_object_reference: si-12.3
+      relationship_type: required
+      target: "#si-12"
+normative_content:
+  source_bound_obligation_reference:
+    source_object_id: si-12.3
+    part_id: si-12.3_smt
+  controlled_representation: >-
+    Use the organization-defined techniques to dispose of, destroy, or erase
+    information following the retention period.
+  parameter_dependencies:
+    - parameter_id: si-12.3_prm_1
+      assignment_state: UNRESOLVED
+governance:
+  human_review_state: NOT_REVIEWED
+  approval_decision: NOT_APPROVED
+applicability:
+  state: UNRESOLVED / GOVERNED RULE NOT YET POPULATED
+  assessment_source_role: NOT_DETERMINED
+execution_boundary:
+  execution_state: NON_EXECUTABLE
+  parameter_dependent_evaluation_state: BLOCKED_UNTIL_AUTHORIZED_ASSIGNMENT_AND_GOVERNED_RULE
+history:
+  - event_type: BOUNDARY_VALIDATION_REFERENCE
+    date: "2026-10-08"
+    authority: DDS CISO
+    reference: SAR-SI-12-3-BOUNDARY-VALIDATION.md#recorded-approval
+  - event_type: REQUIREMENT_PROPOSED
+    date: "2026-10-08"
+    reference: SAR-CODEX-070 implementation example; not an approval decision
