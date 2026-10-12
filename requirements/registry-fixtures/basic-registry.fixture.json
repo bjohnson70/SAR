@@ -1,0 +1,212 @@
+{
+  "registry_contract_version": "1.0.0",
+  "snapshot_context": "NON_OPERATIONAL_FIXTURE",
+  "identities": [
+    {
+      "record_type": "SAR_REQUIREMENT_LOGICAL_IDENTITY",
+      "record_schema_version": "1.0.0",
+      "issuer_namespace": "urn:example:sar-test-fixtures",
+      "logical_id": "fixture-logical-requirement-001",
+      "registration_event_id": "fixture-event-001",
+      "external_aliases": []
+    }
+  ],
+  "versions": [
+    {
+      "record_type": "SAR_REQUIREMENT_IMMUTABLE_VERSION",
+      "record_schema_version": "1.0.0",
+      "issuer_namespace": "urn:example:sar-test-fixtures",
+      "logical_id": "fixture-logical-requirement-001",
+      "version_id": 1,
+      "content_reference_id": "fixture-content-001-v1",
+      "registration_event_id": "fixture-event-002"
+    },
+    {
+      "record_type": "SAR_REQUIREMENT_IMMUTABLE_VERSION",
+      "record_schema_version": "1.0.0",
+      "issuer_namespace": "urn:example:sar-test-fixtures",
+      "logical_id": "fixture-logical-requirement-001",
+      "version_id": 2,
+      "content_reference_id": "fixture-content-001-v2",
+      "registration_event_id": "fixture-event-004",
+      "based_on_version": 1
+    }
+  ],
+  "content_references": [
+    {
+      "record_type": "SAR_REQUIREMENT_CONTENT_REFERENCE",
+      "record_schema_version": "1.0.0",
+      "content_reference_id": "fixture-content-001-v1",
+      "digest_algorithm": "sha-256",
+      "digest_value": "9378c8502d3ba3a7b51b3cc29fd6792f18b6497a9bd120d7a20fe9207d89fb67",
+      "immutable_locator": "fixture://content/fixture-content-001-v1",
+      "content_envelope": {
+        "profile_id": "SAR-REQ-CONTENT-JCS-SHA256",
+        "profile_version": "1.0.0",
+        "identity": {
+          "issuer_namespace": "urn:example:sar-test-fixtures",
+          "logical_id": "fixture-logical-requirement-001",
+          "version_id": 1
+        },
+        "normative_content": {
+          "statement": "Fixture-only obligation representation, version one.",
+          "semantic_role": "fixture obligation",
+          "normative_strength": "fixture only",
+          "scope": ["fixture scope"],
+          "conditions": [],
+          "exceptions": [],
+          "qualifiers": [],
+          "parameter_dependencies": [
+            {
+              "parameter_id": "fixture-parameter-1",
+              "source_reference": "fixture-source-parameter-1",
+              "usage_reference": "fixture-part-1"
+            }
+          ]
+        },
+        "source_bindings": [
+          {
+            "source_catalog_identity": "urn:example:source-catalog",
+            "source_version": "fixture-source-version-1",
+            "source_revision": "fixture-source-revision-1",
+            "artifact_reference": "fixture://source/artifact-1",
+            "source_object_id": "fixture-source-object-1",
+            "provision_reference": "fixture-provision-1",
+            "part_references": ["fixture-part-1"],
+            "relationships": [],
+            "candidate_boundary": {
+              "candidate_boundary_id": "fixture-boundary-1",
+              "revision_reference": "fixture-boundary-revision-1",
+              "validation_status": "VALIDATED",
+              "decision_reference": "fixture-only-boundary-decision-1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "record_type": "SAR_REQUIREMENT_CONTENT_REFERENCE",
+      "record_schema_version": "1.0.0",
+      "content_reference_id": "fixture-content-001-v2",
+      "digest_algorithm": "sha-256",
+      "digest_value": "80c60a5c74dfcd14a3b1c64edd7125b0ae638fd963b847c2bbf10dea530d6535",
+      "immutable_locator": "fixture://content/fixture-content-001-v2",
+      "content_envelope": {
+        "profile_id": "SAR-REQ-CONTENT-JCS-SHA256",
+        "profile_version": "1.0.0",
+        "identity": {
+          "issuer_namespace": "urn:example:sar-test-fixtures",
+          "logical_id": "fixture-logical-requirement-001",
+          "version_id": 2
+        },
+        "normative_content": {
+          "statement": "Fixture-only obligation representation, version two.",
+          "semantic_role": "fixture obligation",
+          "normative_strength": "fixture only",
+          "scope": ["fixture scope"],
+          "conditions": [],
+          "exceptions": [],
+          "qualifiers": [],
+          "parameter_dependencies": [
+            {
+              "parameter_id": "fixture-parameter-1",
+              "source_reference": "fixture-source-parameter-1",
+              "usage_reference": "fixture-part-1"
+            }
+          ]
+        },
+        "source_bindings": [
+          {
+            "source_catalog_identity": "urn:example:source-catalog",
+            "source_version": "fixture-source-version-1",
+            "source_revision": "fixture-source-revision-1",
+            "artifact_reference": "fixture://source/artifact-1",
+            "source_object_id": "fixture-source-object-1",
+            "provision_reference": "fixture-provision-1",
+            "part_references": ["fixture-part-1"],
+            "relationships": [],
+            "candidate_boundary": {
+              "candidate_boundary_id": "fixture-boundary-1",
+              "revision_reference": "fixture-boundary-revision-1",
+              "validation_status": "VALIDATED",
+              "decision_reference": "fixture-only-boundary-decision-1"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "lifecycle_events": [
+    {
+      "record_type": "SAR_REQUIREMENT_LIFECYCLE_EVENT",
+      "record_schema_version": "1.0.0",
+      "event_id": "fixture-event-001",
+      "sequence": 1,
+      "event_type": "IDENTITY_REGISTERED",
+      "target_identity": {
+        "issuer_namespace": "urn:example:sar-test-fixtures",
+        "logical_id": "fixture-logical-requirement-001"
+      },
+      "actor_reference": "synthetic:test-actor-not-authenticated",
+      "occurred_at": "2026-10-11T12:00:00Z"
+    },
+    {
+      "record_type": "SAR_REQUIREMENT_LIFECYCLE_EVENT",
+      "record_schema_version": "1.0.0",
+      "event_id": "fixture-event-002",
+      "sequence": 2,
+      "previous_event_id": "fixture-event-001",
+      "event_type": "VERSION_REGISTERED",
+      "target_identity": {
+        "issuer_namespace": "urn:example:sar-test-fixtures",
+        "logical_id": "fixture-logical-requirement-001"
+      },
+      "target_version": {
+        "issuer_namespace": "urn:example:sar-test-fixtures",
+        "logical_id": "fixture-logical-requirement-001",
+        "version_id": 1
+      },
+      "actor_reference": "synthetic:test-actor-not-authenticated",
+      "occurred_at": "2026-10-11T12:00:01Z"
+    },
+    {
+      "record_type": "SAR_REQUIREMENT_LIFECYCLE_EVENT",
+      "record_schema_version": "1.0.0",
+      "event_id": "fixture-event-003",
+      "sequence": 3,
+      "previous_event_id": "fixture-event-002",
+      "event_type": "HUMAN_REVIEW_RECORDED",
+      "target_identity": {
+        "issuer_namespace": "urn:example:sar-test-fixtures",
+        "logical_id": "fixture-logical-requirement-001"
+      },
+      "target_version": {
+        "issuer_namespace": "urn:example:sar-test-fixtures",
+        "logical_id": "fixture-logical-requirement-001",
+        "version_id": 1
+      },
+      "actor_reference": "synthetic:test-reviewer-not-authenticated",
+      "occurred_at": "2026-10-11T12:00:02Z",
+      "reason": "Synthetic review event; no Requirement approval is asserted."
+    },
+    {
+      "record_type": "SAR_REQUIREMENT_LIFECYCLE_EVENT",
+      "record_schema_version": "1.0.0",
+      "event_id": "fixture-event-004",
+      "sequence": 4,
+      "previous_event_id": "fixture-event-003",
+      "event_type": "VERSION_REGISTERED",
+      "target_identity": {
+        "issuer_namespace": "urn:example:sar-test-fixtures",
+        "logical_id": "fixture-logical-requirement-001"
+      },
+      "target_version": {
+        "issuer_namespace": "urn:example:sar-test-fixtures",
+        "logical_id": "fixture-logical-requirement-001",
+        "version_id": 2
+      },
+      "actor_reference": "synthetic:test-actor-not-authenticated",
+      "occurred_at": "2026-10-11T12:00:03Z"
+    }
+  ]
+}

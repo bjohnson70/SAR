@@ -1,0 +1,327 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:sar:schema:requirement-registry:1.0.0",
+  "title": "Non-operational SAR Requirement Registry Contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "registry_contract_version",
+    "snapshot_context",
+    "identities",
+    "versions",
+    "content_references",
+    "lifecycle_events"
+  ],
+  "properties": {
+    "registry_contract_version": { "const": "1.0.0" },
+    "snapshot_context": { "const": "NON_OPERATIONAL_FIXTURE" },
+    "identities": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/identityRecord" }
+    },
+    "versions": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/versionRecord" }
+    },
+    "content_references": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/contentReferenceRecord" }
+    },
+    "lifecycle_events": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/lifecycleEventRecord" }
+    }
+  },
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "identityReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["issuer_namespace", "logical_id"],
+      "properties": {
+        "issuer_namespace": { "$ref": "#/$defs/nonEmptyString" },
+        "logical_id": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "versionReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["issuer_namespace", "logical_id", "version_id"],
+      "properties": {
+        "issuer_namespace": { "$ref": "#/$defs/nonEmptyString" },
+        "logical_id": { "$ref": "#/$defs/nonEmptyString" },
+        "version_id": { "type": "integer", "minimum": 1, "maximum": 9007199254740991 }
+      }
+    },
+    "identityRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_type",
+        "record_schema_version",
+        "issuer_namespace",
+        "logical_id",
+        "registration_event_id"
+      ],
+      "properties": {
+        "record_type": { "const": "SAR_REQUIREMENT_LOGICAL_IDENTITY" },
+        "record_schema_version": { "const": "1.0.0" },
+        "issuer_namespace": { "$ref": "#/$defs/nonEmptyString" },
+        "logical_id": { "$ref": "#/$defs/nonEmptyString" },
+        "registration_event_id": { "$ref": "#/$defs/nonEmptyString" },
+        "external_aliases": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/nonEmptyString" },
+          "uniqueItems": true
+        }
+      }
+    },
+    "versionRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_type",
+        "record_schema_version",
+        "issuer_namespace",
+        "logical_id",
+        "version_id",
+        "content_reference_id",
+        "registration_event_id"
+      ],
+      "properties": {
+        "record_type": { "const": "SAR_REQUIREMENT_IMMUTABLE_VERSION" },
+        "record_schema_version": { "const": "1.0.0" },
+        "issuer_namespace": { "$ref": "#/$defs/nonEmptyString" },
+        "logical_id": { "$ref": "#/$defs/nonEmptyString" },
+        "version_id": { "type": "integer", "minimum": 1, "maximum": 9007199254740991 },
+        "content_reference_id": { "$ref": "#/$defs/nonEmptyString" },
+        "registration_event_id": { "$ref": "#/$defs/nonEmptyString" },
+        "based_on_version": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "parameterDependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["parameter_id", "source_reference", "usage_reference"],
+      "properties": {
+        "parameter_id": { "$ref": "#/$defs/nonEmptyString" },
+        "source_reference": { "$ref": "#/$defs/nonEmptyString" },
+        "usage_reference": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "sourceRelationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["origin_reference", "relationship_type", "target_reference"],
+      "properties": {
+        "origin_reference": { "$ref": "#/$defs/nonEmptyString" },
+        "relationship_type": { "$ref": "#/$defs/nonEmptyString" },
+        "target_reference": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "candidateBoundaryBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_boundary_id",
+        "revision_reference",
+        "validation_status",
+        "decision_reference"
+      ],
+      "properties": {
+        "candidate_boundary_id": { "$ref": "#/$defs/nonEmptyString" },
+        "revision_reference": { "$ref": "#/$defs/nonEmptyString" },
+        "validation_status": { "const": "VALIDATED" },
+        "decision_reference": { "$ref": "#/$defs/nonEmptyString" }
+      }
+    },
+    "sourceBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_catalog_identity",
+        "source_version",
+        "source_revision",
+        "artifact_reference",
+        "source_object_id",
+        "provision_reference",
+        "part_references",
+        "relationships",
+        "candidate_boundary"
+      ],
+      "properties": {
+        "source_catalog_identity": { "$ref": "#/$defs/nonEmptyString" },
+        "source_version": { "$ref": "#/$defs/nonEmptyString" },
+        "source_revision": { "$ref": "#/$defs/nonEmptyString" },
+        "artifact_reference": { "$ref": "#/$defs/nonEmptyString" },
+        "source_object_id": { "$ref": "#/$defs/nonEmptyString" },
+        "provision_reference": { "$ref": "#/$defs/nonEmptyString" },
+        "part_references": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/nonEmptyString" },
+          "uniqueItems": true
+        },
+        "relationships": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/sourceRelationship" }
+        },
+        "candidate_boundary": { "$ref": "#/$defs/candidateBoundaryBinding" }
+      }
+    },
+    "parameterDependencyList": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/parameterDependency" }
+    },
+    "contentEnvelope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "profile_id",
+        "profile_version",
+        "identity",
+        "normative_content",
+        "source_bindings"
+      ],
+      "properties": {
+        "profile_id": { "const": "SAR-REQ-CONTENT-JCS-SHA256" },
+        "profile_version": { "const": "1.0.0" },
+        "identity": { "$ref": "#/$defs/versionReference" },
+        "normative_content": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "statement",
+            "semantic_role",
+            "normative_strength",
+            "scope",
+            "conditions",
+            "exceptions",
+            "qualifiers",
+            "parameter_dependencies"
+          ],
+          "properties": {
+            "statement": { "$ref": "#/$defs/nonEmptyString" },
+            "semantic_role": { "$ref": "#/$defs/nonEmptyString" },
+            "normative_strength": { "$ref": "#/$defs/nonEmptyString" },
+            "scope": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/nonEmptyString" }
+            },
+            "conditions": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/nonEmptyString" }
+            },
+            "exceptions": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/nonEmptyString" }
+            },
+            "qualifiers": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/nonEmptyString" }
+            },
+            "parameter_dependencies": { "$ref": "#/$defs/parameterDependencyList" }
+          }
+        },
+        "source_bindings": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/sourceBinding" }
+        }
+      }
+    },
+    "contentReferenceRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_type",
+        "record_schema_version",
+        "content_reference_id",
+        "digest_algorithm",
+        "digest_value",
+        "content_envelope"
+      ],
+      "properties": {
+        "record_type": { "const": "SAR_REQUIREMENT_CONTENT_REFERENCE" },
+        "record_schema_version": { "const": "1.0.0" },
+        "content_reference_id": { "$ref": "#/$defs/nonEmptyString" },
+        "digest_algorithm": { "const": "sha-256" },
+        "digest_value": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "immutable_locator": { "$ref": "#/$defs/nonEmptyString" },
+        "content_envelope": { "$ref": "#/$defs/contentEnvelope" }
+      }
+    },
+    "lifecycleEventRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_type",
+        "record_schema_version",
+        "event_id",
+        "sequence",
+        "event_type",
+        "target_identity",
+        "actor_reference",
+        "occurred_at"
+      ],
+      "properties": {
+        "record_type": { "const": "SAR_REQUIREMENT_LIFECYCLE_EVENT" },
+        "record_schema_version": { "const": "1.0.0" },
+        "event_id": { "$ref": "#/$defs/nonEmptyString" },
+        "sequence": { "type": "integer", "minimum": 1 },
+        "previous_event_id": { "$ref": "#/$defs/nonEmptyString" },
+        "event_type": {
+          "enum": [
+            "IDENTITY_REGISTERED",
+            "VERSION_REGISTERED",
+            "HUMAN_REVIEW_RECORDED",
+            "APPROVAL_EVIDENCE_REFERENCED",
+            "VERSION_REVIEW_REQUIRED",
+            "VERSION_WITHDRAWN",
+            "VERSION_SUPERSEDED",
+            "ADMINISTRATIVE_CORRECTION"
+          ]
+        },
+        "target_identity": { "$ref": "#/$defs/identityReference" },
+        "target_version": { "$ref": "#/$defs/versionReference" },
+        "actor_reference": { "$ref": "#/$defs/nonEmptyString" },
+        "authority_reference": { "$ref": "#/$defs/nonEmptyString" },
+        "occurred_at": { "type": "string", "format": "date-time" },
+        "evidence_reference": { "$ref": "#/$defs/nonEmptyString" },
+        "approval_content_digest": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "reason": { "$ref": "#/$defs/nonEmptyString" },
+        "successor_versions": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/versionReference" },
+          "uniqueItems": true
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "sequence": { "const": 1 } }, "required": ["sequence"] },
+          "then": { "not": { "required": ["previous_event_id"] } },
+          "else": { "required": ["previous_event_id"] }
+        },
+        {
+          "if": { "properties": { "event_type": { "const": "IDENTITY_REGISTERED" } }, "required": ["event_type"] },
+          "then": { "not": { "required": ["target_version"] } },
+          "else": { "required": ["target_version"] }
+        },
+        {
+          "if": { "properties": { "event_type": { "const": "VERSION_SUPERSEDED" } }, "required": ["event_type"] },
+          "then": { "required": ["successor_versions"] },
+          "else": { "not": { "required": ["successor_versions"] } }
+        },
+        {
+          "if": { "properties": { "event_type": { "const": "APPROVAL_EVIDENCE_REFERENCED" } }, "required": ["event_type"] },
+          "then": { "required": ["evidence_reference", "approval_content_digest"] },
+          "else": { "not": { "required": ["approval_content_digest"] } }
+        }
+      ]
+    }
+  }
+}
