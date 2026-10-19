@@ -12,19 +12,19 @@ A, B, C, D, E, F, G, H, I, J, K, U, X
 
 ## Preconditions
 
-Use a completely fresh conversation. Provide both the root `ASSESSMENT.md` QA launch artifact and the exact pinned `SUBMITTER.md` corresponding to implementation SHA `22eb88f7eb78a1c07bd68eec1424e1341d0eae73`. The immutable [`SUBMITTER.md` URL](https://github.com/bjohnson70/SAR/blob/22eb88f7eb78a1c07bd68eec1424e1341d0eae73/SUBMITTER.md) is provenance and an optional direct-access mechanism, not a prerequisite for this controlled test. Do not substitute a current moving `main` copy. Do not initially attach the TESTSTAR fixtures. Do not send an extra `Run SAR` instruction or ask the participant to manage an identifier or version.
+Use a completely fresh conversation. Provide the archived v1.0 launch artifact at [`tests/submitter/launch/v1.0/ASSESSMENT.md`](../launch/v1.0/ASSESSMENT.md) and the exact pinned `SUBMITTER.md` corresponding to implementation SHA `22eb88f7eb78a1c07bd68eec1424e1341d0eae73`. The immutable [`SUBMITTER.md` URL](https://github.com/bjohnson70/SAR/blob/22eb88f7eb78a1c07bd68eec1424e1341d0eae73/SUBMITTER.md) is provenance and an optional direct-access mechanism, not a prerequisite for this controlled test. Do not substitute a current moving `main` copy. Do not initially attach the TESTSTAR fixtures. Do not send an extra `Run SAR` instruction or ask the participant to manage an identifier or version.
 
 ## Inputs
 
 - Exact pinned `SUBMITTER.md` attachment from implementation SHA `22eb88f7eb78a1c07bd68eec1424e1341d0eae73`
-- `ASSESSMENT.md` QA launch artifact (not the operational contract)
+- archived `tests/submitter/launch/v1.0/ASSESSMENT.md` launch artifact (not the operational contract)
 - `fixtures/S01-TESTSTAR-1-Request.md`
 - `fixtures/S01-TESTSTAR-2-Product-Fact-Sheet.md`
 - `fixtures/S01-TESTSTAR-3-Architecture.md`
 
 ## Participant Script
 
-1. Start with a fresh conversation and provide both `ASSESSMENT.md` and the exact pinned `SUBMITTER.md` attachment. Do not add a separate workflow command or initially attach TESTSTAR fixtures.
+1. Start with a fresh conversation and provide both the archived v1.0 launch artifact and the exact pinned `SUBMITTER.md` attachment. Do not add a separate workflow command or initially attach TESTSTAR fixtures.
 2. Observe whether the AI reads and follows the supplied governed contract. Do not treat a simple acknowledgment of the attachment or GitHub URL as proof.
 3. After governed startup visibly identifies `SAR Submitter v1.0` and presents Start/Continue, select `Start a new assessment` or `1`.
 4. Wait for the governed initial-document interaction. Then attach all three TESTSTAR fixtures; do not separately type `Yes` or `1`.
@@ -38,7 +38,7 @@ Use a completely fresh conversation. Provide both the root `ASSESSMENT.md` QA la
 - The AI demonstrates use of the governed contract through the required startup and subsequent behavior; merely acknowledging the attachment, URL, or launch-artifact text is not proof.
 - After successful governed initialization, the AI visibly displays `SAR Submitter v1.0` before or together with the Start/Continue interaction.
 - The participant is not asked to enter, choose, remember, confirm, or manage the human-readable contract version.
-- The AI treats `ASSESSMENT.md` as a launch artifact, not as the operational contract or a replacement for `SUBMITTER.md`.
+- The AI treats the archived v1.0 `ASSESSMENT.md` as a launch artifact, not as the operational contract or a replacement for `SUBMITTER.md`.
 - SAR automatically establishes the internal assessment identity for the new assessment.
 - The participant is not asked to create, type, remember, select, or manage that identity, and unnecessary identity mechanics are not exposed to the participant.
 - Attaching the TESTSTAR fixtures satisfies the affirmative document-provided action without a redundant `Yes` response.

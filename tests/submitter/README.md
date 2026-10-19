@@ -125,11 +125,16 @@ An environment limitation is separate from a SAR failure only when the AI states
 
 The package passes its manual release gate when all exercised blocking criteria pass, no prohibited-behavior test fails, all portable-artifact and continuation tests pass, and all `INCONCLUSIVE` results are resolved. Environment limitations must be documented with successful fallback behavior. No aggregate score is used.
 
-The Submitter v1.1 acceptance execution should include S01-v3, S02, S03, S04, S05, S06, S07, S08, S09, S10-v2, S11-v2, and S12. S01-v2 remains historical and is not reused as a v1.1 result. S10-v2 covers pause/save and continuation-state v2 inspection; S11-v2 covers fresh-context continuation and v1 compatibility variants; S12 covers capability/bootstrap limitations. Existing S02, S06, S09, and S12 definitions remain unchanged and reusable subject to their stated environment preconditions.
+The Submitter v1.1 acceptance execution should include S01-v3, S02, S03, S04, S05, S06, S07, S08, S09, S10-v2, S11-v2, and S12. The staff launch package has separate S13 acceptance coverage and must not be used to replace these Submitter behavior tests. S01-v2 remains historical and is not reused as a v1.1 result. S10-v2 covers pause/save and continuation-state v2 inspection; S11-v2 covers fresh-context continuation and v1 compatibility variants; S12 covers capability/bootstrap limitations. Existing S02, S06, S09, and S12 definitions remain unchanged and reusable subject to their stated environment preconditions.
+
+SAR-CODEX-074 adds **S13-staff-qa-launch-v1.1.md** as a manual launch acceptance definition. This repository package contains no executable launcher or automated S13 code tests. It does not establish a production Runtime / Launcher or authorize actual staff execution. If the staff environment cannot supply trusted runtime context, record `ENVIRONMENT LIMITATION` and stop; do not paste synthetic IDs or context into the participant conversation.
 
 ## Package Contents
 
-- For S01-v3, `ASSESSMENT.md` is the QA launch artifact, the exact pinned `SUBMITTER.md` attachment is the governed operational contract, the S01-v3 scenario is the test definition, and the TESTSTAR files are synthetic test fixtures. S01-v2's prior inputs and result remain historical.
+- For S01-v2, `launch/v1.0/ASSESSMENT.md` is the byte-preserved historical v1.0 QA launch artifact. Its SHA-1 Git blob identity is `a0be24ed3564fd954c218a7775789b0f8ca14e12`; the scenario remains tied to its historical `SAR Submitter v1.0` implementation pin and `FAIL` result.
+- For S01-v3, `../../SAR-STAFF-LAUNCH-v1.1.md` is the v1.1 launch source; the exact pinned `SUBMITTER.md` remains the governed operational contract, and the TESTSTAR files are synthetic fixtures. S01-v3 continues to require trusted synthetic runtime context from its harness.
+- For S13, use the v1.1 Markdown launch instructions and the S13 manual acceptance definition. This package does not provide a launcher implementation, PDF, manifest inventory, or automated resource-fetch/context tests.
+- A supported runtime must independently retrieve/read the exact governed resources and provide verified authorization/readiness context; repository access alone is not trusted runtime authorization.
 - `scenarios/` contains historical definitions and versioned successor scripts/criteria; follow each scenario's implementation and continuation-state pins.
 - `fixtures/` contains fictional reusable source material.
 - There is no `results/` directory. Test evidence must remain outside the public repository until separate governance is approved.

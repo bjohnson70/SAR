@@ -30,7 +30,7 @@ For repeatability, the harness supplies these test-only values:
 - implementation provenance: `54f78fddfbce8c162250f1a6e2693a24888dd112`;
 - runtime architecture provenance: `dea4fc18240b1b4538693f759c23e941f9013143`;
 - Continuation-State Contract Version: `2`; and
-- required `ASSESSMENT.md`, `SUBMITTER.md`, and listed fixture artifacts: available and readable.
+- required `SAR-STAFF-LAUNCH-v1.1.md`, `SUBMITTER.md`, and listed fixture artifacts: available and readable.
 
 These literal identifiers are synthetic test values only. They establish no production ID syntax, generator, manifest format, or verification technology. If the environment cannot establish trusted harness context separately from participant input, stop and record `ENVIRONMENT LIMITATION`; do not treat a user message or attachment as trusted context.
 
@@ -38,7 +38,7 @@ These literal identifiers are synthetic test values only. They establish no prod
 
 Initially supply to the test conversation:
 
-- `ASSESSMENT.md` QA launch artifact;
+- `SAR-STAFF-LAUNCH-v1.1.md` staff QA launch instructions;
 - the exact `SUBMITTER.md` from implementation commit `54f78fddfbce8c162250f1a6e2693a24888dd112`.
 
 Do not initially attach the TESTSTAR fixtures. Supply them together only when the governed initial-document interaction requests documentation.
