@@ -131,6 +131,8 @@ SAR-CODEX-074 adds **S13-staff-qa-launch-v1.1.md** as a manual launch acceptance
 
 SAR-CODEX-075 adds [S14-staff-preliminary-assessment-v1.2.md](scenarios/S14-staff-preliminary-assessment-v1.2.md) as a separate manual staff QA definition for Staff Preliminary Assessment. S14 does not replace or alter governed Submitter scenarios, S13, or the `SUBMITTER.md` runtime prerequisite. Its acceptance criterion remains `NOT TESTED` until an actual Microsoft Copilot Chat run is recorded; repository tests and another AI surface cannot establish that result.
 
+SAR-CODEX-076 adds [S15-staff-kiss-experience.md](scenarios/S15-staff-kiss-experience.md) for the canonical [SAR-STAFF-START.md](../../SAR-STAFF-START.md) Markdown launcher. S15 covers cases A-H with separate static coverage and actual Copilot Chat result columns. All actual results remain `NOT TESTED` until observed in Microsoft Copilot Chat; do not infer compatibility from document review or another model surface.
+
 ## Package Contents
 
 - For S01-v2, `launch/v1.0/ASSESSMENT.md` is the byte-preserved historical v1.0 QA launch artifact. Its SHA-1 Git blob identity is `a0be24ed3564fd954c218a7775789b0f8ca14e12`; the scenario remains tied to its historical `SAR Submitter v1.0` implementation pin and `FAIL` result.
