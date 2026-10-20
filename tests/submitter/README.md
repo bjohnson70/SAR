@@ -129,11 +129,15 @@ The Submitter v1.1 acceptance execution should include S01-v3, S02, S03, S04, S0
 
 SAR-CODEX-074 adds **S13-staff-qa-launch-v1.1.md** as a manual launch acceptance definition. This repository package contains no executable launcher or automated S13 code tests. It does not establish a production Runtime / Launcher or authorize actual staff execution. If the staff environment cannot supply trusted runtime context, record `ENVIRONMENT LIMITATION` and stop; do not paste synthetic IDs or context into the participant conversation.
 
+SAR-CODEX-075 adds [S14-staff-preliminary-assessment-v1.2.md](scenarios/S14-staff-preliminary-assessment-v1.2.md) as a separate manual staff QA definition for Staff Preliminary Assessment. S14 does not replace or alter governed Submitter scenarios, S13, or the `SUBMITTER.md` runtime prerequisite. Its acceptance criterion remains `NOT TESTED` until an actual Microsoft Copilot Chat run is recorded; repository tests and another AI surface cannot establish that result.
+
 ## Package Contents
 
 - For S01-v2, `launch/v1.0/ASSESSMENT.md` is the byte-preserved historical v1.0 QA launch artifact. Its SHA-1 Git blob identity is `a0be24ed3564fd954c218a7775789b0f8ca14e12`; the scenario remains tied to its historical `SAR Submitter v1.0` implementation pin and `FAIL` result.
 - For S01-v3, `../../SAR-STAFF-LAUNCH-v1.1.md` is the v1.1 launch source; the exact pinned `SUBMITTER.md` remains the governed operational contract, and the TESTSTAR files are synthetic fixtures. S01-v3 continues to require trusted synthetic runtime context from its harness.
-- For S13, use the v1.1 Markdown launch instructions and the S13 manual acceptance definition. This package does not provide a launcher implementation, PDF, manifest inventory, or automated resource-fetch/context tests.
+- For S13, use the v1.1 Markdown launch instructions and the S13 manual acceptance definition. This package does not provide a launcher implementation, PDF, trusted runtime manifest, or automated resource-fetch/context tests.
+- For S14, use the v1.2 dual-path launch, preliminary-mode contract, and S14 manual scenario. It tests the independent no-runtime preliminary pathway and separately verifies that Governed Assessment still fails closed without trusted runtime context.
+- The Staff Preliminary Assessment may use AI chat when required governing Markdown materials are accessible and read. It does not become a governed Submitter execution or official security determination.
 - A supported runtime must independently retrieve/read the exact governed resources and provide verified authorization/readiness context; repository access alone is not trusted runtime authorization.
 - `scenarios/` contains historical definitions and versioned successor scripts/criteria; follow each scenario's implementation and continuation-state pins.
 - `fixtures/` contains fictional reusable source material.

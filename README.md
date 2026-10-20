@@ -1,24 +1,22 @@
-# SAR Staff QA Launch
+# SAR Staff Assessment
 
-This repository contains SAR governance documents and a **Markdown-only staff QA launch package**. It does not contain a production launcher, trusted runtime, online form, scoring engine, or assessment service.
+SAR is a Markdown-native, AI-executed assessment framework. Staff can use the separate **Staff Preliminary Assessment** pathway in an approved AI chat after its required governing materials are readable. This is **PRELIMINARY — NOT AN OFFICIAL SECURITY DETERMINATION**. Governed Assessment still requires an authorized trusted SAR Runtime / Launcher. Neither mode has an authorized scoring methodology.
 
-## Staff Launch v1.1.0
+## Staff Launch v1.2.0
 
-- [Current launch pointer](https://github.com/bjohnson70/SAR/blob/sar-codex-074-staff-qa-launch/ASSESSMENT.md)
-- [Versioned launch instructions](https://github.com/bjohnson70/SAR/blob/sar-codex-074-staff-qa-launch/SAR-STAFF-LAUNCH-v1.1.md)
-- [Initial request form for the NO-document QA path](https://github.com/bjohnson70/SAR/blob/sar-codex-074-staff-qa-launch/SAR-STAFF-INITIAL-REQUEST-FORM-v1.1.md)
-- [Portable Markdown assessment report template](https://github.com/bjohnson70/SAR/blob/sar-codex-074-staff-qa-launch/SAR-STAFF-ASSESSMENT-REPORT-TEMPLATE-v1.1.md)
-- [Organization presentation profiles](https://github.com/bjohnson70/SAR/blob/sar-codex-074-staff-qa-launch/SAR-STAFF-REPORT-PROFILES-v1.1.md)
-- [Manual S13 launch acceptance scenario](https://github.com/bjohnson70/SAR/blob/sar-codex-074-staff-qa-launch/tests/submitter/scenarios/S13-staff-qa-launch-v1.1.md)
+- [Current launch pointer](ASSESSMENT.md)
+- [Dual-path staff launch instructions](SAR-STAFF-LAUNCH-v1.2.md)
+- [Staff Preliminary Assessment contract](SAR-STAFF-PRELIMINARY-MODE-v1.0.md)
+- [Initial request form](SAR-STAFF-INITIAL-REQUEST-FORM-v1.2.md)
+- [Portable preliminary report template](SAR-STAFF-ASSESSMENT-REPORT-TEMPLATE-v1.2.md)
+- [Organization presentation profiles](SAR-STAFF-REPORT-PROFILES-v1.2.md)
+- [Manual Copilot Chat S14 QA scenario](tests/submitter/scenarios/S14-staff-preliminary-assessment-v1.2.md)
 
-## Staff QA Steps
+## Mode Boundaries
 
-1. Use only an AI environment approved for the information you plan to share. Do not submit actual PHI or sensitive personal information in an unapproved environment.
-2. Use an already approved SAR Runtime / Launcher to retrieve and read the configured Markdown resources and establish trusted execution context. This repository provides instructions only; it cannot initialize runtime authorization itself.
-3. If a required resource is unavailable, unreadable, mismatched, or trusted runtime context is unavailable, stop. Report that no assessment initialized. A URL, branch, Markdown file, or successful GitHub read is not runtime authorization.
-4. After verified startup, choose Department, Regional Center, or Service Provider. This changes report emphasis only; it does not determine applicability.
-5. Answer the documentation YES/NO question. YES follows document-first intake. NO uses the versioned Markdown initial request form; no online form URL is provided.
-6. Prepare the portable report from the Markdown template. Preserve source/fact/evidence states and unknowns, use the organization presentation profile, and state that governed scoring is pending. Do not imply approval, applicability, validated controls, residual risk, or execution.
-7. Save the report and answers as portable Markdown input for a future authorized SAR session. Its continuation instructions do not provide authorization or create identities.
+- Staff Preliminary Assessment runs in an approved AI chat without an executable SAR runtime only when all launch-required governing materials are actually read. It may produce evidence-qualified candidate controls/requirements, never official applicability, validated controls, formal Findings, scores, approval, or authorization.
+- Governed Assessment still requires trusted runtime context, verified manifest/artifacts, and runtime-supplied assessment/execution identities. It must stop without those prerequisites.
+- Do not submit PHI, PII, confidential information, or sensitive records unless the AI environment is authorized for that information and organizational use. A failure to detect identifiers does not establish safety.
+- A preliminary report is portable historical input, not an assessment identity, authorization, or governed continuation record.
 
-The repository-root `ASSESSMENT.md` is a v1.1 launch pointer. The historical v1.0 S01-v2 launch is byte-preserved at [tests/submitter/launch/v1.0/ASSESSMENT.md](https://github.com/bjohnson70/SAR/blob/sar-codex-074-staff-qa-launch/tests/submitter/launch/v1.0/ASSESSMENT.md); S01-v2 continues to use that archive. S01-v3 and S13 use the v1.1 Markdown launch source. This branch adds no executable launcher or automated S13 code tests; the S13 scenario is a manual acceptance definition.
+The v1.1 runtime-only launch and S13 remain historical; S01-v2's v1.0 launch remains byte-preserved. S14 tests the v1.2 preliminary pathway manually. Do not claim its acceptance criterion passed until tested in Microsoft Copilot Chat.
