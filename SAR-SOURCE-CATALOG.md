@@ -86,6 +86,12 @@ These are source families or candidate sources only. This document does not popu
 
 The four specifically named California documents above are source-family candidates, not completed authoritative source registrations. Their publisher metadata, version/revision, publication and effective dates, canonical and immutable references, applicable citations, currentness, and any inter-source relationships require authoritative source ingestion. Do not guess missing fields or bulk-extract requirements as part of source-family registration. Procurement or contract routing and certification obligations remain distinct from security/privacy risk determinations. A certification or compliance statement is not, by itself, evidence that safeguards are implemented or independently validated. No cross-source relationship is asserted until its direction and source/version-specific citation are established.
 
+### Supplied DDS SRAT Preliminary Benchmark
+
+The [SRAT preliminary profile](SAR-SRAT-PRELIMINARY-SCORING-PROFILE-v1.0.md) records the supplied ten-variable `DDS_SRAT_v1r5_Default_High.xlsx` reference, exact-byte SHA-256, visible version, worksheet/cell provenance, descriptive summaries and source-reported formula behavior. This is a **preliminary benchmark reference**, not an authenticated source of universally applicable requirements or CISO-approved numeric scoring. Publisher authority, canonical publication location and currentness remain unestablished.
+
+Use the [open scoring decision record](SAR-SRAT-SCORING-DECISIONS.md) for unresolved thresholds, unknown/N/A treatment, descriptive/formula conflicts, and software/organizational scope. The workbook is not committed. Its SIMM references do not establish applicability to Regional Centers or Service Providers. Applicable privacy source families may additionally include GDPR, UK GDPR, CCPA/CPRA, Data Privacy Framework, and contractual transfer/subprocessor/retention provisions; their actual scope, versions and readable provisions must be established separately.
+
 ### HIPAA Safe Harbor Identifier Authority
 
 For the initial SAR HIPAA Safe Harbor identifier reference, preserve two distinguishable source authorities:

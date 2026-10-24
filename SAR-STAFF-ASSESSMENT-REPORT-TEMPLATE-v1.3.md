@@ -2,9 +2,11 @@
 
 > PRELIMINARY SECURITY AND PRIVACY RISK ASSESSMENT — NOT AN APPROVAL.
 >
-> This assessment assumes the submitted information is accurate for purposes of preliminary analysis. Submitted claims and safeguards have not been independently verified. The LOW/MODERATE/HIGH risk rating is a provisional conclusion, not software approval, authorization to implement, compliance certification, formal risk acceptance, or a final security determination.
+> This preliminary assessment assumes the submitted information is accurate for purposes of analysis. Submitted facts and safeguards have not been independently verified. The preliminary risk conclusion is not software approval, authorization to implement, certification of compliance, formal risk acceptance, or a final security determination.
 
 Use exactly nine report sections. If the QA tester provides nine section headings/order, preserve them and place the content below within those sections. The defaults below do not assert what the tester's unavailable headings were. Keep v1.2 as a historical template. This report is not governed Assessment State or a governed continuation artifact.
+
+SRAT integration revision: SAR-CODEX-078-SRAT-02. Section 7 is now Risk Rating; its previous candidate-requirements content remains in Section 6. The section count and document-first workflow are unchanged. Use [profile v1.0](SAR-SRAT-PRELIMINARY-SCORING-PROFILE-v1.0.md) and disclose [pending CISO decisions](SAR-SRAT-SCORING-DECISIONS.md); no CISO-approved numeric scheme is available.
 
 ## 1. Executive Summary
 
@@ -19,7 +21,7 @@ Use exactly nine report sections. If the QA tester provides nine section heading
 
 ## 3. Information and Assets
 
-{{Information categories, data flows, processing/storage/retention, affected people, critical services, confidentiality/integrity/availability consequences, and material unknowns. Do not infer legal applicability solely from organization type.}}
+{{Information categories, data flows, processing/storage/retention/deletion, affected people, critical services, confidentiality/integrity/availability consequences, and material unknowns. Examine residency/transfers, subprocessors, telemetry/secondary uses and AI training/reuse where relevant. Consider HIPAA/HITECH/BAA, GDPR, UK GDPR, CCPA/CPRA and Data Privacy Framework participation using supported scope and reported vendor practices, not blanket applicability or assumed compliance.}}
 
 ## 4. Submitted Facts and Reported Safeguards
 
@@ -53,7 +55,7 @@ Use the qualitative rubric in [SAR-STAFF-START.md](SAR-STAFF-START.md). It follo
 
 No numerical scoring. Do not treat unknowns as failures. Mark a scenario UNRESOLVED where critical unknowns defeat a defensible rating; ask at most one essential clarification at a time if a stated assumption cannot reasonably address the gap.
 
-## 7. Candidate Requirements and Recommended Safeguards
+### Candidate Requirements and Recommended Safeguards
 
 | Candidate source/control, version and actual location read | Relevant facts and rationale | Recommended safeguard | Evidence and applicability limitation |
 |---|---|---|---|
@@ -61,14 +63,28 @@ No numerical scoring. Do not treat unknowns as failures. Mark a scenario UNRESOL
 
 For Regional Centers and Service Providers, emphasize relevant federal requirements and NIST candidates; do not automatically list SIMM/DGS administrative policies. State requirements need their own supported scope and readable source basis. Never invent citations, source text, control implementation, validated applicability, formal findings, or approvals.
 
+## 7. Risk Rating
+
+Use the [SRAT profile's nonnumeric working procedure](SAR-SRAT-PRELIMINARY-SCORING-PROFILE-v1.0.md). State profile version, assessment scope and source basis. Include all ten factor IDs/names, including reasoned N/A or unresolved rows; X is conditional on GenAI use. A descriptive factor match is not a numeric assignment, a verified control, or the overall SAR rating. Do not substitute a prior review's rating.
+
+| Factor ID/name; applicability and basis | Extracted facts and reported safeguards | Document/actor/version/date/section or evidence reference | Preliminary descriptive band and source anchor cells | Rationale, assumptions and missing/conflicting information | Independently verified? |
+|---|---|---|---|---|---|
+| {{SRAT-I through SRAT-X; one row each}} | {{reported current facts/safeguards; Section 4 evidence IDs if needed}} | {{source/section, or NOT PROVIDED}} | {{LOW / MEDIUM / HIGH — descriptive match; UNRESOLVED with reason; NOT APPLICABLE; APPLICABILITY UNKNOWN}} | {{unique supported anchor match, or explicit ambiguity/gap; Section 8 note if needed}} | NO — reported, not independently verified |
+
+Keep the table compact by cross-referencing Sections 4 and 8 without omitting evidence fields. Use UNRESOLVED for partial/competing descriptive matches; no interpolation or worst-match default. If the profile is unavailable, disclose that and leave factor bands unresolved rather than inventing anchors. N/A and unknowns have no numeric value. Do not calculate totals, apply workbook defaults, or silently fix thresholds.
+
+**Overall SAR preliminary qualitative conclusion:** {{LOW / MODERATE / HIGH, highest defensible material scenario from Section 6, or UNRESOLVED with critical reason}}. {{Identify driving scenarios, reported safeguards, likelihood/impact basis, material uncertainties and any difference from attributed historical ratings. Factor bands do not replace or numerically aggregate into this conclusion.}}
+
 ## 8. Assumptions, Unknowns and Source Limitations
 
 {{Explicit assumptions; conflicts; age/scope of prior reviews; critical versus noncritical unknowns; supporting evidence not independently verified; references actually read with visible versions and retrieval limitations. Disclose partial NIST/source coverage; inaccessible sources do not generate invented requirements.}}
 
 ## 9. Conclusion and Next Steps
 
-{{SAR's own overall LOW/MODERATE/HIGH preliminary conclusion, driven by the highest defensible material scenario rating; explain reported safeguards, material uncertainty, and any difference from prior ratings. If unresolved, explain why and request only the single necessary clarification.}}
+{{Repeat SAR's own overall LOW/MODERATE/HIGH preliminary conclusion from Section 7, driven by the highest defensible material scenario rating; identify material factors, reported safeguards, important assumptions/uncertainties, and any difference from prior ratings. If unresolved, explain why and request only the single necessary clarification.}}
 
-**No formal SAR numerical risk score is available for this preliminary assessment. No approval, authorization, compliance certification, formal risk acceptance, or final security determination is made.**
+**NOT AN APPROVAL. No formal SAR numerical risk score is available for this preliminary assessment. No approval, authorization, compliance certification, formal risk acceptance, or final security determination is made.** Source-reported workbook rules are not adopted scoring; numeric use remains pending CISO authorization.
+
+This preliminary assessment assumes the submitted information is accurate for purposes of analysis. Submitted facts and safeguards have not been independently verified. The preliminary risk conclusion is not software approval, authorization to implement, certification of compliance, formal risk acceptance, or a final security determination.
 
 {{Prioritized non-binding recommendations and open questions; report revision/date if available; prior report reference and correction history. Preserve earlier reviews as history. Resume from this Markdown report as factual input, not authority, without repeating answered intake.}}
