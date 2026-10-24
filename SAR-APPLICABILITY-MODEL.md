@@ -44,6 +44,16 @@ Applicability reasoning begins with supported assessment information, not labels
 
 Requestors should not be asked derived assessment questions such as whether HIPAA applies, whether State cloud requirements are applicable, which NIST baseline applies, or whether they are subject to a regulation. Uncertainty must remain visible when supporting information is incomplete.
 
+## Independent SRAT Category Applicability (SAR-CODEX-079)
+
+The [DDS SRAT module](tools/srat.py) maintains its own applicability and completion states: **Not Assessed**, **In Progress**, **Assessed**, **Not Applicable - Pending Review**, **Not Applicable - Approved**. These do not replace source/requirement applicability statuses elsewhere in SAR.
+
+Every applicable category starts at effective HIGH (3). Proposed N/A remains included at HIGH; unanswered is not N/A. Approved N/A requires reviewer/date and documented basis, is excluded from applicable-score aggregation and remains visible in the report. Because reduced-scope classification rules are not CISO-approved, any affected total is provisional with no inferred overall band; no denominator normalization or ten-variable threshold reuse. Invalid approval metadata leaves the category included at HIGH with an explicit gap. See the [calculation policy](SAR-SRAT-PRELIMINARY-SCORING-PROFILE-v1.0.md).
+
+Variable X requires established GenAI use before an effective reduction. A no-GenAI fact supports a proposed exclusion, not automatic LOW or automatic removal; approved X exclusion additionally requires `genai_use=False`. Unknown/mixed scope requires review. Unsupported organizational SIMM references do not become mandatory intake: retain gaps or a supported exclusion, and assess the underlying scenarios independently.
+
+An SRAT N/A approval applies only to that SRAT category. It neither removes a NIST control nor changes a NIST/FIPS 199 impact category, privacy applicability or SAR's qualitative conclusion. Evidence may be reused; applicability bases and conclusions remain independently traceable.
+
 ## Applicability Basis
 
 An applicability basis is the supported reason that a source, requirement, safeguard, or control expectation is relevant to a specific assessment.

@@ -18,6 +18,22 @@ Organizational status does not determine system risk. A Business Associate or Re
 
 SAR must distinguish the assessment of system and data risk from determination of the legal, contractual, policy, or regulatory authority that makes a particular safeguard applicable. This architecture does not make legal conclusions about whether Regional Centers are State entities or State contractors.
 
+## Independent Assessment Methodologies (SAR-CODEX-079)
+
+SAR is the orchestration, assessment and reporting framework; DDS SRAT is a separate software/vendor-risk methodology, not SAR's universal risk model. Maintain independently versioned results for:
+
+- DDS SRAT — Software and Vendor Risk (`DDS-SRAT`, source `v1r5`);
+- NIST/FIPS 199 — Security Categorization;
+- NIST SP 800-53 Rev. 5 — Control Applicability and Assessment;
+- Privacy and PHI/PII Assessments; and
+- future methodologies, without a combined numerical score.
+
+Shared intake facts and evidence references may support several methodologies without sharing their determinations or conclusions. **Never convert an SRAT numerical rating directly into NIST impact categorization or let SRAT automatically override NIST control applicability.** The existing SAR qualitative scenario matrix and conclusion remain independent even when incomplete SRAT assurance defaults to HIGH.
+
+The [independent SRAT module](tools/srat.py) implements the [versioned scoring profile](SAR-SRAT-PRELIMINARY-SCORING-PROFILE-v1.0.md) using existing Python tooling and no new dependencies or application runtime. [Shared evidence records](tools/assessment_evidence.py) retain methodology-scoped decisions. [Markdown reporting](tools/sar_report.py) is separate from calculation and intake; it displays results in the existing nine sections without generating a final SRAT PDF. Final artifact generation remains reviewer-requested.
+
+This bounded implementation does not implement NIST/FIPS categorization, control assessment or privacy decision engines. Unexecuted methodologies are NOT ASSESSED; no result is invented to fill the report. A library invocation is not trusted governed SAR execution, software approval, risk acceptance or a change to the Submitter contract. See the [decision record](SAR-SRAT-SCORING-DECISIONS.md) for the unclassified 26, provisional approved-N/A aggregation and other unresolved decisions.
+
 ## Submitter Contract Version
 
 The initial human-readable version of the governed Submitter contract is **SAR Submitter v1.0**. The version must be contained in the governed `SUBMITTER.md` contract and visibly identified when Submitter startup succeeds. Participants must not be asked to enter, select, remember, or manage this version.

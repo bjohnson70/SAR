@@ -16,6 +16,25 @@ Control Mapping   = future authoritative mapping of requirements and safeguards
 
 This document is not a final rules engine, risk-scoring methodology, control catalog, OSCAL implementation, complete HIPAA analysis, California State requirements matrix, legal opinion, final approval workflow, or replacement for human risk authorization. It does not encode NIST control mappings or regulatory applicability rules.
 
+## Independent DDS SRAT Decision Path (SAR-CODEX-079)
+
+The executable [SRAT module](tools/srat.py) is a bounded methodology, not a replacement for the conceptual decision chain below. Its path is:
+
+```text
+Shared document facts / evidence references
+    -> SRAT category responses, applicability and reviewer metadata
+    -> worksheet-specific raw score
+    -> completion / validated evidence / review / reduction-justification checks
+    -> effective SRAT score (applicable categories begin at HIGH)
+    -> applicable-only sum / source classification or explicit unresolved state
+```
+
+Raw worksheet formulas are distinct from effective scores and from a reviewer determination. The [profile](SAR-SRAT-PRELIMINARY-SCORING-PROFILE-v1.0.md) specifies each source range and formula, required questions, default-HIGH gates and provisional N/A policy. Missing evidence or an unanswered question cannot produce a favorable effective score. A verified No can support a formula outcome without being an unanswered/unknown response.
+
+All-ten totals are 10–30, initially 30 HIGH. Source bands remain unchanged; 26 is UNCLASSIFIED, not silently HIGH or LOW. Invalid totals never classify LOW. Approved N/A excludes a category from the sum but leaves reduced-scope classification provisional pending CISO policy. Pending N/A stays included at HIGH. Classification and calculation gaps are explicit output, not swallowed errors.
+
+These numbers describe **SRAT software/vendor assurance**, not NIST confidentiality/integrity/availability impact, NIST control applicability, privacy compliance, a formal finding or software approval. Unknown stays unknown for other methodologies even when SRAT's effective assurance default is HIGH. SAR's existing qualitative likelihood/impact matrix is unchanged. Separate [report rendering](tools/sar_report.py) displays independently supplied methodology outcomes without recalculating or overriding them; no combined numerical score is permitted.
+
 ## Core Reasoning Model
 
 SAR uses the following conceptual reasoning dependency model:

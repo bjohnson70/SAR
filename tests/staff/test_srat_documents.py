@@ -13,7 +13,7 @@ LAUNCHER = "SAR-STAFF-START.md"
 TEMPLATE = "SAR-STAFF-ASSESSMENT-REPORT-TEMPLATE-v1.3.md"
 SCENARIO = "tests/submitter/scenarios/S16-srat-preliminary-scoring.md"
 FIXTURE = "tests/submitter/fixtures/S16-srat-signed-review.md"
-BRANCH = "sar-codex-078-srat-preliminary-scoring"
+BRANCH = "sar-codex-079-srat-independent-module"
 DISCLAIMER = (
     "This preliminary assessment assumes the submitted information is accurate "
     "for purposes of analysis. Submitted facts and safeguards have not been "
@@ -40,7 +40,7 @@ class SratDocumentTests(unittest.TestCase):
             with self.subTest(path=path):
                 self.assertIn(DISCLAIMER, read(path))
                 self.assertIn("NOT AN APPROVAL", read(path))
-                self.assertIn("No formal SAR numerical risk score", read(path))
+                self.assertIn("No combined SAR numerical risk score", read(path))
 
     def test_ten_factor_coverage_and_source_cells(self):
         rows = re.findall(r"^\| SRAT-([IVX]+) — .+$", read(PROFILE), re.MULTILINE)
@@ -54,7 +54,7 @@ class SratDocumentTests(unittest.TestCase):
                 self.assertIn("Scorecard C", row)
                 self.assertIn("VARIABLE ", row)
 
-    def test_source_provenance_and_unapproved_method_are_explicit(self):
+    def test_source_provenance_authorized_module_and_open_decisions_are_explicit(self):
         profile = read(PROFILE)
         for text in (
             "20d716ee47e4b504a218f28ad978454d863135ca66dc8e46ae319cb58465053c",
@@ -63,10 +63,13 @@ class SratDocumentTests(unittest.TestCase):
             "minimum **10**, maximum **30**",
             "**26 is unclassified.**",
             "Low Risk (1), Medium Risk (2), High Risk (3)",
-            "No CISO approval of numeric scoring is recorded",
-            "Do not output 1/2/3 as assigned SAR scores",
-            "exactly one complete anchor",
-            "UNRESOLVED — anchor ambiguity",
+            "CISO-approved architectural direction",
+            "DDS-SRAT",
+            "implementation version `1.0.0`",
+            "All applicable categories begin",
+            "NOT EXECUTED — no numerical result available",
+            "Not Applicable - Pending Review",
+            "Not Applicable - Approved",
         ):
             self.assertIn(text, profile)
         for decision in range(1, 9):
@@ -83,7 +86,7 @@ class SratDocumentTests(unittest.TestCase):
             "Do not restart the intake questionnaire",
             "ask only one focused clarification at a time",
             "highest defensible material scenario rating",
-            "UNRESOLVED — profile unavailable",
+            "NOT EXECUTED — no numerical result available",
             "LOW -> LOW / LOW / MODERATE",
             "MODERATE -> LOW / MODERATE / HIGH",
             "HIGH -> MODERATE / HIGH / HIGH",
@@ -97,7 +100,7 @@ class SratDocumentTests(unittest.TestCase):
             "Data Privacy Framework", "Residency and international transfers",
             "Subprocessors", "Telemetry / secondary uses", "Retention / deletion",
             "AI training / reuse", "do not automatically impose SIMM/DGS",
-            "APPLICABILITY UNKNOWN", "NOT APPLICABLE",
+            "no-GenAI", "Not Applicable - Pending Review",
         ):
             self.assertIn(text, profile)
 
@@ -112,6 +115,8 @@ class SratDocumentTests(unittest.TestCase):
         documents = (
             PROFILE, DECISIONS, LAUNCHER, TEMPLATE, SCENARIO, FIXTURE,
             "README.md", "SAR-SOURCE-CATALOG.md", "tests/submitter/README.md",
+            "SAR-ARCHITECTURE.md", "SAR-INFORMATION-MODEL.md",
+            "SAR-APPLICABILITY-MODEL.md", "SAR-DECISION-LOGIC.md",
         )
         checked = 0
         for relative in documents:
@@ -138,6 +143,22 @@ class SratDocumentTests(unittest.TestCase):
         self.assertIn(f"Launch reference: `{BRANCH}`", read(LAUNCHER))
         for document in (PROFILE, DECISIONS, TEMPLATE):
             self.assertIn(f"/blob/{BRANCH}/{document}", read(LAUNCHER))
+
+    def test_nine_section_template_exposes_separate_methodology_results(self):
+        text = read(TEMPLATE)
+        for heading in (
+            "### DDS SRAT — Software and Vendor Risk",
+            "### NIST/FIPS 199 — Security Categorization",
+            "### NIST SP 800-53 Rev. 5 — Control Applicability and Assessment",
+            "### Privacy and PHI/PII Assessments",
+            "### SAR Preliminary Qualitative Assessment",
+        ):
+            self.assertIn(heading, text)
+        for column in ("Raw worksheet score", "Effective SRAT score", "Evidence status", "Reviewer/date/comments"):
+            self.assertIn(column, text)
+        self.assertIn("reviewer-requested only", text)
+        self.assertIn("NOT EXECUTED", text)
+        self.assertIn("26986021b79c22e926939b3da199fc1fc2963d02", read(SCENARIO))
 
 
 if __name__ == "__main__":

@@ -4,6 +4,8 @@
 
 **Live Microsoft Copilot Chat result: NOT TESTED for every case.**
 
+**Historical baseline:** `26986021b79c22e926939b3da199fc1fc2963d02` (SAR-CODEX-078). Read the launcher, profile, template and fixture from that exact commit for this scenario. SAR-CODEX-079 supersedes its descriptive-only/no-number expectations with an independent numerical module; use [current automated A-J tests](../../staff/test_srat.py) for that module. Do not reinterpret historical expectations/results as 079 results.
+
 This scenario follows the requester-approved **ten-variable DDS v1r5 workbook** scope. It does not test an invented fourteen-factor 1–5 scale. Use the [launcher](../../../SAR-STAFF-START.md), [profile](../../../SAR-SRAT-PRELIMINARY-SCORING-PROFILE-v1.0.md), [decision record](../../../SAR-SRAT-SCORING-DECISIONS.md), [template](../../../SAR-STAFF-ASSESSMENT-REPORT-TEMPLATE-v1.3.md), and [synthetic signed review](../fixtures/S16-srat-signed-review.md) from the same implementation commit.
 
 ## Setup and Execution

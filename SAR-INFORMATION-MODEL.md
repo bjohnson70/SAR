@@ -17,6 +17,23 @@ The guiding principle is:
 
 This principle does not make requestor statements conclusive. Independent verification, reviewer-developed facts, and supporting evidence may be needed to validate, refine, or contradict a statement.
 
+## Methodology-Scoped Assessment and Reusable Evidence (SAR-CODEX-079)
+
+One SAR assessment identifier correlates facts and evidence while preserving separate methodology IDs, versions, statuses, findings, reviewer decisions and conclusions. DDS SRAT software/vendor risk, NIST/FIPS 199 categorization, NIST SP 800-53 control applicability/assessment, privacy/PHI/PII assessments and future results must never collapse into one score. SRAT reductions or exclusions do not mutate another methodology's record.
+
+The implemented [shared evidence types](tools/assessment_evidence.py) represent:
+
+| Record | Fields and meaning |
+|---|---|
+| Reusable artifact (`Evidence`) | Reference ID, source, source location, verification status (Not Provided / Reported - Not Verified / Validated / Rejected), verifier and verification date |
+| Methodology-specific question evidence (`AssessmentEvidence`) | Assessment identifier; methodology identifier/version; variable/question identifiers; response; evidence references/status; raw score; effective score; assessment status; reviewer; review date; justification for score reduction |
+| SRAT category result | All question records, independently derived completion, evidence status, raw/effective scores, applicability exclusion, reviewer comments and outstanding gaps |
+| Independent methodology result | Assessment ID, methodology ID/version, conclusion, findings and applicability; no inferred NIST categorization or control result from an SRAT total. The renderer rejects cross-assessment results and duplicate methodology IDs. |
+
+An evidence reference may be reused without asking the same intake question twice. Verification must still cover the actual response, deployment and methodology scope; reuse does not carry another method's conclusion or approval. Python trusts explicitly supplied review metadata and does not authenticate artifacts, signatures or reviewer authority.
+
+The [SRAT module](tools/srat.py) derives immutable outputs from immutable assessment inputs, rather than storing a caller-provided score. Unknown answers, missing evidence, incomplete reviews and approved N/A are different states. Applicable categories default to HIGH; effective `None` means approved exclusion, not unanswered or numeric zero. Approved exclusions remain visible, with provisional aggregation/classification as documented in the [profile](SAR-SRAT-PRELIMINARY-SCORING-PROFILE-v1.0.md). These concrete records extend, not replace, the conceptual model below; no database or new intake interface is introduced.
+
 ## Core SAR Record
 
 Every SAR assessment must be capable of representation as one logical SAR record identified by its SAR GUID. The record correlates the assessment's information over its lifecycle without prescribing a database or implementation structure.

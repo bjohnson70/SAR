@@ -8,7 +8,7 @@ Historical S01-v2 tests **SAR Submitter v1.0** at implementation baseline `22eb8
 
 These tests are not Reviewer tests, legal determinations, compliance tests, risk calculations, or a substitute for human authorization.
 
-The distinct staff preliminary pathway is covered by [S15 document-first scenarios](scenarios/S15-staff-kiss-experience.md) and [S16 SRAT scenarios A-H](scenarios/S16-srat-preliminary-scoring.md). S16 uses the requester-approved ten-variable workbook scope, not the unavailable fourteen-factor reference. Its descriptive bands and overall qualitative conclusions do not relax any governed Submitter prohibitions below. Historical scenario results are not evidence of this revision's behavior; S16 live results remain NOT TESTED.
+The distinct staff preliminary pathway is covered by [S15 document-first scenarios](scenarios/S15-staff-kiss-experience.md) and the historical [S16 SRAT scenarios A-H](scenarios/S16-srat-preliminary-scoring.md), pinned to 078. SAR-CODEX-079's independent numerical methodology is covered by [A-J calculation/report regression tests](../staff/test_srat.py) and [current document checks](../staff/test_srat_documents.py). Neither methodology changes governed Submitter prohibitions below. S16 descriptive-only expectations do not govern 079; historical results are not evidence of the new revision and live Copilot results remain NOT TESTED.
 
 ## Behavior-Based Principle
 

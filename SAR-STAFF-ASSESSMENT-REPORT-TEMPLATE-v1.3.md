@@ -6,7 +6,7 @@
 
 Use exactly nine report sections. If the QA tester provides nine section headings/order, preserve them and place the content below within those sections. The defaults below do not assert what the tester's unavailable headings were. Keep v1.2 as a historical template. This report is not governed Assessment State or a governed continuation artifact.
 
-SRAT integration revision: SAR-CODEX-078-SRAT-02. Section 7 is now Risk Rating; its previous candidate-requirements content remains in Section 6. The section count and document-first workflow are unchanged. Use [profile v1.0](SAR-SRAT-PRELIMINARY-SCORING-PROFILE-v1.0.md) and disclose [pending CISO decisions](SAR-SRAT-SCORING-DECISIONS.md); no CISO-approved numeric scheme is available.
+SRAT integration revision: SAR-CODEX-079 (supersedes 078's descriptive-only SRAT reporting). Section 7 remains Risk Rating; candidate requirements remain in Section 6. The section count and document-first workflow are unchanged. Use [profile v1.0](SAR-SRAT-PRELIMINARY-SCORING-PROFILE-v1.0.md) and disclose [open CISO decisions](SAR-SRAT-SCORING-DECISIONS.md). The independent [SRAT module](tools/srat.py) implements raw worksheet logic plus evidence-gated effective scores; the separate [Markdown renderer](tools/sar_report.py) preserves other supplied methodology results without recalculation.
 
 ## 1. Executive Summary
 
@@ -53,7 +53,7 @@ Use the qualitative rubric in [SAR-STAFF-START.md](SAR-STAFF-START.md). It follo
 | MODERATE | LOW | MODERATE | HIGH |
 | HIGH | MODERATE | HIGH | HIGH |
 
-No numerical scoring. Do not treat unknowns as failures. Mark a scenario UNRESOLVED where critical unknowns defeat a defensible rating; ask at most one essential clarification at a time if a stated assumption cannot reasonably address the gap.
+No numerical scoring in this qualitative scenario matrix. Do not treat unknowns as failures. SRAT's separate default-HIGH assurance rule does not change this method. Mark a scenario UNRESOLVED where critical unknowns defeat a defensible rating; ask at most one essential clarification at a time if a stated assumption cannot reasonably address the gap.
 
 ### Candidate Requirements and Recommended Safeguards
 
@@ -65,15 +65,39 @@ For Regional Centers and Service Providers, emphasize relevant federal requireme
 
 ## 7. Risk Rating
 
-Use the [SRAT profile's nonnumeric working procedure](SAR-SRAT-PRELIMINARY-SCORING-PROFILE-v1.0.md). State profile version, assessment scope and source basis. Include all ten factor IDs/names, including reasoned N/A or unresolved rows; X is conditional on GenAI use. A descriptive factor match is not a numeric assignment, a verified control, or the overall SAR rating. Do not substitute a prior review's rating.
+### DDS SRAT — Software and Vendor Risk
 
-| Factor ID/name; applicability and basis | Extracted facts and reported safeguards | Document/actor/version/date/section or evidence reference | Preliminary descriptive band and source anchor cells | Rationale, assumptions and missing/conflicting information | Independently verified? |
+Assessment ID: {{assessment ID}}; methodology `DDS-SRAT` / `v1r5`; implementation `1.0.0`; scope/source basis: {{facts and source versions}}.
+
+Include all ten variables I–X, including approved/pending exclusions. Display computed values only after module execution; otherwise state **NOT EXECUTED — no numerical result available** and identify coverage gaps without inventing calculations. Read documentation and issue the preliminary qualitative report immediately; numerical completion/reviewer activity must not become a staff-intake gate.
+
+| Variable/name and applicability basis | Raw worksheet score | Effective SRAT score | Assessment status / completion | Evidence status and source references | Reviewer/date/comments; reduction rationale and gaps |
 |---|---|---|---|---|---|
-| {{SRAT-I through SRAT-X; one row each}} | {{reported current facts/safeguards; Section 4 evidence IDs if needed}} | {{source/section, or NOT PROVIDED}} | {{LOW / MEDIUM / HIGH — descriptive match; UNRESOLVED with reason; NOT APPLICABLE; APPLICABILITY UNKNOWN}} | {{unique supported anchor match, or explicit ambiguity/gap; Section 8 note if needed}} | NO — reported, not independently verified |
+| {{I–X, one row each; facts/safeguards linked to Section 4}} | {{source formula result}} | {{1 LOW / 2 MEDIUM / 3 HIGH; or EXCLUDED — approved N/A}} | {{Not Assessed / In Progress / Assessed / Not Applicable - Pending Review / Not Applicable - Approved; completion separately}} | {{reported / missing / validated / rejected; document/section/evidence IDs}} | {{reviewer, date, justification; assumptions and missing/conflicting information, or Section 8 notes}} |
 
-Keep the table compact by cross-referencing Sections 4 and 8 without omitting evidence fields. Use UNRESOLVED for partial/competing descriptive matches; no interpolation or worst-match default. If the profile is unavailable, disclose that and leave factor bands unresolved rather than inventing anchors. N/A and unknowns have no numeric value. Do not calculate totals, apply workbook defaults, or silently fix thresholds.
+**Total numerical score:** {{sum of applicable effective scores; applicable count and excluded variable IDs}}.
 
-**Overall SAR preliminary qualitative conclusion:** {{LOW / MODERATE / HIGH, highest defensible material scenario from Section 6, or UNRESOLVED with critical reason}}. {{Identify driving scenarios, reported safeguards, likelihood/impact basis, material uncertainties and any difference from attributed historical ratings. Factor bands do not replace or numerically aggregate into this conclusion.}}
+**Overall SRAT classification:** {{source five-band classification; UNCLASSIFIED for total 26; PROVISIONAL without a band when approved N/A affects aggregation; invalid/undefined never LOW}}.
+
+**Outstanding SRAT gaps / reviewer comments:** {{unanswered/invalid questions, evidence verification gaps, pending applicability and decisions}}.
+
+Every applicable category begins HIGH (3). Raw results cannot justify reductions without complete valid responses, validated supporting evidence, reviewer/date and reduction justification. Pending N/A remains 3; approved N/A is excluded, not zero, and reduced-scope classification remains provisional pending CISO policy. Missing assurance is not a confirmed adverse control finding.
+
+### NIST/FIPS 199 — Security Categorization
+
+{{Independent categorization, scope/version, confidentiality/integrity/availability impact basis and uncertainties, or NOT ASSESSED. Never derive it from SRAT.}}
+
+### NIST SP 800-53 Rev. 5 — Control Applicability and Assessment
+
+{{Independent supported applicability, candidate/control assessment results and findings with evidence/source limits, or NOT ASSESSED. SRAT does not automatically add/remove/override controls; preliminary candidates are not formal findings.}}
+
+### Privacy and PHI/PII Assessments
+
+{{Separate privacy/data findings, applicability bases, evidence and limitations, or NOT ASSESSED. Reuse evidence references, not another methodology's conclusion. Future methodologies also retain independent results.}}
+
+### SAR Preliminary Qualitative Assessment
+
+**Overall SAR preliminary qualitative conclusion:** {{LOW / MODERATE / HIGH, highest defensible material scenario from Section 6, or UNRESOLVED with critical reason}}. {{Drivers, reported safeguards, likelihood/impact, assumptions and differences from historical ratings. This conclusion is unchanged by the SRAT number; no combined numerical score is calculated.}}
 
 ## 8. Assumptions, Unknowns and Source Limitations
 
@@ -83,7 +107,9 @@ Keep the table compact by cross-referencing Sections 4 and 8 without omitting ev
 
 {{Repeat SAR's own overall LOW/MODERATE/HIGH preliminary conclusion from Section 7, driven by the highest defensible material scenario rating; identify material factors, reported safeguards, important assumptions/uncertainties, and any difference from prior ratings. If unresolved, explain why and request only the single necessary clarification.}}
 
-**NOT AN APPROVAL. No formal SAR numerical risk score is available for this preliminary assessment. No approval, authorization, compliance certification, formal risk acceptance, or final security determination is made.** Source-reported workbook rules are not adopted scoring; numeric use remains pending CISO authorization.
+{{Separately summarize any executed SRAT result, completion/evidence gaps and open decisions; never substitute it for the qualitative conclusion or NIST results.}}
+
+**NOT AN APPROVAL. No combined SAR numerical risk score is calculated. No approval, authorization, compliance certification, formal risk acceptance, or final security determination is made.** DDS SRAT is a distinct methodology result. Final SRAT PDF generation is reviewer-requested only; do not generate it automatically.
 
 This preliminary assessment assumes the submitted information is accurate for purposes of analysis. Submitted facts and safeguards have not been independently verified. The preliminary risk conclusion is not software approval, authorization to implement, certification of compliance, formal risk acceptance, or a final security determination.
 

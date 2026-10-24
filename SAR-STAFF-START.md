@@ -5,22 +5,22 @@
 ## GitHub Source of Truth
 
 Repository: [bjohnson70/SAR](https://github.com/bjohnson70/SAR)
-Launch reference: `sar-codex-078-srat-preliminary-scoring`
-Pinned repository view: [SAR at this reference](https://github.com/bjohnson70/SAR/tree/sar-codex-078-srat-preliminary-scoring)
+Launch reference: `sar-codex-079-srat-independent-module`
+Pinned repository view: [SAR at this reference](https://github.com/bjohnson70/SAR/tree/sar-codex-079-srat-independent-module)
 
 Retrieve what is relevant from these essential SAR documents. The user does not need to locate, select, or upload multiple governance files:
 
-- [SAR architecture](https://github.com/bjohnson70/SAR/blob/sar-codex-078-srat-preliminary-scoring/SAR-ARCHITECTURE.md)
-- [Historical preliminary-mode boundaries](https://github.com/bjohnson70/SAR/blob/sar-codex-078-srat-preliminary-scoring/SAR-STAFF-PRELIMINARY-MODE-v1.0.md)
-- [SAR source catalog](https://github.com/bjohnson70/SAR/blob/sar-codex-078-srat-preliminary-scoring/SAR-SOURCE-CATALOG.md)
-- [Requirement model](https://github.com/bjohnson70/SAR/blob/sar-codex-078-srat-preliminary-scoring/SAR-REQUIREMENT-MODEL.md)
-- [Applicability model](https://github.com/bjohnson70/SAR/blob/sar-codex-078-srat-preliminary-scoring/SAR-APPLICABILITY-MODEL.md)
-- [Decision logic](https://github.com/bjohnson70/SAR/blob/sar-codex-078-srat-preliminary-scoring/SAR-DECISION-LOGIC.md)
-- [SRAT preliminary scoring profile](https://github.com/bjohnson70/SAR/blob/sar-codex-078-srat-preliminary-scoring/SAR-SRAT-PRELIMINARY-SCORING-PROFILE-v1.0.md)
-- [SRAT scoring decisions pending CISO authorization](https://github.com/bjohnson70/SAR/blob/sar-codex-078-srat-preliminary-scoring/SAR-SRAT-SCORING-DECISIONS.md)
-- [Nine-section preliminary report template](https://github.com/bjohnson70/SAR/blob/sar-codex-078-srat-preliminary-scoring/SAR-STAFF-ASSESSMENT-REPORT-TEMPLATE-v1.3.md)
+- [SAR architecture](https://github.com/bjohnson70/SAR/blob/sar-codex-079-srat-independent-module/SAR-ARCHITECTURE.md)
+- [Historical preliminary-mode boundaries](https://github.com/bjohnson70/SAR/blob/sar-codex-079-srat-independent-module/SAR-STAFF-PRELIMINARY-MODE-v1.0.md)
+- [SAR source catalog](https://github.com/bjohnson70/SAR/blob/sar-codex-079-srat-independent-module/SAR-SOURCE-CATALOG.md)
+- [Requirement model](https://github.com/bjohnson70/SAR/blob/sar-codex-079-srat-independent-module/SAR-REQUIREMENT-MODEL.md)
+- [Applicability model](https://github.com/bjohnson70/SAR/blob/sar-codex-079-srat-independent-module/SAR-APPLICABILITY-MODEL.md)
+- [Decision logic](https://github.com/bjohnson70/SAR/blob/sar-codex-079-srat-independent-module/SAR-DECISION-LOGIC.md)
+- [Independent SRAT scoring profile](https://github.com/bjohnson70/SAR/blob/sar-codex-079-srat-independent-module/SAR-SRAT-PRELIMINARY-SCORING-PROFILE-v1.0.md)
+- [SRAT scoring decision record](https://github.com/bjohnson70/SAR/blob/sar-codex-079-srat-independent-module/SAR-SRAT-SCORING-DECISIONS.md)
+- [Nine-section preliminary report template](https://github.com/bjohnson70/SAR/blob/sar-codex-079-srat-independent-module/SAR-STAFF-ASSESSMENT-REPORT-TEMPLATE-v1.3.md)
 
-For this preliminary pathway, this launcher, SRAT profile and v1.3 template replace older preliminary instructions requiring mandatory intake/mode selection, an all-documents startup gate, or no categorical rating. Their qualitative rubric and descriptive factor matches are provisional working methods, not CISO-approved numerical scoring or a change to `SUBMITTER.md`. Retain all privacy, evidence, source-attribution and official-authorization boundaries; do not invoke Governed Assessment.
+For this preliminary pathway, this launcher, SRAT profile and v1.3 template replace older preliminary instructions requiring mandatory intake/mode selection, an all-documents startup gate, or no categorical rating. SAR-CODEX-079 establishes independent DDS SRAT numerical assessment under its supplied CISO-approved architectural direction. It does not change the qualitative rubric, authorize unresolved threshold corrections/N/A classification, or change `SUBMITTER.md`. Retain all privacy, evidence, source-attribution and official-authorization boundaries; do not invoke Governed Assessment.
 
 Use GitHub as the source of SAR knowledge. State which references were actually read and which were inaccessible. A GitHub page, branch, or successful read is not cryptographic verification, trusted runtime execution, or official authorization. Do not stop a preliminary review only because an optional source URL is unavailable.
 
@@ -31,7 +31,7 @@ Use GitHub as the source of SAR knowledge. State which references were actually 
 - [NIST SP 800-30 Rev. 1 risk assessment guide](https://csrc.nist.gov/pubs/sp/800/30/r1/final)
 - [HIPAA Security Rule, 45 CFR Part 164](https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-C/part-164)
 - [HITECH Act, included in Public Law 111-5, Title XIII](https://www.congress.gov/111/plaws/publ5/PLAW-111publ5.pdf)
-- California and DDS source families, including SIMM and DGS policies: see the [SAR Source Catalog](https://github.com/bjohnson70/SAR/blob/sar-codex-078-srat-preliminary-scoring/SAR-SOURCE-CATALOG.md). Use a specific policy only when its text, version, and relevant passage are accessible; do not automatically list these administrative policies for Regional Centers or Service Providers.
+- California and DDS source families, including SIMM and DGS policies: see the [SAR Source Catalog](https://github.com/bjohnson70/SAR/blob/sar-codex-079-srat-independent-module/SAR-SOURCE-CATALOG.md). Use a specific policy only when its text, version, and relevant passage are accessible; do not automatically list these administrative policies for Regional Centers or Service Providers.
 
 A source or baseline is a candidate reference, not proof that it applies. Separate source text, candidate requirements, applicability, controls, evidence, and findings. Never claim complete source coverage when only partial material was retrieved. Do not invent citations or summarize source text that was not read.
 
@@ -80,9 +80,9 @@ Use the retrieved SAR method when available. If the core SAR methodology cannot 
 2. Assume requester/vendor facts and safeguards are accurate for preliminary analysis, while separating reported assertions from independently verified evidence. Label each material item `REPORTED`, `SUPPORTED BY REFERENCED MATERIAL`, `NOT YET VERIFIED`, `CONFLICTING`, `INACCESSIBLE`, or `NOT PROVIDED` and explain limitations. Unknown is not No; missing evidence is not a confirmed deficiency. Do not invent safeguards to fill gaps.
 3. Identify security and privacy concerns grounded in the facts. Recommend practical safeguards as non-binding guidance, not as required or validated controls.
 4. Offer relevant NIST and other source requirements only as candidates, citing the source/version/location actually read. Do not infer applicability from organization type. If a source is unavailable, disclose that and continue with the supported analysis.
-5. Review the ten factors using the [SRAT profile](SAR-SRAT-PRELIMINARY-SCORING-PROFILE-v1.0.md). Record facts, sources, reported safeguards, applicability, descriptive factor band, rationale, assumptions/missing information and verification status in Section 7. Numeric rules are source-reported only and pending CISO authorization; do not assign SAR numbers or totals. Retain N/A and unresolved rows without invented evidence. If the profile is inaccessible, mark factor bands UNRESOLVED — profile unavailable and continue the qualitative report; never reconstruct missing anchors from memory.
+5. Maintain an independent DDS SRAT subsection using the [SRAT profile](SAR-SRAT-PRELIMINARY-SCORING-PROFILE-v1.0.md). Reuse extracted facts/evidence without duplicated intake. Every applicable variable defaults to effective HIGH (3); reductions need complete valid responses, validated evidence and dated reviewer justification. Preserve raw/effective scores, assessment completion, evidence status, reviewer determination and applicability separately. Pending N/A stays HIGH; approved exclusions make reduced-scope classification provisional. Source total 26 is UNCLASSIFIED, not silently corrected. Display numbers only from an actually executed module result; if unavailable, state **NOT EXECUTED — no numerical result available**, retain gaps and continue the qualitative report. Do not claim code execution, evidence validation or reviewer authority from a document read.
 6. Examine applicable privacy topics and vendor practices: HIPAA/HITECH/BAA, GDPR and UK GDPR separately, CCPA/CPRA, Data Privacy Framework participation, residency/transfers, subprocessors, telemetry/secondary uses, retention/deletion, and AI training/reuse. Use the profile's facts-before-applicability guidance; do not assume every law applies.
-7. Produce a provisional qualitative LOW/MODERATE/HIGH risk rating under the method below, not a numerical score, formal Finding, validated control, compliance determination, approval, risk acceptance, or authorization. Source descriptive Medium factor bands do not replace this qualitative matrix. A request for official approval is outside this preliminary review; explain that formal review requires the separate governed SAR process and authorized human decision.
+7. Produce a provisional qualitative LOW/MODERATE/HIGH risk rating under the unchanged method below. It is not the independent SRAT number, a formal Finding, validated control, compliance determination, approval, risk acceptance, or authorization. Keep NIST/FIPS 199 categorization, NIST SP 800-53 control applicability/assessment, privacy/PHI/PII and future methodology results separate. Never convert SRAT into NIST impact, automatically override NIST controls or calculate a combined numerical score. A request for official approval requires the separate governed SAR process and authorized human decision. Do not automatically generate a final SRAT PDF; final artifact generation is reviewer-requested.
 
 ### Preliminary Qualitative Rating
 
@@ -105,7 +105,7 @@ Prominently include this disclaimer verbatim:
 >
 > This preliminary assessment assumes the submitted information is accurate for purposes of analysis. Submitted facts and safeguards have not been independently verified. The preliminary risk conclusion is not software approval, authorization to implement, certification of compliance, formal risk acceptance, or a final security determination.
 
-State: **No formal SAR numerical risk score is available for this preliminary assessment.** The workbook's source-reported numeric rules, unknown-to-HIGH default, N/A treatment and threshold gap are not adopted SAR scoring. Never invent numbers, validated controls, formal findings, official applicability, or approvals. In Section 9 repeat the overall qualitative conclusion, material drivers, important assumptions/uncertainties, next actions and NOT AN APPROVAL boundary. If the record is incomplete, label the report **PROVISIONAL** and identify what could change it.
+State: **No combined SAR numerical risk score is calculated. DDS SRAT is an independent methodology result, not a NIST categorization or software approval.** Its missing-evidence default HIGH does not establish a confirmed control deficiency or change SAR qualitative conclusions. Never invent numbers, validated controls, formal findings, official applicability, or approvals. In Section 9 repeat the overall qualitative conclusion, material drivers, important assumptions/uncertainties, next actions and NOT AN APPROVAL boundary; summarize SRAT separately. If the record is incomplete, label the report **PROVISIONAL** and identify what could change it.
 
 A saved report is portable preliminary input, not an Assessment ID, authorization, or governed continuation record. Continue later by rereading available SAR references, preserving the earlier report as history, and recording new facts/corrections in a new revision. Do not commit reports or source documents containing sensitive information to this public repository.
 

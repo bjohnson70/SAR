@@ -2,6 +2,8 @@
 
 ## Status
 
+Pre-079 baseline: `26986021b79c22e926939b3da199fc1fc2963d02`. Preserve these historical expectations/results; its no-numerical-score expectation concerns the earlier preliminary pathway. For SAR-CODEX-079, retain the document-first behavior while allowing the distinct executed SRAT subsection; see [current module regression tests](../../staff/test_srat.py). Do not reuse a historical or reported live PASS as an observation of this revision.
+
 Manual scenario definition for `SAR-STAFF-START.md`. **Microsoft Copilot Chat execution: NOT TESTED.** Static coverage below confirms the launcher contains an expected response path; it is not an observation of model behavior or compatibility evidence.
 
 ## Test Setup
